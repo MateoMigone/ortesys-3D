@@ -10,9 +10,9 @@
       </h2>
     </div>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="#" method="POST">
-        <div class="mt-2">
+    <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="flex flex-col items-center" action="#" method="POST">
+        <div class="md:w-2/3 mt-2">
           <input
             id="email"
             name="email"
@@ -24,7 +24,7 @@
           />
         </div>
 
-        <div class="mt-2">
+        <div class="w-2/3 mt-2">
           <input
             id="password"
             name="password"
@@ -36,7 +36,7 @@
           />
         </div>
 
-        <div>
+        <div class="w-2/3 mt-2">
           <button
             type="submit"
             class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -46,7 +46,7 @@
         </div>
       </form>
 
-      <p class="underline mt-7 text-center text-sm">
+      <p class="underline mt-5 text-center text-sm">
         <NuxtLink to="/">Esqueci minha senha</NuxtLink>
       </p>
     </div>
