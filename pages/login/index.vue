@@ -37,12 +37,7 @@
         </div>
 
         <div class="w-2/3 mt-2">
-          <button
-            type="submit"
-            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            Continuar
-          </button>
+          <Button type="submit" />
         </div>
       </form>
 
@@ -69,14 +64,6 @@ definePageMeta({
 
 input {
   background-color: rgba(92, 106, 196, 0.1);
-}
-
-button {
-  background-color: rgba(45, 88, 147, 1);
-}
-
-button:hover {
-  background-color: #2fb7a0;
 }
 
 p {
