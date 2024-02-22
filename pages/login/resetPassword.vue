@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div v-if="!true">
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
-          class="mx-auto h-[36px] w-[205px]"
-          src="/logo.png"
+          class="mx-auto h-[34px] w-[190px]"
+          src="../../assets/imgs/logo.png"
           alt="Ortesys Gen"
         />
-        <h2
-          class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
-        >
+        <h2 class="mt-4 text-center text-[27px] font-bold leading-9">
           Senha de acceso
         </h2>
       </div>
 
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
         <form class="space-y-6" action="#" method="POST">
-          <div>
-            <p class="mt-1 text-sm leading-6 text-gray-700">
+          <div class="mb-8">
+            <p
+              class="mb-5 text-[20px] text-center font-semibold leading-6 text-gray-800"
+            >
               Digite seu CPF para criar sua senha
             </p>
             <div class="mt-2">
@@ -27,13 +27,14 @@
                 type="text"
                 autocomplete="cpf"
                 required
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                placeholder="CPF"
+                class="block w-full rounded-md border-0 px-3 py-1 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs leading-6"
               />
             </div>
           </div>
 
           <div>
-            <p class="mt-1 text-sm leading-6 text-gray-600">
+            <p class="text-xl font-semibold leading-6 text-gray-800">
               Por onde você quer receber o link para criar sua senha?
             </p>
             <div class="mt-6 space-y-6">
@@ -42,11 +43,11 @@
                   id="push-everything"
                   name="push-notifications"
                   type="radio"
-                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  class="h-6 w-6 text-indigo-600"
                 />
                 <label
                   for="push-everything"
-                  class="block text-sm font-medium leading-6 text-gray-900"
+                  class="block text-md font-medium leading-6"
                   >E-mail</label
                 >
               </div>
@@ -55,11 +56,11 @@
                   id="push-email"
                   name="push-notifications"
                   type="radio"
-                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  class="h-6 w-6 border-red-900 text-red-600 focus:ring-green-600 border-5"
                 />
                 <label
                   for="push-email"
-                  class="block text-sm font-medium leading-6 text-gray-900"
+                  class="block text-md font-medium leading-6"
                   >SMS</label
                 >
               </div>
@@ -67,10 +68,35 @@
           </div>
 
           <div>
-            <Button type="submit" />
+            <Button type="submit" text="Enviar" />
           </div>
         </form>
       </div>
+    </div>
+  </div>
+
+  <div v-else class="background flex justify-center items-center px-8 my-auto">
+    <div class="flex flex-col py-[60px] px-[25px] w-[350px] text-center">
+      <img
+        class="mx-auto h-[34px] w-[190px] mt-5"
+        src="../../assets/imgs/logo.png"
+        alt="Ortesys Gen"
+      />
+      <p class="text-xl font-extrabold mt-3 px-5">
+        Em breve, você receberá o link para criar sua senha
+      </p>
+      <p class="text-md mt-3 font-semibold">
+        Caso você não receba o link em alguns minutos, tente novamente ou entre
+        em contato conosco para verificar o que está acontecendo:
+      </p>
+      <ul class="text-md mt-3 mb-6 font-semibold">
+        <li>E-mail: suporte@ortesys.com.br</li>
+        <li>Telefone: (99) 9999-9999</li>
+        <span>em dias úteis, das 9h às 18h</span>
+      </ul>
+      <NuxtLink to="../login">
+        <Button text="Voltar para o login" class="text-[12px]" />
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -84,5 +110,12 @@ definePageMeta({
 <style scoped>
 input {
   background-color: rgba(92, 106, 196, 0.1);
+}
+
+.background {
+  background-image: url("../../assets/imgs/resetPassBg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>

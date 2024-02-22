@@ -37,12 +37,12 @@
         </div>
 
         <div class="w-2/3 mt-2">
-          <Button type="submit" />
+          <Button type="submit" text="Continuar" />
         </div>
       </form>
 
       <p class="underline mt-5 text-center text-sm">
-        <NuxtLink to="/">Esqueci minha senha</NuxtLink>
+        <NuxtLink to="../login/resetPassword">Esqueci minha senha</NuxtLink>
       </p>
     </div>
   </div>
@@ -56,7 +56,7 @@ definePageMeta({
 
 <style scoped>
 .background {
-  background-image: url("/ortesys-background-logo.png");
+  background-image: url("../../assets/imgs/ortesys-background-logo.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

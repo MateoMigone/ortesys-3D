@@ -1,5 +1,5 @@
 <template>
-  <div class="loginBackground">
+  <div class="loginBackground grid">
     <slot />
   </div>
   <footer class="loginFooter text-white py-4">
@@ -40,7 +40,7 @@
 
 <style>
 .loginBackground {
-  background-image: url("/background.png");
+  background-image: url("../assets/imgs/background.png");
   background-size: cover;
   background-position: center;
   height: 90vh;
