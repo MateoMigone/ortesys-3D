@@ -18,7 +18,7 @@
         <li>Telefone: (99) 9999-9999</li>
         <span>em dias úteis, das 9h às 18h</span>
       </ul>
-      <NuxtLink to="../../pages/login">
+      <NuxtLink to="/login">
         <Button text="Voltar para o login" class="text-[12px]" />
       </NuxtLink>
     </div>

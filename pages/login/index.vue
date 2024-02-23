@@ -1,49 +1,47 @@
 <template>
-  <div
-    class="background flex min-h-full flex-col justify-center px-6 py-12 lg:px-8"
-  >
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2
-        class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
-      >
-        Login
-      </h2>
-    </div>
+  <div class="background">
+    <div
+      class="flex flex-col justify-center px-6 py-12 m-[100px] 2xl:m-[140px]"
+    >
+      <div class="mx-auto w-full max-w-sm">
+        <h2 class="text-center text-2xl 2xl:text-3xl font-bold">Login</h2>
+      </div>
 
-    <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="flex flex-col items-center" action="#" method="POST">
-        <div class="md:w-2/3 mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-            placeholder="Seu email..."
-            class="block w-full rounded-md border-0 px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-          />
-        </div>
+      <div class="mt-5 2xl:mt-8 mx-auto w-full max-w-sm">
+        <form class="flex flex-col items-center">
+          <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Seu email..."
+              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+            />
+          </div>
 
-        <div class="w-2/3 mt-2">
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
-            required
-            placeholder="Sua senha..."
-            class="block w-full rounded-md border-0 px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-          />
-        </div>
+          <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="Sua senha..."
+              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+            />
+          </div>
 
-        <div class="w-2/3 mt-2">
-          <Button type="submit" text="Continuar" />
-        </div>
-      </form>
+          <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
+            <Button type="submit" text="Continuar" />
+          </div>
+        </form>
 
-      <p class="underline mt-5 text-center text-sm">
-        <NuxtLink to="../login/resetPassword">Esqueci minha senha</NuxtLink>
-      </p>
+        <p class="underline mt-5 2xl:mt-8 text-center text-sm 2xl:text-base">
+          <NuxtLink to="../login/resetPassword">Esqueci minha senha</NuxtLink>
+        </p>
+      </div>
     </div>
   </div>
 </template>
