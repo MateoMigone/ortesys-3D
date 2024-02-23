@@ -1,5 +1,5 @@
 <template>
-  <div class="loginBackground grid">
+  <div class="loginBackground grid items-center">
     <slot />
   </div>
   <footer class="loginFooter text-white py-4">
