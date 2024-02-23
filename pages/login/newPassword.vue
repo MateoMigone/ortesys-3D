@@ -152,27 +152,28 @@ const nonSequencialNumbers = ref(false);
 const checkCharQty = () => pass.value.length > 5;
 
 const checkSpecialChar = () => {
-  const uppercaseRegex = /[@*!%;:.]/;
-  return uppercaseRegex.test(pass.value);
+  const regex = /[@*!%;:.]/;
+  return regex.test(pass.value);
 };
 
 const checkMayus = () => {
-  const uppercaseRegex = /[A-Z]/;
-  return uppercaseRegex.test(pass.value);
+  const regex = /[A-Z]/;
+  return regex.test(pass.value);
 };
 
 const checkMinus = () => {
-  const uppercaseRegex = /[a-z]/;
-  return uppercaseRegex.test(pass.value);
+  const regex = /[a-z]/;
+  return regex.test(pass.value);
 };
 
 const checkNumber = () => {
-  const uppercaseRegex = /\d/;
-  return uppercaseRegex.test(pass.value);
+  const regex = /\d/;
+  return regex.test(pass.value);
 };
 
 const checkNonSequencialNumbers = () => {
-  const regex = /(01|12|23|34|45|56|67|78|89|98|87|76|65|54|43|32|21|10)/;
+  const regex =
+    /(012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210)/;
   return !regex.test(pass.value);
 };
 
