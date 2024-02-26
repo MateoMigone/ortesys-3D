@@ -1,21 +1,29 @@
 <template>
   <div>
-    <div class="flex flex-col gap-2 mx-auto w-full max-w-sm">
+    <div
+      class="flex flex-col gap-2 mx-auto w-full max-w-[560px] 2xl:max-w-[340px]"
+    >
       <img
         src="../../assets/imgs/logo.png"
         alt="Ortesys Gen"
         class="mx-auto h-[30px] w-[170px]"
       />
-      <h3 class="text-center text-[20px] blue-text font-bold">
+      <h3
+        class="text-center blue-text font-bold mt-3 text-[20px] 2xl:text-[20px]"
+      >
         Crie sua senha
       </h3>
-      <p class="text-center text-[20px] font-bold leading-6">
+      <p
+        class="text-center font-bold leading-6 mt-2 2xl:mt-3 text-[20px] 2xl:text-[20px] w-[340px] mx-auto"
+      >
         Falta pouco! Crie uma senha para acessar seu painel.
       </p>
-      <p class="text-center text-[20px] blue-text font-bold mb-3">
+      <p
+        class="text-center blue-text font-bold mb-3 mt-2 2xl:mt-3 text-[20px] 2xl:text-[20px]"
+      >
         Sua senha deve ter:
       </p>
-      <ul>
+      <ul class="grid grid-cols-2 2xl:grid-cols-1 mx-auto 2xl:mx-0">
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -96,19 +104,19 @@
           números não sequenciais
         </li>
       </ul>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 mt-5 2xl:mt-0">
         <img
           src="../../assets/imgs/warning-icon.png"
           alt="Warning icon"
-          class="w-[42px] h-[42px]"
+          class="w-[30px] h-[30px] 2xl:w-[42px] 2xl:h-[42px]"
         />
-        <p>
+        <p class="my-1">
           Evite senhas utilizadas em outros sites, ou que sejam fáceis de
           descobrir
         </p>
       </div>
-      <form action="#" class="flex flex-col items-center">
-        <div class="md:w-2/3 mt-2">
+      <form action="#" class="flex 2xl:flex-col items-center gap-2 mt-2">
+        <div class="w-[260px]">
           <input
             v-model="pass"
             @input="validatePassword"
@@ -117,20 +125,20 @@
             type="text"
             required
             placeholder="Criar senha"
-            class="w-full rounded-md px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+            class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm leading-6"
           />
         </div>
-        <div class="md:w-2/3 mt-2">
+        <div class="w-[260px]">
           <input
             id="newPassRepeat"
             name="newPassRepeat"
             type="password"
             required
             placeholder="Repetir senha"
-            class="w-full rounded-md px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm"
+            class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm leading-6"
           />
         </div>
-        <Button type="submit" text="Criar senha" class="w-2/3 mt-2" />
+        <Button type="submit" text="Criar senha" class="w-[260px]" />
       </form>
     </div>
   </div>
@@ -209,5 +217,9 @@ const validatePassword = () => {
 
 .valid {
   background-color: #bef264;
+}
+
+input {
+  background-color: rgba(92, 106, 196, 0.1);
 }
 </style>
