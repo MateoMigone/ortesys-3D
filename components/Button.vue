@@ -1,47 +1,58 @@
 <template>
-  <button
-    :class="[
-      'flex w-[165px] h-[40px] justify-center rounded-md px-3 py-1.5 text-md font-medium leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors',
-      textColorClass,
-      bgColorClass,
-      hoverTextColorClass,
-      hoverBgColorClass,
-    ]"
-  >
-    {{ text }}
-  </button>
+  <div>
+    <button
+      class="flex w-full justify-center rounded-md px-3 py-1.5 text-base font-medium shadow-sm"
+      :class="color || 'default'"
+    >
+      {{ text }}
+    </button>
+  </div>
 </template>
 
 <script setup>
-const { text, color } = defineProps({
-  text: String,
-  color: String,
-});
-
-const colorMap = {
-  blue: {
-    text: "text-blue-700",
-    bg: "bg-blue-100",
-    hoverText: "hover:text-white",
-    hoverBg: "hover:bg-blue-500",
-  },
-  red: {
-    text: "text-red-700",
-    bg: "bg-red-100",
-    hoverText: "hover:text-white",
-    hoverBg: "hover:bg-red-500",
-  },
-  yellow: {
-    text: "text-yellow-700",
-    bg: "bg-yellow-100",
-    hoverText: "hover:text-white",
-    hoverBg: "hover:bg-yellow-500",
-  },
-  // Add other colors as needed
-};
-
-const textColorClass = colorMap[color]?.text || "text-gray-700";
-const bgColorClass = colorMap[color]?.bg || "bg-gray-100";
-const hoverTextColorClass = colorMap[color]?.hoverText || "";
-const hoverBgColorClass = colorMap[color]?.hoverBg || "";
+const { text, color } = defineProps(["text", "color"]);
 </script>
+
+<style scoped>
+.default {
+  color: rgba(92, 106, 196, 1);
+  background-color: rgba(92, 106, 196, 0.15);
+}
+
+.default:hover {
+  color: white;
+  background-color: rgba(92, 106, 196, 1);
+}
+
+.red {
+  color: rgba(196, 92, 92, 1);
+
+  background-color: rgba(196, 92, 92, 0.15);
+}
+
+.red:hover {
+  color: white;
+  background-color: rgba(196, 92, 92, 1);
+}
+
+.yellow {
+  color: rgba(230, 175, 35, 1);
+
+  background-color: rgba(230, 175, 35, 0.15);
+}
+
+.yellow:hover {
+  color: white;
+  background-color: rgba(230, 175, 35, 1);
+}
+
+.green {
+  color: rgba(92, 196, 109, 1);
+  background-color: rgba(92, 196, 109, 0.15);
+}
+
+.green:hover {
+  color: white;
+  background-color: rgba(92, 196, 109, 1);
+}
+</style>
