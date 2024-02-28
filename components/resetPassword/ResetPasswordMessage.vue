@@ -6,20 +6,22 @@
         src="../../assets/imgs/logo.png"
         alt="Ortesys Gen"
       />
-      <p class="text-xl font-extrabold mt-3 px-5">
+      <p
+        class="font-extrabold text-xl 2xl:text-[22px] mt-3 2xl:mt-5 px-5 2xl:px-2"
+      >
         Em breve, você receberá o link para criar sua senha
       </p>
-      <p class="text-md mt-3 font-semibold">
+      <p class="font-semibold text-base 2xl:text-lg mt-3 2xl:mt-5">
         Caso você não receba o link em alguns minutos, tente novamente ou entre
         em contato conosco para verificar o que está acontecendo:
       </p>
-      <ul class="text-md mt-3 mb-6 font-semibold">
+      <ul class="mb-6 font-semibold text-base 2xl:text-lg mt-3 2xl:mt-5">
         <li>E-mail: suporte@ortesys.com.br</li>
         <li>Telefone: (99) 9999-9999</li>
         <span>em dias úteis, das 9h às 18h</span>
       </ul>
       <NuxtLink to="/login">
-        <Button text="Voltar para o login" class="text-[12px]" />
+        <Button text="Voltar para o login" />
       </NuxtLink>
     </div>
   </div>
