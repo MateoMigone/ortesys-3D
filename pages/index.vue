@@ -1,4 +1,6 @@
 <template>
-  <div>Setting the project</div>
-  <PrintTutorialCard />
+  <div>
+    <div>Setting the project</div>
+    <OrtesysAdminCard />
+  </div>
 </template>
