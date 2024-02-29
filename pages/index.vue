@@ -1,4 +1,5 @@
 <template>
-  <div>Setting the project</div>
-  <CardComponentsMaterialManageCard />
+  <div>
+    <div>Setting the project</div>
+  </div>
 </template>
