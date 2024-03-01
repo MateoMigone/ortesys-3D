@@ -1,109 +1,309 @@
 <template>
-  <div class="bg-gray-200">
-    <div class="flex h-screen">
-      <!-- Sidebar -->
-      <div class="w-64 bg-white p-5">
-        <div class="flex items-center space-x-4 p-2 mb-5">
-          <img
-            class="h-12 w-12 rounded-full"
-            src="https://placehold.co/100x100"
-            alt="Profile image placeholder"
-          />
-          <div>
-            <h4
-              class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide"
-            >
-              Dr Paulo Tavares
-            </h4>
-            <span class="text-sm tracking-wide flex items-center space-x-1">
-              <span class="text-green-500">
-                <i class="fas fa-circle"></i>
-              </span>
-              <span class="text-gray-600">Online</span>
-            </span>
-          </div>
+  <div class="bg-gray-200 flex">
+    <!-- Sidebar -->
+    <div class="w-1/3 mainBackground p-8 flex flex-col">
+      <img
+        src="../assets/imgs/logo.png"
+        alt="Ortesys Gen"
+        class="mx-auto h-[30px] w-[170px]"
+      />
+      <div class="flex flex-col items-center gap-1 p-2 mt-5">
+        <img
+          class="h-[52px] w-[52px] rounded-full border-2 border-[#2d5893] p-1"
+          src="../assets/imgs/user-avatar.png"
+          alt="Profile image"
+        />
+        <div class="flex flex-col items-center gap-1">
+          <h4 class="font-semibold text-[#2d5893]">Dr Paulo Tavares</h4>
+          <NuxtLink to="/myAccount"
+            ><span
+              class="px-2.5 py-[1px] border-[#2d5893] border-[1px] text-[#2d5893] rounded-full text-xs text-bold"
+              >Edit</span
+            ></NuxtLink
+          >
         </div>
-        <ul class="space-y-2 text-sm">
-          <!-- Sidebar links -->
-          <!-- ... -->
-        </ul>
       </div>
+      <div>
+        <ul class="p-4 flex flex-col gap-3">
+          <li>
+            <router-link
+              to="/"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="28"
+                height="29"
+                viewBox="0 0 28 29"
+                :fill="$route.path === '/' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.627 14.2712L14.127 16.7712L11.627 14.2712L14.127 11.7712L16.627 14.2712ZM14.127 6.77124L16.777 9.42124L19.902 6.29624L14.127 0.52124L8.35195 6.29624L11.477 9.42124L14.127 6.77124ZM6.62695 14.2712L9.27695 11.6212L6.15195 8.49624L0.376953 14.2712L6.15195 20.0462L9.27695 16.9212L6.62695 14.2712ZM21.627 14.2712L18.977 16.9212L22.102 20.0462L27.877 14.2712L22.102 8.49624L18.977 11.6212L21.627 14.2712ZM14.127 21.7712L11.477 19.1212L8.35195 22.2462L14.127 28.0212L19.902 22.2462L16.777 19.1212L14.127 21.7712Z"
+                />
+              </svg>
+               Nova órtese</router-link
+            >
+          </li>
 
-      <!-- Main Content -->
-      <div class="flex-1 flex flex-col overflow-hidden">
-        <!-- Header -->
-        <header class="flex justify-between items-center p-5 border-b-2">
-          <div class="flex space-x-2">
-            <!-- Search input -->
-            <input
-              type="search"
-              placeholder="Pesquisar"
-              class="px-4 py-2 w-80 focus:ring-blue-500 focus:border-blue-500"
+          <li>
+            <router-link
+              to="/manage"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/manage' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="25"
+                height="16"
+                viewBox="0 0 25 16"
+                :fill="$route.path === '/manage' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.1885 9.65845C22.8385 9.65845 24.1885 11.0084 24.1885 12.6584C24.1885 14.3084 22.8385 15.6584 21.1885 15.6584C19.5385 15.6584 18.1885 14.3084 18.1885 12.6584C18.1885 11.0084 19.5385 9.65845 21.1885 9.65845ZM9.18848 12.6584C9.18848 14.3084 10.5385 15.6584 12.1885 15.6584C13.8385 15.6584 15.1885 14.3084 15.1885 12.6584C15.1885 11.0084 13.8385 9.65845 12.1885 9.65845C10.5385 9.65845 9.18848 11.0084 9.18848 12.6584ZM0.188476 12.6584C0.188477 14.3084 1.53848 15.6584 3.18848 15.6584C4.83848 15.6584 6.18848 14.3084 6.18848 12.6584C6.18848 11.0084 4.83848 9.65845 3.18848 9.65845C1.53848 9.65845 0.188476 11.0084 0.188476 12.6584ZM6.18848 3.65845C6.18848 2.00845 4.83848 0.658449 3.18848 0.658449C1.53848 0.658449 0.188476 2.00845 0.188476 3.65845C0.188476 5.30845 1.53848 6.65845 3.18848 6.65845C4.83848 6.65845 6.18848 5.30845 6.18848 3.65845ZM9.18848 3.65845C9.18848 5.30845 10.5385 6.65845 12.1885 6.65845C13.8385 6.65845 15.1885 5.30845 15.1885 3.65845C15.1885 2.00845 13.8385 0.658449 12.1885 0.658449C10.5385 0.658449 9.18848 2.00845 9.18848 3.65845ZM18.1885 3.65845C18.1885 5.30845 19.5385 6.65845 21.1885 6.65845C22.8385 6.65845 24.1885 5.30845 24.1885 3.65845C24.1885 2.00845 22.8385 0.658448 21.1885 0.658448C19.5385 0.658448 18.1885 2.00845 18.1885 3.65845Z"
+                />
+              </svg>
+              Gerenciar</router-link
+            >
+          </li>
+
+          <li>
+            <router-link
+              to="/support"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/support' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                :fill="$route.path === '/support' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1885 0.53125C5.56448 0.53125 0.188477 5.90725 0.188477 12.5312C0.188477 19.1553 5.56448 24.5312 12.1885 24.5312C18.8125 24.5312 24.1885 19.1553 24.1885 12.5312C24.1885 5.90725 18.8125 0.53125 12.1885 0.53125ZM21.1405 9.07525L17.8045 10.4553C17.1925 8.82325 15.9085 7.52725 14.2645 6.92725L15.6445 3.59125C18.1645 4.55125 20.1685 6.55525 21.1405 9.07525ZM12.1885 16.1313C10.1965 16.1313 8.58848 14.5233 8.58848 12.5312C8.58848 10.5393 10.1965 8.93125 12.1885 8.93125C14.1805 8.93125 15.7885 10.5393 15.7885 12.5312C15.7885 14.5233 14.1805 16.1313 12.1885 16.1313ZM8.74448 3.57925L10.1485 6.91525C8.49248 7.51525 7.18448 8.82325 6.57248 10.4792L3.23648 9.08725C4.20848 6.55525 6.21248 4.55125 8.74448 3.57925ZM3.23648 15.9753L6.57248 14.5953C7.18448 16.2513 8.48048 17.5473 10.1365 18.1473L8.73248 21.4832C6.21248 20.5112 4.20848 18.5072 3.23648 15.9753ZM15.6445 21.4832L14.2645 18.1473C15.9085 17.5353 17.2045 16.2393 17.8045 14.5833L21.1405 15.9873C20.1685 18.5072 18.1645 20.5112 15.6445 21.4832Z"
+                />
+              </svg>
+              Suporte</router-link
+            >
+          </li>
+
+          <li>
+            <router-link
+              to="/myAccount"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/myAccount' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="22"
+                height="23"
+                viewBox="0 0 22 23"
+                :fill="$route.path === '/myAccount' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.9714 8.80804C13.4037 8.80804 15.3754 6.8363 15.3754 4.40402C15.3754 1.97175 13.4037 0 10.9714 0C8.53913 0 6.56738 1.97175 6.56738 4.40402C6.56738 6.8363 8.53913 8.80804 10.9714 8.80804Z"
+                />
+                <path
+                  d="M21.8785 18.9959C21.4216 16.916 20.3741 15.0121 18.8617 13.5129C18.4946 13.1446 18.0968 12.8082 17.6726 12.5074C15.7408 11.0583 13.386 10.2845 10.9712 10.3053C8.01837 10.2902 5.17937 11.4432 3.07329 13.5129C1.56088 15.0121 0.513364 16.916 0.0565347 18.9959C-0.0228691 19.3637 -0.0185799 19.7447 0.0690853 20.1106C0.156751 20.4765 0.325549 20.818 0.562997 21.1099C0.808906 21.408 1.11857 21.6472 1.46918 21.8098C1.81978 21.9724 2.2024 22.0543 2.58885 22.0494H19.3535C19.7411 22.0496 20.1237 21.9627 20.4732 21.795C20.8226 21.6272 21.1298 21.3831 21.372 21.0805C21.6052 20.7921 21.7715 20.4555 21.8591 20.0951C21.9467 19.7346 21.9533 19.3592 21.8785 18.9959Z"
+                />
+              </svg>
+              Minha conta</router-link
+            >
+          </li>
+
+          <li>
+            <router-link
+              to="/managePrinter"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/managePrinter' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="24"
+                height="17"
+                viewBox="0 0 24 17"
+                :fill="$route.path === '/managePrinter' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.8909 9.45193H14.6895V5.82031H8.97647V9.45193H0.775581C0.347151 9.45193 0 9.79908 0 10.227C0 10.655 0.347151 11.0021 0.775581 11.0021H8.97647V14.6337H10.8885V15.8108C10.8885 16.3323 11.3115 16.7553 11.833 16.7553C12.3545 16.7553 12.7775 16.3328 12.7775 15.8108V14.6337H14.6895V11.0021H22.8909C23.3188 11.0021 23.666 10.655 23.666 10.227C23.666 9.79908 23.3188 9.45193 22.8909 9.45193Z"
+                />
+                <path
+                  d="M8.42709 7.93181H8.58965V6.2793H8.42709C7.97026 6.2793 7.60059 6.64897 7.60059 7.1058C7.60059 7.56263 7.97026 7.93181 8.42709 7.93181Z"
+                />
+                <path
+                  d="M14.9443 6.27979V7.9323H15.1069C15.5642 7.9323 15.9334 7.56263 15.9334 7.1058C15.9334 6.64897 15.5637 6.2793 15.1069 6.2793L14.9443 6.27979Z"
+                />
+                <path
+                  d="M12.249 5.63472L12.3831 5.63325C12.3728 4.81605 12.5604 4.22849 12.957 3.83678C13.7095 3.09352 15.1706 3.12779 16.5832 3.16353C18.0555 3.19928 19.5788 3.236 20.3975 2.37669C20.8567 1.8944 21.0457 1.19618 20.9762 0.243354L20.4885 0.279097C20.5473 1.0865 20.4019 1.66231 20.0439 2.03884C19.6052 2.49861 18.8737 2.64207 18.0213 2.67733C18.2127 2.57744 18.3895 2.45503 18.5403 2.29199C18.9961 1.79892 19.1802 1.04831 19.1029 -0.00195312L18.6142 0.0337902C18.6813 0.941573 18.5388 1.57173 18.1799 1.96001C17.6393 2.54415 16.6376 2.55002 15.576 2.5559C14.422 2.56275 13.2282 2.56961 12.4727 3.33833C11.9787 3.8407 11.7456 4.59719 11.7588 5.65039L12.2485 5.64402C12.248 5.64109 12.249 5.63864 12.249 5.63472Z"
+                />
+              </svg>
+              Controle de impressão</router-link
+            >
+          </li>
+
+          <li>
+            <router-link
+              to="/infoPanel"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/infoPanel' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                :fill="$route.path === '/infoPanel' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.5178 11.723H7.98223V8.18743H11.5178V11.723ZM15.0533 4.6519V8.39957L19.4727 8.39957L19.4727 0.232484H11.3056V4.6519H15.0533ZM4.4467 4.6519H8.19436V0.232484H0.0272819L0.0272806 8.39957L4.4467 8.39957V4.6519ZM15.0533 15.2585H11.3056L11.3056 19.6779H19.4727L19.4727 11.5108L15.0533 11.5108V15.2585ZM4.4467 15.2585V11.5108L0.0272833 11.5108L0.0272819 19.6779H8.19437L8.19436 15.2585H4.4467Z"
+                />
+              </svg>
+              Painel de informações</router-link
+            >
+          </li>
+
+          <li>
+            <router-link
+              to="/manageOrthosis"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              :class="$route.path === '/manageOrthosis' ? 'active' : ''"
+            >
+              <svg
+                class="w-[30px]"
+                width="19"
+                height="16"
+                viewBox="0 0 19 16"
+                :fill="$route.path === '/manageOrthosis' ? 'white' : '#2d5893'"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.38452 3.06412C6.39719 3.06412 7.33941 3.37137 8.12305 3.89738V0.230469H2.646V3.89743C3.42964 3.37143 4.3718 3.06412 5.38452 3.06412Z"
+                />
+                <path
+                  d="M2.16943 7.45299H8.59904C8.34284 5.90843 7.00147 4.73047 5.38424 4.73047C3.767 4.73047 2.42563 5.90849 2.16943 7.45299Z"
+                />
+                <path
+                  d="M8.87949 9.12109H1.64785C1.64785 9.12109 0.920932 10.0311 0.908264 10.0474C-0.137908 11.3939 -0.294815 13.2253 0.512998 14.7315L1.18907 15.9922H15.6646C17.5038 15.9922 19 14.496 19 12.6568V12.0291L8.87949 9.12109Z"
+                />
+              </svg>
+              Controle de Órteses</router-link
+            >
+          </li>
+        </ul>
+        <div class="flex justify-center items-center gap-2 mt-4">
+          <svg
+            width="15"
+            height="14"
+            viewBox="0 0 15 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.96625 0H6.4107V7.77778H7.96625V0ZM11.7229 1.68778L10.6185 2.79222C11.8474 3.78 12.6329 5.29667 12.6329 7C12.6329 10.01 10.1985 12.4444 7.18848 12.4444C4.17848 12.4444 1.74403 10.01 1.74403 7C1.74403 5.29667 2.52959 3.78 3.7507 2.78444L2.65403 1.68778C1.14514 2.97111 0.188477 4.86889 0.188477 7C0.188477 10.8656 3.32292 14 7.18848 14C11.054 14 14.1885 10.8656 14.1885 7C14.1885 4.86889 13.2318 2.97111 11.7229 1.68778Z"
+              fill="#2D5893"
             />
-            <button class="text-blue-500">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-          <div class="flex space-x-4">
-            <!-- Icons -->
-            <button class="text-blue-500">
-              <i class="far fa-bell"></i>
-            </button>
-            <button class="text-blue-500">
-              <i class="far fa-envelope"></i>
-            </button>
-          </div>
-        </header>
+          </svg>
+          <span class="text-[#2d5893]">Sair</span>
+        </div>
+      </div>
+    </div>
 
-        <!-- Main section -->
-        <main class="flex-1 overflow-y-auto p-5">
-          <div class="bg-white p-8 rounded-md w-full">
-            <div class="flex items-center justify-between pb-6">
-              <div>
-                <h2 class="text-gray-600 font-semibold">
-                  Selecione o tipo de órtese desejado.
-                </h2>
-                <span class="text-xs">Todos os campos são obrigatórios.</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="lg:ml-40 ml-10 space-x-8">
-                  <button
-                    class="btn border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition ease-out duration-500"
-                  >
-                    Membro Superior
-                  </button>
-                  <button
-                    class="btn border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition ease-out duration-500"
-                  >
-                    Membro Inferior
-                  </button>
-                </div>
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-5 border-b-2">
+        <div class="flex space-x-2">
+          <!-- Search input -->
+          <input
+            type="search"
+            placeholder="Pesquisar"
+            class="px-4 py-2 w-80 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <button class="text-blue-500">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="flex space-x-4">
+          <!-- Icons -->
+          <button class="text-blue-500">
+            <i class="far fa-bell"></i>
+          </button>
+          <button class="text-blue-500">
+            <i class="far fa-envelope"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main section -->
+      <main class="flex-1 overflow-y-auto p-5">
+        <div class="bg-white p-8 rounded-md w-full">
+          <div class="flex items-center justify-between pb-6">
+            <div>
+              <h2 class="text-gray-600 font-semibold">
+                Selecione o tipo de órtese desejado.
+              </h2>
+              <span class="text-xs">Todos os campos são obrigatórios.</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="lg:ml-40 ml-10 space-x-8">
+                <button
+                  class="btn border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition ease-out duration-500"
+                >
+                  Membro Superior
+                </button>
+                <button
+                  class="btn border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition ease-out duration-500"
+                >
+                  Membro Inferior
+                </button>
               </div>
             </div>
-            <slot />
-            <!-- Content here -->
           </div>
-        </main>
+          <slot />
+          <!-- Content here -->
+        </div>
+      </main>
 
-        <!-- Footer -->
-        <footer class="flex justify-between items-center p-5 border-t">
-          <span class="text-sm text-gray-600"
-            >Termos e Condições | Política de Privacidade</span
-          >
-          <div class="flex space-x-4">
-            <!-- Social media icons -->
-            <a href="#" class="text-gray-600">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-600">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-600">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </footer>
-      </div>
+      <!-- Footer -->
+      <footer class="flex justify-between items-center p-5 border-t">
+        <span class="text-sm text-gray-600"
+          >Termos e Condições | Política de Privacidade</span
+        >
+        <div class="flex space-x-4">
+          <!-- Social media icons -->
+          <a href="#" class="text-gray-600">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-600">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-600">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
+
+<style scoped>
+.mainBackground {
+  background-image: url("../assets/imgs/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  max-width: 100vw;
+}
+
+.active {
+  color: white;
+  background-color: #2d5893;
+}
+</style>

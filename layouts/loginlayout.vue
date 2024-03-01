@@ -38,7 +38,7 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 .mainBackground {
   background-image: url("../assets/imgs/background.png");
   background-size: cover;

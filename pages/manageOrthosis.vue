@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div>This will be "index" page</div>
-  </div>
+  <div>This will be "manage orthosis" page</div>
 </template>
 
 <script setup>
