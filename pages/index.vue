@@ -1,3 +1,6 @@
 <template>
-  <div>Setting the project</div>
+  <div>
+    Setting the project
+    <CardComponentsOrtesysInfoCard />
+  </div>
 </template>
