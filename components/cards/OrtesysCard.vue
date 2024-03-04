@@ -6,7 +6,7 @@
     <div class="flex items-center justify-center gap-4 h-full px-6">
       <img
         class="h-56"
-        src="../assets/imgs/ortesys-arm.png"
+        src="../../assets/imgs/ortesys-arm.png"
         alt="Ortesys Arm"
       />
 

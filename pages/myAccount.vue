@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div>This will be "index" page</div>
-  </div>
+  <div>This will be "my account" page</div>
 </template>
 
 <script setup>
