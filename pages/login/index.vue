@@ -34,7 +34,9 @@
           </div>
 
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
-            <Button type="submit" text="Continuar" />
+            <NuxtLink to="/"
+              ><Button type="submit" text="Continuar"
+            /></NuxtLink>
           </div>
         </form>
 

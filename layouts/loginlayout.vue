@@ -2,22 +2,25 @@
   <div class="mainBackground grid items-center">
     <slot />
   </div>
-  <footer class="loginFooter text-white py-4">
+  <footer
+    class="flex justify-center items-center gap-[40px] bg-[#2d5893] h-[10vh] text-white py-4"
+  >
     <select
       id="language"
       name="language"
       autocomplete="language-name"
-      class="w-full rounded-md py-2 text-black max-w-xs text-sm"
+      class="rounded-full border-[1px] border-[#2d5893] p-2 text-black max-w-xs text-sm"
     >
       <option value="por">Português</option>
       <option value="esp">Español</option>
       <option value="eng">English</option>
     </select>
-    <a class="text-center">Termos e Condições</a>
-    <a class="text-center">Política de Privacidade</a>
-    <div class="social-media">
+    <span class="text-center underline">Termos e Condições</span>
+    <span class="text-center underline">Política de Privacidade</span>
+    <div class="flex gap-[10px]">
       <svg
-        class="icon"
+        width="17.5"
+        fill="white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
       >
@@ -26,7 +29,8 @@
         />
       </svg>
       <svg
-        class="icon"
+        width="17.5"
+        fill="white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
       >
@@ -45,24 +49,5 @@
   background-position: center;
   height: 90vh;
   max-width: 100vw;
-}
-
-.loginFooter {
-  height: 10vh;
-  background-color: #2d5893;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
-}
-
-.social-media {
-  display: flex;
-  gap: 10px;
-}
-
-.icon {
-  width: 17.5px;
-  fill: white;
 }
 </style>

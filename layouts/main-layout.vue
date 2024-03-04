@@ -1,13 +1,15 @@
 <template>
-  <div class="bg-gray-200 flex">
+  <div class="bg-[#f4f4f4] flex min-h-[100vh]">
     <!-- Sidebar -->
     <div class="w-1/3 mainBackground p-8 flex flex-col">
       <img
         src="../assets/imgs/logo.png"
         alt="Ortesys Gen"
-        class="mx-auto h-[30px] w-[170px]"
+        class="mx-auto h-[30px] w-[170px] 2xl:mt-5"
       />
-      <div class="flex flex-col items-center gap-1 p-2 mt-5">
+      <div
+        class="flex flex-col items-center gap-1 p-2 mt-5 2xl:gap-3 2xl:p-4 2xl:mt-7"
+      >
         <img
           class="h-[52px] w-[52px] rounded-full border-2 border-[#2d5893] p-1"
           src="../assets/imgs/user-avatar.png"
@@ -24,11 +26,11 @@
         </div>
       </div>
       <div>
-        <ul class="p-4 flex flex-col gap-3">
+        <ul class="p-4 flex flex-col gap-3 2xl:gap-3.5">
           <li>
             <router-link
               to="/"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/' ? 'active' : ''"
             >
               <svg
@@ -43,14 +45,14 @@
                   d="M16.627 14.2712L14.127 16.7712L11.627 14.2712L14.127 11.7712L16.627 14.2712ZM14.127 6.77124L16.777 9.42124L19.902 6.29624L14.127 0.52124L8.35195 6.29624L11.477 9.42124L14.127 6.77124ZM6.62695 14.2712L9.27695 11.6212L6.15195 8.49624L0.376953 14.2712L6.15195 20.0462L9.27695 16.9212L6.62695 14.2712ZM21.627 14.2712L18.977 16.9212L22.102 20.0462L27.877 14.2712L22.102 8.49624L18.977 11.6212L21.627 14.2712ZM14.127 21.7712L11.477 19.1212L8.35195 22.2462L14.127 28.0212L19.902 22.2462L16.777 19.1212L14.127 21.7712Z"
                 />
               </svg>
-               Nova órtese</router-link
+              Nova órtese</router-link
             >
           </li>
 
           <li>
             <router-link
               to="/manage"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/manage' ? 'active' : ''"
             >
               <svg
@@ -72,7 +74,7 @@
           <li>
             <router-link
               to="/support"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/support' ? 'active' : ''"
             >
               <svg
@@ -94,7 +96,7 @@
           <li>
             <router-link
               to="/myAccount"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/myAccount' ? 'active' : ''"
             >
               <svg
@@ -119,7 +121,7 @@
           <li>
             <router-link
               to="/managePrinter"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/managePrinter' ? 'active' : ''"
             >
               <svg
@@ -150,7 +152,7 @@
           <li>
             <router-link
               to="/infoPanel"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/infoPanel' ? 'active' : ''"
             >
               <svg
@@ -172,7 +174,7 @@
           <li>
             <router-link
               to="/manageOrthosis"
-              class="text-[#2d5893] flex items-center gap-4 w-3/4 px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+              class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
               :class="$route.path === '/manageOrthosis' ? 'active' : ''"
             >
               <svg
@@ -197,7 +199,7 @@
             >
           </li>
         </ul>
-        <div class="mt-4 flex justify-center">
+        <div class="flex justify-center mt-4 2xl:mt-[100px]">
           <NuxtLink to="/login" class="flex items-center gap-2 w-min">
             <svg
               width="15"
@@ -218,25 +220,23 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex flex-col p-5 w-2/3">
+    <div class="flex flex-col gap-5 p-5 w-2/3">
       <!-- Header -->
       <header
         class="sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
       >
         <!-- Search bar -->
-        <div>
+        <div class="flex items-center gap-6 2xl:gap-10">
           <input
             type="text"
-            class="pl-10 pr-4 py-2 rounded-full shadow-sm bg-[#f4f4f4] placeholder:text-sm text-sm"
+            class="pl-10 pr-4 py-2 rounded-full bg-[#f4f4f4] placeholder:text-sm placeholder:text-[#2d5893] text-[#2d5893] text-sm font-medium 2xl:mr-[45px]"
             placeholder="Pesquisar"
           />
-        </div>
-
-        <!-- Menu items -->
-        <div class="flex items-center gap-4">
           <button class="text-[#2d5893] font-semibold">Membro Superior</button>
           <button class="text-[#2d5893] font-semibold">Membro Inferior</button>
         </div>
+
+        <!-- Menu items -->
         <div class="flex items-center gap-2">
           <div
             class="bg-[#2d5893] rounded-md w-[34px] h-[34px] flex items-center justify-center"
@@ -297,21 +297,69 @@
       <slot />
 
       <!-- Footer -->
-      <footer class="flex justify-between items-center p-5 border-t">
-        <span class="text-sm text-gray-600"
-          >Termos e Condições | Política de Privacidade</span
-        >
-        <div class="flex space-x-4">
-          <!-- Social media icons -->
-          <a href="#" class="text-gray-600">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="text-gray-600">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="text-gray-600">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+      <footer
+        class="top-5 bg-white py-5 px-8 w-[90%] mx-auto rounded-xl flex justify-center gap-10 2xl:gap-20"
+      >
+        <div class="flex items-center gap-4 2xl:gap-6">
+          <div
+            class="rounded-full custom-shadow w-[37px] h-[37px] flex items-center justify-center"
+          >
+            <svg
+              width="17"
+              height="20"
+              viewBox="0 0 17 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.66105 18.825C8.66105 18.825 15.8011 15.255 15.8011 9.89993V3.65238L8.66105 0.974854L1.521 3.65238V9.89993C1.521 15.255 8.66105 18.825 8.66105 18.825Z"
+                stroke="#2D5893"
+                stroke-width="1.78501"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span class="text-sm text-[#2d5893] underline font-semibold"
+            >Termos e Condições</span
+          >
+          <span class="text-sm text-[#2d5893] underline font-semibold"
+            >Política de Privacidade</span
+          >
+          <select
+            id="language"
+            name="language"
+            autocomplete="language-name"
+            class="rounded-full border-[1px] border-[#2d5893] p-2 text-black max-w-xs text-sm"
+          >
+            <option value="por">Português</option>
+            <option value="esp">Español</option>
+            <option value="eng">English</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-3 2xl:gap-5">
+          <svg
+            width="20"
+            height="20"
+            fill="#2d5893"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            />
+          </svg>
+          <svg
+            width="20"
+            height="20"
+            fill="#2d5893"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+            />
+          </svg>
         </div>
       </footer>
     </div>
@@ -321,8 +369,7 @@
 <style scoped>
 .mainBackground {
   background-image: url("../assets/imgs/background.png");
-  background-size: cover;
-  background-position: center;
+  background-position: left;
   background-repeat: repeat-y;
   max-width: 100vw;
 }
@@ -330,5 +377,10 @@
 .active {
   color: white;
   background-color: #2d5893;
+}
+
+.custom-shadow {
+  box-shadow: 0px 1.2600102424621582px 20.16016387939453px 0px
+    rgba(0, 0, 0, 0.16);
 }
 </style>
