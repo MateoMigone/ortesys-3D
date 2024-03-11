@@ -223,7 +223,7 @@
     <div class="flex flex-col gap-5 p-5 w-2/3">
       <!-- Header -->
       <header
-        class="sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
+        class="z-10 sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
       >
         <!-- Search bar -->
         <div class="flex items-center gap-6 2xl:gap-10">
@@ -294,7 +294,9 @@
       </header>
 
       <!-- Main section -->
-      <slot />
+      <div class="min-h-[77.5vh]">
+        <slot />
+      </div>
 
       <!-- Footer -->
       <footer
