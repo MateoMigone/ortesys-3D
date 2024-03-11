@@ -17,7 +17,7 @@ const { title, subtitle } = defineProps(["title", "subtitle"]);
 
 <style scoped>
 .bg-banner {
-  background-image: url("../assets/imgs/bannerBg.png");
+  background-image: url("../../assets/imgs/bannerBg.png");
   background-size: cover;
   background-position: right;
 }

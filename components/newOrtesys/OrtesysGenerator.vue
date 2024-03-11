@@ -158,7 +158,7 @@
       </div>
       <img
         class="h-[70%] mt-10"
-        src="../assets/imgs/ortesys-arm-shadow.png"
+        src="../../assets/imgs/ortesys-arm-shadow.png"
         alt="Ortesys Arm"
       />
     </div>
