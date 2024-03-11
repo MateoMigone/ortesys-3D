@@ -1,5 +1,5 @@
 <template>
-  <div>This will be "manage orthosis" page</div>
+  <div>This will be "manage ortesys" page</div>
 </template>
 
 <script setup>

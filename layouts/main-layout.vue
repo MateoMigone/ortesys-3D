@@ -173,16 +173,16 @@
 
           <li>
             <router-link
-              to="/manageOrthosis"
+              to="/manageOrtesys"
               class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
-              :class="$route.path === '/manageOrthosis' ? 'active' : ''"
+              :class="$route.path === '/manageOrtesys' ? 'active' : ''"
             >
               <svg
                 class="w-[30px]"
                 width="19"
                 height="16"
                 viewBox="0 0 19 16"
-                :fill="$route.path === '/manageOrthosis' ? 'white' : '#2d5893'"
+                :fill="$route.path === '/manageOrtesys' ? 'white' : '#2d5893'"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

@@ -1,5 +1,13 @@
 <template>
-  <div>This will be "manage" page</div>
+  <div class="w-[90%] mx-auto flex flex-col gap-5">
+    <DateFilterButton class="self-end" />
+    <div class="flex flex-col gap-4">
+      <OrtesysRecordCard filesQty="2" />
+      <OrtesysRecordCard filesQty="2" />
+      <OrtesysRecordCard filesQty="2" />
+      <OrtesysRecordCard filesQty="2" />
+    </div>
+  </div>
 </template>
 
 <script setup>
