@@ -2,7 +2,7 @@
   <div>
     <button
       class="flex w-full justify-center rounded-md px-3 py-1.5 text-base font-medium shadow-sm"
-      :class="color || 'default'"
+      :class="color || 'primary'"
     >
       {{ text }}
     </button>
@@ -14,12 +14,32 @@ const { text, color } = defineProps(["text", "color"]);
 </script>
 
 <style scoped>
-.default {
+.primary {
+  color: rgba(45, 88, 147, 1);
+  background-color: rgba(45, 88, 147, 0.15);
+}
+
+.primary:hover {
+  color: white;
+  background-color: rgba(45, 88, 147, 1);
+}
+
+.secondary {
+  color: rgba(47, 183, 160, 1);
+  background-color: rgba(47, 183, 160, 0.15);
+}
+
+.secondary:hover {
+  color: white;
+  background-color: rgba(47, 183, 160, 1);
+}
+
+.purple {
   color: rgba(92, 106, 196, 1);
   background-color: rgba(92, 106, 196, 0.15);
 }
 
-.default:hover {
+.purple:hover {
   color: white;
   background-color: rgba(92, 106, 196, 1);
 }

@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <div>This will be "index" page</div>
-    <OrtesysInfoCard />
-  </div>
+  <div>This will be where the new interface will go.</div>
 </template>
 
 <script setup>
