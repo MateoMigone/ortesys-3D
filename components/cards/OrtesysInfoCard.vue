@@ -1,7 +1,8 @@
 <template>
   <div class="bg-white rounded-lg">
     <div
-      class="flex justify-center items-center border-b-[4px] border-[#f4f4f4] p-3 cursor-pointer"
+      class="flex justify-center items-center border-b-[4px] border-[#f4f4f4] p-5 cursor-pointer"
+      :class="type === 'user' && 'p-6'"
       @click="toggle"
     >
       <div class="flex justify-center items-center">
@@ -13,7 +14,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 ml-2 transition-transform duration-500"
+          class="w-6 h-6 ml-2 transition-transform duration-500 mr-6"
         >
           <path
             stroke-linecap="round"
@@ -21,6 +22,21 @@
             d="m6 9 6 6 6-6"
           />
         </svg>
+        <div
+          v-show="type === 'user'"
+          class="grid grid-cols-4 gap-2 place-items-center"
+        >
+          <Button text="Cadastro" color="secondary" class="w-full h-full" />
+          <Button text="Pagamento" color="secondary" class="w-full h-full" />
+          <Button text="Material" color="secondary" class="w-full h-full" />
+          <div class="w-[100px]">
+            <Button
+              text="Habilitar / Desabilitar"
+              color="secondary"
+              class="leading-4"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <transition
@@ -38,6 +54,7 @@
 </template>
 
 <script setup>
+const { type } = defineProps(["type"]);
 const isOpen = ref(false);
 
 const toggle = () => {

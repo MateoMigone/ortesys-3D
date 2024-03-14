@@ -73,8 +73,8 @@
       @leave="leave"
     >
       <div v-if="isOpen" class="content rounded-b-2xl">
-        <OrtesysRecordContentCard />
-        <OrtesysRecordContentCard />
+        <OrderContentCard />
+        <OrderContentCard />
       </div>
     </transition>
   </div>

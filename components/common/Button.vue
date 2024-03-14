@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <button
-      class="flex w-full justify-center rounded-md px-3 py-1.5 text-base font-medium shadow-sm"
-      :class="color || 'primary'"
-    >
-      {{ text }}
-    </button>
-  </div>
+  <button
+    class="flex justify-center items-center rounded-md px-3 py-1.5 text-base font-medium shadow-sm"
+    :class="color || 'primary'"
+  >
+    {{ text }}
+  </button>
 </template>
 
 <script setup>
