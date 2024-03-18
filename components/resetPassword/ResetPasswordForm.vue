@@ -61,7 +61,7 @@
         </div>
 
         <div>
-          <Button type="submit" text="Enviar" />
+          <Button type="submit" text="Enviar" class="w-full" />
         </div>
       </form>
     </div>
