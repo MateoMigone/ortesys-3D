@@ -1,5 +1,8 @@
 <template>
-  <div>This will be where the new interface will go.</div>
+  <div>
+    This will be where the new interface will go.
+    <PrintConfigForm />
+  </div>
 </template>
 
 <script setup>
