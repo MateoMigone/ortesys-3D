@@ -10,11 +10,13 @@
         <div
           class="bg-white w-full h-full rounded-2xl flex justify-center items-center"
         >
-          <Button
-            text="Adicionar novo usuário"
-            color="green"
-            class="w-[250px]"
-          />
+          <NuxtLink to="/infoPanel/createUser">
+            <Button
+              text="Adicionar novo usuário"
+              color="green"
+              class="w-[250px]"
+            />
+          </NuxtLink>
         </div>
       </div>
       <div class="grid grid-cols-3 gap-10 2xl:gap-12">
