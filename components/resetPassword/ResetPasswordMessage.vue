@@ -21,7 +21,7 @@
         <span>em dias úteis, das 9h às 18h</span>
       </ul>
       <NuxtLink to="/login">
-        <Button text="Voltar para o login" />
+        <Button text="Voltar para o login" class="w-full" />
       </NuxtLink>
     </div>
   </div>

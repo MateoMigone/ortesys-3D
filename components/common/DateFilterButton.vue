@@ -1,9 +1,9 @@
 <template>
-  <div class="relative flex justify-center items-center">
+  <div class="relative flex justify-center items-center w-[220px]">
     <select
       name="dateFilter"
       id="dateFilter"
-      class="appearance-none w-[220px] text-center text-sm font-bold text-[#2d5893] py-2.5 rounded-2xl"
+      class="appearance-none w-[220px] text-center text-sm font-bold text-[#2d5893] py-2.5 rounded-2xl cursor-pointer"
     >
       <option value="default" disabled selected hidden>Seleccione</option>
       <option value="thisMonth">Esse mês</option>
