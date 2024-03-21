@@ -1,6 +1,6 @@
 <template>
   <header
-    class="z-10 sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
+    class="z-9 sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
   >
     <!-- Search bar -->
     <div class="flex items-center gap-6 2xl:gap-10">
