@@ -26,14 +26,32 @@
           v-show="type === 'user'"
           class="grid grid-cols-4 gap-2 place-items-center"
         >
-          <Button text="Cadastro" color="secondary" class="w-full h-full" />
-          <Button text="Pagamento" color="secondary" class="w-full h-full" />
-          <Button text="Material" color="secondary" class="w-full h-full" />
+          <NuxtLink to="/infoPanel/updateUser" class="w-full h-full">
+            <Button
+              text="Cadastro"
+              color="secondary"
+              class="w-full h-full"
+              @click.stop
+            />
+          </NuxtLink>
+          <Button
+            text="Pagamento"
+            color="secondary"
+            class="w-full h-full"
+            @click.stop
+          />
+          <Button
+            text="Material"
+            color="secondary"
+            class="w-full h-full"
+            @click.stop="openModal"
+          />
           <div class="w-[100px]">
             <Button
               text="Habilitar / Desabilitar"
-              color="secondary"
+              :color="userState ? 'secondary' : 'red'"
               class="leading-4"
+              @click.stop="toggleUserState"
             />
           </div>
         </div>
@@ -50,12 +68,23 @@
         <InfoCard />
       </div>
     </transition>
+    <MaterialModal :openRequest="showModal" :toggleModal="openModal" />
   </div>
 </template>
 
 <script setup>
 const { type } = defineProps(["type"]);
 const isOpen = ref(false);
+const showModal = ref(false);
+const userState = ref(true);
+
+const openModal = () => {
+  showModal.value = !showModal.value;
+};
+
+const toggleUserState = () => {
+  userState.value = !userState.value;
+};
 
 const toggle = () => {
   isOpen.value = !isOpen.value;
@@ -85,18 +114,16 @@ const leave = (el, done) => {
 </script>
 
 <style scoped>
-/* Icon rotation animation */
 .rotate {
   transform: rotate(180deg);
 }
 
-/* Expand/collapse transition for content */
 .expand-enter-active,
 .expand-leave-active {
   transition: height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
 }
 .expand-enter,
-.expand-leave-to /* Initial state for content height, required for transition */ {
+.expand-leave-to {
   height: 0;
   padding: 0;
   opacity: 0;

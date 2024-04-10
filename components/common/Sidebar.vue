@@ -130,14 +130,16 @@
           <router-link
             to="/managePrinter"
             class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
-            :class="$route.path === '/managePrinter' ? 'active' : ''"
+            :class="$route.path.includes('/managePrinter') ? 'active' : ''"
           >
             <svg
               class="w-[30px]"
               width="24"
               height="17"
               viewBox="0 0 24 17"
-              :fill="$route.path === '/managePrinter' ? 'white' : '#2d5893'"
+              :fill="
+                $route.path.includes('/managePrinter') ? 'white' : '#2d5893'
+              "
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -183,14 +185,16 @@
           <router-link
             to="/manageOrtesys"
             class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
-            :class="$route.path === '/manageOrtesys' ? 'active' : ''"
+            :class="$route.path.includes('/manageOrtesys') ? 'active' : ''"
           >
             <svg
               class="w-[30px]"
               width="19"
               height="16"
               viewBox="0 0 19 16"
-              :fill="$route.path === '/manageOrtesys' ? 'white' : '#2d5893'"
+              :fill="
+                $route.path.includes('/manageOrtesys') ? 'white' : '#2d5893'
+              "
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
