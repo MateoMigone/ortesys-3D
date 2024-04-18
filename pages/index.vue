@@ -1,5 +1,7 @@
 <template>
-  <div>This will be where the new interface will go.</div>
+  <div class="flex justify-center mt-3">
+    <HumanBody />
+  </div>
 </template>
 
 <script setup>
