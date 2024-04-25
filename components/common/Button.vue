@@ -32,6 +32,16 @@ const { text, color } = defineProps(["text", "color"]);
   background-color: rgba(47, 183, 160, 1);
 }
 
+.secondary-dark {
+  color: rgba(47, 183, 160, 1);
+  background-color: rgba(47, 183, 160, 0.15);
+}
+
+.secondary-dark:hover {
+  color: white;
+  background-color: rgba(47, 183, 160, 0.4);
+}
+
 .purple {
   color: rgba(92, 106, 196, 1);
   background-color: rgba(92, 106, 196, 0.15);

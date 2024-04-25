@@ -10,12 +10,15 @@
       :fill="color"
       @mouseover="changeToGreen"
       @mouseleave="changeToBlue"
+      @click="zoomIn"
       class="cursor-pointer pointer-events-auto"
     />
   </svg>
 </template>
 
 <script setup>
+const { zoomIn } = defineProps(["zoomIn"]);
+
 const color = ref("#2D5893");
 
 const changeToBlue = () => {

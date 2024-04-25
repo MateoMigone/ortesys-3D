@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mt-3">
+  <div class="flex justify-center my-4">
     <HumanBody />
   </div>
 </template>

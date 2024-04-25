@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#f4f4f4] flex min-h-[100vh]">
     <!-- Sidebar -->
-    <div class="w-1/3 mainBackground">
+    <div class="w-1/3 mainBackground z-20">
       <Sidebar />
     </div>
 

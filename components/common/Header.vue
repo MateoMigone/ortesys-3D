@@ -1,6 +1,6 @@
 <template>
   <header
-    class="z-10 sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
+    class="z-30 sticky top-5 bg-white py-4 px-8 w-[90%] mx-auto rounded-2xl flex justify-between gap-3"
   >
     <!-- Search bar -->
     <div class="flex items-center gap-6 2xl:gap-10">
@@ -9,8 +9,12 @@
         class="pl-10 pr-4 py-2 rounded-full bg-[#f4f4f4] placeholder:text-sm placeholder:text-[#2d5893] text-[#2d5893] text-sm font-medium 2xl:mr-[45px]"
         placeholder="Pesquisar"
       />
-      <button class="text-[#2d5893] font-semibold">Membro Superior</button>
-      <button class="text-[#2d5893] font-semibold">Membro Inferior</button>
+      <NuxtLink to="/newOrtesys"
+        ><h5 class="text-[#2d5893] font-semibold">Membro Superior</h5></NuxtLink
+      >
+      <NuxtLink to="/newOrtesys"
+        ><h5 class="text-[#2d5893] font-semibold">Membro Inferior</h5></NuxtLink
+      >
     </div>
 
     <!-- Menu items -->
