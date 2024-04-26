@@ -10,8 +10,8 @@
     <HumanAbs />
     <RightArm :zoomIn="zoomInRightArm" />
     <LeftArm :zoomIn="zoomInLeftArm" />
-    <RightLeg />
-    <LeftLeg />
+    <RightLeg :zoomIn="zoomInLegs" />
+    <LeftLeg :zoomIn="zoomInLegs" />
   </div>
 
   <!-- Zoomed right arm -->
@@ -43,12 +43,28 @@
     </div>
     <LeftArmZoom />
   </div>
+
+  <!-- Zoomed legs -->
+  <div class="relative w-full" v-show="legsZoom">
+    <div
+      class="absolute top-[85px] left-[-20px] bg-[#112621] z-20 p-6 pl-[90px] rounded-r-xl"
+    >
+      <Button
+        text="Voltar"
+        color="secondary-dark"
+        class="w-[100px]"
+        @click="zoomOutLegs"
+      />
+    </div>
+    <LegsZoom />
+  </div>
 </template>
 
 <script setup>
 const defaultView = ref(true);
 const rightArmZoom = ref(false);
 const leftArmZoom = ref(false);
+const legsZoom = ref(false);
 
 const zoomOutRightArm = () => {
   rightArmZoom.value = false;
@@ -67,6 +83,16 @@ const zoomOutLeftArm = () => {
 
 const zoomInLeftArm = () => {
   leftArmZoom.value = true;
+  defaultView.value = false;
+};
+
+const zoomOutLegs = () => {
+  legsZoom.value = false;
+  defaultView.value = true;
+};
+
+const zoomInLegs = () => {
+  legsZoom.value = true;
   defaultView.value = false;
 };
 </script>

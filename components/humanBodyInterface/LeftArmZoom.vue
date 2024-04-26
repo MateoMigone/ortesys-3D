@@ -1,7 +1,20 @@
 <template>
   <!-- Background opacity (hover) -->
   <div class="fixed inset-0 bg-black bg-opacity-40 z-10"></div>
-  <!-- <div class="fixed inset-0 bg-black bg-opacity-40 z-20" v-show="active"></div> -->
+  <div
+    class="fixed inset-0 bg-black bg-opacity-40 z-20"
+    v-show="
+      armActive ||
+      shoulderActive ||
+      forearmActive ||
+      handActive ||
+      thumbActive ||
+      indexFingerActive ||
+      middleFingerActive ||
+      ringFingerActive ||
+      littleFingerActive
+    "
+  ></div>
 
   <div class="relative overflow-hidden w-full h-[500px]">
     <!-- Complete body zoomed -->
