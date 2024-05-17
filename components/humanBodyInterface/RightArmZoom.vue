@@ -80,7 +80,7 @@
           viewBox="0 0 80 83"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[104.5px] absolute top-[40px] right-[234px] pointer-events-none z-10"
+          class="w-[104.5px] absolute top-[40px] right-[235px] pointer-events-none z-10"
           :class="(shoulderActive || armActive) && 'z-20'"
         >
           <path
@@ -182,7 +182,7 @@
           viewBox="0 0 32 19"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[40.8px] absolute top-[373px] right-[502px] pointer-events-none z-10"
+          class="w-[41.5px] absolute top-[372.5px] right-[503px] pointer-events-none z-10"
           :class="(thumbActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -216,7 +216,7 @@
           viewBox="0 0 30 33"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[38.7px] absolute top-[417px] right-[504px] pointer-events-none z-10"
+          class="w-[38.7px] absolute top-[417px] right-[505px] pointer-events-none z-10"
           :class="(indexFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -250,7 +250,7 @@
           viewBox="0 0 28 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[34.8px] absolute top-[433px] right-[489px] pointer-events-none z-10"
+          class="w-[36px] absolute top-[432px] right-[489px] pointer-events-none z-10"
           :class="(middleFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -284,7 +284,7 @@
           viewBox="0 0 26 34"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[32.3px] absolute top-[439px] right-[474px] pointer-events-none z-10"
+          class="w-[33.3px] absolute top-[439px] right-[474px] pointer-events-none z-10"
           :class="(ringFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -318,7 +318,7 @@
           viewBox="0 0 14 34"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[18.4px] absolute top-[435px] right-[458px] pointer-events-none z-10"
+          class="w-[18.6px] absolute top-[435px] right-[458px] pointer-events-none z-10"
           :class="(littleFingerActive || handActive || armActive) && 'z-20'"
         >
           <path

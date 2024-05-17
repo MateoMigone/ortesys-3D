@@ -55,7 +55,7 @@
       viewBox="0 0 150 56"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-[88px] absolute bottom-[462px] left-[127px] pointer-events-none"
+      class="w-[88.5px] absolute bottom-[462px] left-[127px] pointer-events-none"
       :class="(neckActive || headActive) && 'z-20'"
     >
       <path

@@ -182,7 +182,7 @@
           viewBox="0 0 32 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[40.8px] absolute top-[374px] left-[503px] pointer-events-none z-10"
+          class="w-[43px] absolute top-[373px] left-[503px] pointer-events-none z-10"
           :class="(thumbActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -216,7 +216,7 @@
           viewBox="0 0 30 33"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[38.7px] absolute top-[417px] left-[506px] pointer-events-none z-10"
+          class="w-[39.2px] absolute top-[417px] left-[506px] pointer-events-none z-10"
           :class="(indexFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -250,7 +250,7 @@
           viewBox="0 0 27 37"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[36px] absolute top-[432px] left-[490px] pointer-events-none z-10"
+          class="w-[35px] absolute top-[433px] left-[490px] pointer-events-none z-10"
           :class="(middleFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -284,7 +284,7 @@
           viewBox="0 0 25 34"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[32.5px] absolute top-[438px] left-[475px] pointer-events-none z-10"
+          class="w-[33.3px] absolute top-[438px] left-[474px] pointer-events-none z-10"
           :class="(ringFingerActive || handActive || armActive) && 'z-20'"
         >
           <path
@@ -318,7 +318,7 @@
           viewBox="0 0 14 33"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-[18.4px] absolute top-[436px] left-[459px] pointer-events-none z-10"
+          class="w-[18.9px] absolute top-[436px] left-[458px] pointer-events-none z-10"
           :class="(littleFingerActive || handActive || armActive) && 'z-20'"
         >
           <path

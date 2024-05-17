@@ -10,8 +10,8 @@
     <HumanAbs />
     <RightArm :zoomIn="zoomInRightArm" />
     <LeftArm :zoomIn="zoomInLeftArm" />
-    <RightLeg :zoomIn="zoomInLegs" />
-    <LeftLeg :zoomIn="zoomInLegs" />
+    <RightLeg :zoomIn="zoomInRightLeg" />
+    <LeftLeg :zoomIn="zoomInLeftLeg" />
   </div>
 
   <!-- Zoomed right arm -->
@@ -44,8 +44,8 @@
     <LeftArmZoom />
   </div>
 
-  <!-- Zoomed legs -->
-  <div class="relative w-full" v-show="legsZoom">
+  <!-- Zoomed right leg -->
+  <div class="relative w-full" v-show="rightLegZoom">
     <div
       class="absolute top-[85px] left-[-20px] bg-[#112621] z-20 p-6 pl-[90px] rounded-r-xl"
     >
@@ -53,10 +53,25 @@
         text="Voltar"
         color="secondary-dark"
         class="w-[100px]"
-        @click="zoomOutLegs"
+        @click="zoomOutRightLeg"
       />
     </div>
-    <LegsZoom />
+    <RightLegZoom />
+  </div>
+
+  <!-- Zoomed left leg -->
+  <div class="relative w-full" v-show="leftLegZoom">
+    <div
+      class="absolute top-[85px] right-[-20px] bg-[#112621] z-20 p-6 pr-[90px] rounded-l-xl"
+    >
+      <Button
+        text="Voltar"
+        color="secondary-dark"
+        class="w-[100px]"
+        @click="zoomOutLeftLeg"
+      />
+    </div>
+    <LeftLegZoom />
   </div>
 </template>
 
@@ -64,7 +79,8 @@
 const defaultView = ref(true);
 const rightArmZoom = ref(false);
 const leftArmZoom = ref(false);
-const legsZoom = ref(false);
+const rightLegZoom = ref(false);
+const leftLegZoom = ref(false);
 
 const zoomOutRightArm = () => {
   rightArmZoom.value = false;
@@ -86,13 +102,23 @@ const zoomInLeftArm = () => {
   defaultView.value = false;
 };
 
-const zoomOutLegs = () => {
-  legsZoom.value = false;
+const zoomOutRightLeg = () => {
+  rightLegZoom.value = false;
   defaultView.value = true;
 };
 
-const zoomInLegs = () => {
-  legsZoom.value = true;
+const zoomInRightLeg = () => {
+  rightLegZoom.value = true;
+  defaultView.value = false;
+};
+
+const zoomOutLeftLeg = () => {
+  leftLegZoom.value = false;
+  defaultView.value = true;
+};
+
+const zoomInLeftLeg = () => {
+  leftLegZoom.value = true;
   defaultView.value = false;
 };
 </script>

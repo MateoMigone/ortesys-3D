@@ -20,7 +20,7 @@
       viewBox="0 0 179 212"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-[104px] absolute top-[115px] left-[119px] pointer-events-none"
+      class="w-[105px] absolute top-[115px] left-[119px] pointer-events-none"
       :class="active && 'z-20'"
     >
       <path
