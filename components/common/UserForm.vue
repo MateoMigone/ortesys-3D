@@ -1,6 +1,7 @@
 <template>
   <form
     class="flex flex-col items-center justify-center gap-12 rounded-2xl bg-[#ffff] shadow-xl py-12 w-[700px] 2xl:w-[800px]"
+    @submit.prevent="handleSubmit"
   >
     <h3
       class="border-[2px] rounded-full py-1.5 px-7 text-xl 2xl:text-2xl"
@@ -23,8 +24,50 @@
           id="complete-name"
           type="text"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="name"
         />
       </div>
+
+      <div class="flex flex-col gap-2 2xl:gap-2.5">
+        <label
+          for="username"
+          class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+          >Nome de usuário</label
+        >
+        <input
+          id="username"
+          type="text"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="username"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 2xl:gap-2.5">
+        <label
+          for="birth-date"
+          class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+          >Data de nascimento</label
+        >
+        <input
+          id="birth-date"
+          type="datetime-local"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="birthDate"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 2xl:gap-2.5">
+        <label for="gender" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+          >Genero</label
+        >
+        <input
+          id="gender"
+          type="number"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="gender"
+        />
+      </div>
+
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="cpf-cnpj"
@@ -35,21 +78,38 @@
           id="cpf-cnpj"
           type="text"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
-          placeholder="Digite seu número"
+          v-model="cpf"
         />
       </div>
 
-      <div class="flex flex-col gap-2 2xl:gap-2.5">
-        <label
-          for="specialty"
-          class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
-          >Especialidade</label
-        >
-        <input
-          id="specialty"
-          type="text"
-          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
-        />
+      <div class="flex gap-2 2xl:gap-2.5">
+        <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
+          <label
+            for="profession"
+            class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+            >Profissão</label
+          >
+          <input
+            id="profession"
+            type="text"
+            class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="profession"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
+          <label
+            for="specialty"
+            class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+            >Especialidade</label
+          >
+          <input
+            id="specialty"
+            type="text"
+            class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="specialty"
+          />
+        </div>
       </div>
 
       <div class="flex flex-col gap-2 2xl:gap-2.5">
@@ -60,6 +120,7 @@
           id="email"
           type="email"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="email"
         />
       </div>
       <div class="flex gap-2 2xl:gap-2.5">
@@ -71,6 +132,7 @@
             id="ddi"
             type="text"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="ddi"
           />
         </div>
 
@@ -84,35 +146,34 @@
             id="phone-number"
             type="text"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="phoneNumber"
           />
         </div>
       </div>
       <div class="flex gap-2 2xl:gap-2.5">
         <div class="flex flex-col gap-2 2xl:gap-2.5 relative w-1/2">
-          <label
-            for="estado"
-            class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
-            >Estado</label
+          <label for="uf" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+            >UF</label
           >
           <select
-            id="estado"
+            id="uf"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] appearance-none dropdown-icon px-3.5 py-1.5 2xl:py-2"
+            v-model="uf"
           >
             <option disabled selected hidden></option>
-            <option>Rio de Janeiro</option>
-            <option>São Paulo</option>
+            <option>RJ</option>
+            <option>SP</option>
           </select>
         </div>
 
         <div class="flex flex-col gap-2 2xl:gap-2.5 relative w-1/2">
-          <label
-            for="cidade"
-            class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+          <label for="city" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
             >Cidade</label
           >
           <select
-            id="cidade"
+            id="city"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] appearance-none dropdown-icon px-3.5 py-1.5 2xl:py-2"
+            v-model="city"
           >
             <option disabled selected hidden></option>
             <option>Rio de Janeiro</option>
@@ -122,41 +183,43 @@
       </div>
 
       <div class="flex flex-col gap-2 2xl:gap-2.5">
-        <label for="rua" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+        <label for="street" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Rua</label
         >
         <input
-          id="rua"
+          id="street"
           type="text"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
-          placeholder="Digite o endereço"
+          v-model="street"
         />
       </div>
 
       <div class="flex gap-2 2xl:gap-2.5">
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
-            for="numero"
+            for="street-number"
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
             >Número</label
           >
           <input
-            id="numero"
+            id="street-number"
             type="text"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="streetNumber"
           />
         </div>
 
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
-            for="complemento"
+            for="street-complement"
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
             >Complemento</label
           >
           <input
-            id="complemento"
+            id="street-complement"
             type="text"
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+            v-model="streetComplement"
           />
         </div>
       </div>
@@ -168,6 +231,7 @@
         <select
           id="role"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] appearance-none dropdown-icon px-3.5 py-1.5 2xl:py-2"
+          v-model="role"
         >
           <option disabled selected hidden></option>
           <option>Doutor</option>
@@ -185,22 +249,39 @@
           id="password"
           type="password"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="password"
         />
       </div>
 
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
-          for="passwordRepeat"
+          for="password-repeat"
           class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Repetir senha</label
         >
         <input
-          id="passwordRepeat"
+          id="password-repeat"
           type="password"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="passwordRepeat"
         />
       </div>
 
+      <hr class="border-[#CDCEE4] mt-3" />
+      <div class="flex gap-2 2xl:gap-2.5">
+        <input
+          id="marketing-notifications"
+          type="checkbox"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+          v-model="marketingNotifications"
+        />
+        <label
+          for="marketing-notifications"
+          class="font-bold text-md 2xl:text-lg"
+          >Quero receber notificações de marketing</label
+        >
+      </div>
+      <hr class="border-[#CDCEE4] mb-3" />
       <Button text="Concluir" color="purple" />
     </div>
   </form>
@@ -210,6 +291,60 @@
 const { submitAction } = defineProps(["submitAction"]);
 const title = ref("");
 title.value = submitAction === "create" ? "Criando novo" : "Atualizando";
+
+const name = ref("");
+const username = ref("");
+const birthDate = ref("");
+const gender = ref(0);
+const cpf = ref("");
+const profession = ref("");
+const specialty = ref("");
+const email = ref("");
+const ddi = ref("");
+const phoneNumber = ref("");
+const uf = ref("");
+const city = ref("");
+const street = ref("");
+const streetNumber = ref("");
+const streetComplement = ref("");
+const role = ref("");
+const password = ref("");
+const passwordRepeat = ref("");
+const marketingNotifications = ref(false);
+
+const handleSubmit = async () => {
+  // Convert the date to ISO 8601 format
+  const isoBirthDate = new Date(birthDate.value).toISOString();
+
+  // Concatenate ddi and phone number to create full phone number
+  const fullPhoneNumber = `${ddi.value} ${phoneNumber.value}`;
+
+  /* // Concatenate street, street number and street complement to create address
+  const address = `${street.value} ${streetNumber.value} ${streetComplement.value}` */
+
+  // Post the form data
+  const { data } = await useFetch("https://ortesys.pro/api/v1/Conta/Registro", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome: name.value,
+      username: username.value,
+      dataNascimento: isoBirthDate,
+      genero: gender.value,
+      telefone: fullPhoneNumber,
+      profissao: profession.value,
+      especializacao: specialty.value,
+      cidade: city.value,
+      uf: uf.value,
+      email: email.value,
+      notificacoesMarketing: marketingNotifications.value,
+      senha: password.value,
+      confirmarSenha: passwordRepeat.value,
+    }),
+  });
+};
 </script>
 
 <style scoped>
