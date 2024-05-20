@@ -2,7 +2,7 @@
   <div class="flex justify-center bg-[#f4f4f4] min-h-[100vh] py-10">
     <NuxtLink
       to="/infoPanel/usersHistory"
-      class="relative left-[145px] top-[175px] 2xl:top-[185px]"
+      class="relative left-[145px] top-[175px] 2xl:top-[185px] h-[40px]"
     >
       <Button text="Voltar" color="red" class="w-[120px] h-[40px]" />
     </NuxtLink>

@@ -8,7 +8,7 @@
       </div>
 
       <div class="mt-5 2xl:mt-8 mx-auto w-full max-w-sm">
-        <form class="flex flex-col items-center">
+        <form class="flex flex-col items-center" @submit.prevent="handleSubmit">
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
             <input
               id="email"
@@ -18,6 +18,7 @@
               required
               placeholder="Seu email..."
               class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+              v-model="email"
             />
           </div>
 
@@ -30,11 +31,12 @@
               required
               placeholder="Sua senha..."
               class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+              v-model="password"
             />
           </div>
 
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
-            <NuxtLink to="/"
+            <NuxtLink to=""
               ><Button type="submit" text="Continuar" class="w-full"
             /></NuxtLink>
           </div>
@@ -52,6 +54,28 @@
 definePageMeta({
   layout: "loginlayout",
 });
+
+/* const validateUser = ref(false); */
+const email = ref("");
+const password = ref("");
+
+const handleSubmit = async () => {
+  const { data, error } = await useFetch(
+    "https://ortesys.pro/api/v1/Conta/OAuth",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.value,
+        senha: password.value,
+      }),
+    }
+  );
+
+  /* validateUser.value = error.value ? false : true; */
+};
 </script>
 
 <style scoped>
