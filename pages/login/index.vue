@@ -36,7 +36,7 @@
           </div>
 
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
-            <NuxtLink to=""
+            <NuxtLink :to="validateUser && '/'"
               ><Button type="submit" text="Continuar" class="w-full"
             /></NuxtLink>
           </div>
@@ -55,26 +55,23 @@ definePageMeta({
   layout: "loginlayout",
 });
 
-/* const validateUser = ref(false); */
+const validateUser = ref(false);
 const email = ref("");
 const password = ref("");
 
 const handleSubmit = async () => {
-  const { data, error } = await useFetch(
-    "https://ortesys.pro/api/v1/Conta/OAuth",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email.value,
-        senha: password.value,
-      }),
-    }
-  );
+  const { data, error } = await useFetch("/api/Conta/OAuth", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email.value,
+      senha: password.value,
+    }),
+  });
 
-  /* validateUser.value = error.value ? false : true; */
+  validateUser.value = error.value ? false : true;
 };
 </script>
 

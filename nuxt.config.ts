@@ -7,4 +7,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  runtimeConfig: {
+    myProxyUrl: "https://ortesys.pro/api/v1",
+  },
 });
