@@ -212,7 +212,7 @@
         </li>
       </ul>
       <div class="flex justify-center mt-4 2xl:mt-[100px]">
-        <NuxtLink to="/login" class="flex items-center gap-2 w-min">
+        <NuxtLink @click="handleLogout" class="flex items-center gap-2 w-min">
           <svg
             width="15"
             height="14"
@@ -231,6 +231,18 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { useAuthStore } from "~/stores/auth";
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+const handleLogout = () => {
+  authStore.logout();
+  router.push("/login");
+};
+</script>
 
 <style scoped>
 .active {

@@ -13,8 +13,18 @@
       </div>
       <div class="flex gap-4 items-center">
         <div class="flex gap-2">
-          <Button color="secondary" text="Download" class="w-[100px]" />
-          <Button color="primary" text="Imprimir" class="w-[100px]" />
+          <Button
+            color="secondary"
+            text="Download"
+            class="w-[100px]"
+            @click.stop
+          />
+          <Button
+            color="primary"
+            text="Imprimir"
+            class="w-[100px]"
+            @click.stop
+          />
         </div>
         <div class="flex items-center gap-2.5">
           <div class="flex items-center gap-2">

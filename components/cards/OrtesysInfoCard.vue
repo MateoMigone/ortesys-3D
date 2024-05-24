@@ -26,13 +26,8 @@
           v-show="type === 'user'"
           class="grid grid-cols-4 gap-2 place-items-center"
         >
-          <NuxtLink to="/infoPanel/updateUser" class="w-full h-full">
-            <Button
-              text="Cadastro"
-              color="secondary"
-              class="w-full h-full"
-              @click.stop
-            />
+          <NuxtLink to="/infoPanel/updateUser/id" class="w-full h-full">
+            <Button text="Cadastro" color="secondary" class="w-full h-full" />
           </NuxtLink>
           <Button
             text="Pagamento"

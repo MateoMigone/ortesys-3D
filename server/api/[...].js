@@ -7,7 +7,6 @@ export default defineEventHandler(async (event) => {
   // Check the path
   const path = event.path.replace(/^\/api\//, ""); // /api/Conta/Register --> Conta/Register
   const target = joinURL(proxyUrl, path);
-  console.log(target);
 
   // Proxy it!
   return proxyRequest(event, target);

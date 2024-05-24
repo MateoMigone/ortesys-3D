@@ -18,7 +18,7 @@
             : 'flex flex-col gap-2 2xl:flex-row 2xl:gap-2.5'
         "
       >
-        <NuxtLink :to="type === 'printer' && '/managePrinter/updatePrinter'">
+        <NuxtLink :to="type === 'printer' && '/managePrinter/updatePrinter/id'">
           <Button text="Editar" class="w-[165px] 2xl:w-[130px]" />
         </NuxtLink>
         <Button text="Remover" color="red" class="w-[165px] 2xl:w-[130px]" />

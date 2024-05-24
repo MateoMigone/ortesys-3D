@@ -11,15 +11,6 @@
         value="Nome da impressora"
         class="font-bold text-[27px] xl text-[#2D5893] text-center"
       />
-      <div class="flex justify-center gap-2.5">
-        <Button text="Importar" color="purple w-[165px] h-[40px]" />
-        <select name="ab" id="ab" class="border-2 rounded-lg px-3">
-          <option value="default" disabled selected hidden>Selecionar</option>
-          <option value="printer1">Impressora 1</option>
-          <option value="printer2">Impressora 2</option>
-          <option value="printer3">Impressora 3</option>
-        </select>
-      </div>
     </div>
 
     <!-- Form body -->

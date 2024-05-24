@@ -60,15 +60,20 @@
         <label for="gender" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Genero</label
         >
-        <input
-          id="gender"
-          type="number"
-          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
-          v-model="gender"
-        />
+        <select
+          id="uf"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] appearance-none dropdown-icon px-3.5 py-1.5 2xl:py-2"
+          v-model="uf"
+        >
+          <option disabled selected hidden></option>
+          <option>Nenhum</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>NaoInformado</option>
+        </select>
       </div>
 
-      <div class="flex flex-col gap-2 2xl:gap-2.5">
+      <!--  <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="cpf-cnpj"
           class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
@@ -80,7 +85,7 @@
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
           v-model="cpf"
         />
-      </div>
+      </div> -->
 
       <div class="flex gap-2 2xl:gap-2.5">
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
@@ -182,7 +187,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 2xl:gap-2.5">
+      <!-- <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label for="street" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Rua</label
         >
@@ -192,9 +197,9 @@
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
           v-model="street"
         />
-      </div>
+      </div> -->
 
-      <div class="flex gap-2 2xl:gap-2.5">
+      <!-- <div class="flex gap-2 2xl:gap-2.5">
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
             for="street-number"
@@ -207,9 +212,9 @@
             class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
             v-model="streetNumber"
           />
-        </div>
+        </div> -->
 
-        <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
+      <!-- <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
             for="street-complement"
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
@@ -222,9 +227,9 @@
             v-model="streetComplement"
           />
         </div>
-      </div>
+      </div> -->
 
-      <div class="flex flex-col gap-2 2xl:gap-2.5 relative">
+      <!-- <div class="flex flex-col gap-2 2xl:gap-2.5 relative">
         <label for="role" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Papel</label
         >
@@ -237,7 +242,7 @@
           <option>Doutor</option>
           <option>Colaborador</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
@@ -295,7 +300,7 @@ title.value = submitAction === "create" ? "Criando novo" : "Atualizando";
 const name = ref("");
 const username = ref("");
 const birthDate = ref("");
-const gender = ref(0);
+const gender = ref("");
 const cpf = ref("");
 const profession = ref("");
 const specialty = ref("");

@@ -58,6 +58,7 @@
           color="secondary"
           text="Salvar alterações"
           class="w-3/5 max-w-[285px] my-3"
+          @click.prevent
         />
       </form>
     </div>
@@ -82,6 +83,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
+  middleware: "auth",
 });
 </script>
 

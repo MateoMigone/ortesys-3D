@@ -36,9 +36,7 @@
           </div>
 
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
-            <NuxtLink :to="validateUser && '/'"
-              ><Button type="submit" text="Continuar" class="w-full"
-            /></NuxtLink>
+            <Button type="submit" text="Continuar" class="w-full" />
           </div>
         </form>
 
@@ -55,11 +53,16 @@ definePageMeta({
   layout: "loginlayout",
 });
 
-const validateUser = ref(false);
+import { useAuthStore } from "~/stores/auth";
+
 const email = ref("");
 const password = ref("");
+const authStore = useAuthStore();
+const router = useRouter();
 
 const handleSubmit = async () => {
+  /* await authStore.login(email.value, password.value);
+  router.push("/"); */
   const { data, error } = await useFetch("/api/Conta/OAuth", {
     method: "POST",
     headers: {
@@ -71,7 +74,9 @@ const handleSubmit = async () => {
     }),
   });
 
-  validateUser.value = error.value ? false : true;
+  authStore.login(error.value);
+
+  authStore.isAuthenticated && router.push("/");
 };
 </script>
 

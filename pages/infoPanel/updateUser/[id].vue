@@ -14,6 +14,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+  layout: "main-layout",
+  middleware: "auth",
+});
+</script>
 
 <style lang="scss" scoped></style>
