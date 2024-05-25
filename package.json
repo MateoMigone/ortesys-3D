@@ -14,7 +14,7 @@
     "@nuxtjs/proxy": "^2.1.0",
     "@pinia/nuxt": "^0.5.1",
     "node-fetch": "^3.3.2",
-    "nuxt": "^3.10.2",
+    "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "ufo": "^1.5.3",
