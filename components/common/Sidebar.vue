@@ -212,7 +212,10 @@
         </li>
       </ul>
       <div class="flex justify-center mt-4 2xl:mt-[100px]">
-        <NuxtLink @click="handleLogout" class="flex items-center gap-2 w-min">
+        <NuxtLink
+          @click="handleLogout"
+          class="flex items-center gap-2 w-min cursor-pointer"
+        >
           <svg
             width="15"
             height="14"

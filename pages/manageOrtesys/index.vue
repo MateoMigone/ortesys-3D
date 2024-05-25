@@ -3,7 +3,9 @@
     <div
       class="bg-white w-[485px] rounded-2xl flex justify-center items-center py-8"
     >
-      <Button text="Adicionar novo usuário" color="green" class="w-[250px]" />
+      <NuxtLink to="/manageOrtesys/addOrtesys"
+        ><Button text="Adicionar nova órtese" color="green" class="w-[250px]"
+      /></NuxtLink>
     </div>
     <div class="grid grid-cols-2 gap-4 w-full">
       <OrtesysAdminCard text="Punho" />
