@@ -1,5 +1,6 @@
 <template>
   <div class="flex w-[90%] mx-auto">
+    <!-- This is the form displayed when "Medidas" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
       v-show="type === 'Medida'"
@@ -47,6 +48,7 @@
       </div>
     </form>
 
+    <!-- This is the form displayed when "Botao" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
       v-show="type === 'Botao'"
@@ -57,13 +59,6 @@
           placeholder="Título da variável"
           class="font-bold text-lg text-[#2D5893] placeholder:text-light px-2"
         />
-
-        <!-- <div
-          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5 cursor-pointer"
-          @click="openVariablesModal"
-        >
-          <span class="text-sm">Preencha com as medidas</span>
-        </div> -->
 
         <div
           class="flex gap-1 rounded-full border-[2px] border-[#2D5893] bg-[#FCFCFF] px-1 py-1 2xl:py-1.5 cursor-pointer w-[90px]"
@@ -104,6 +99,7 @@
       </div>
     </form>
 
+    <!-- This is the form displayed when "Barra" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
       v-show="type === 'Barra'"
@@ -177,6 +173,7 @@
       <ImagePlaceholder />
     </div>
 
+    <!-- Here the modals beign used in this component -->
     <VariablesModal
       :openRequest="showVariablesModal"
       :toggleModal="openVariablesModal"

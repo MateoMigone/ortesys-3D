@@ -1,7 +1,7 @@
 <template>
-  <div class="flex w-[90%] mx-auto">
+  <div class="flex w-[90%] mx-auto max-h-[70vh]">
     <form
-      class="flex flex-col justify-center items-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
+      class="flex flex-col items-center gap-3 w-1/2 bg-white px-12 py-6 rounded-xl overflow-auto"
     >
       <div class="flex flex-col gap-1.5 2xl:gap-2 w-full">
         <label
@@ -13,7 +13,6 @@
           id="ortesys-name"
           type="text"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5"
-          v-model="name"
         />
       </div>
 
@@ -27,7 +26,6 @@
           id="ortesys-name"
           type="text"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5 resize-none overflow-auto"
-          v-model="description"
         />
       </div>
 
@@ -38,7 +36,20 @@
           class="text-[15px]"
           @click.prevent="setShowAddVariable(true)"
         />
-        <Button text="Salvar configurações" color="green" class="text-[15px]" />
+
+        <Button
+          text="Arquivos"
+          color="yellow"
+          class="text-[15px]"
+          @click.prevent="setShowAddFiles(true)"
+        />
+
+        <Button
+          text="Salvar configurações"
+          color="green"
+          class="text-[15px]"
+          @click.prevent="handleSubmit"
+        />
       </div>
     </form>
     <div class="w-1/2 flex flex-col justify-center items-center gap-5 h-[55vh]">
@@ -53,16 +64,16 @@
 </template>
 
 <script setup>
-defineProps(["setShowAddVariable"]);
+const { setShowAddVariable, setShowAddFiles } = defineProps([
+  "setShowAddVariable",
+  "setShowAddFiles",
+]);
 
 const router = useRouter();
 
-const name = ref("");
-const description = ref("");
-
-/* const handleSubmit = () => {
-  router.push("/manageOrtesys/addVariable");
-}; */
+const handleSubmit = () => {
+  router.push("/manageOrtesys");
+};
 </script>
 
 <style scoped></style>
