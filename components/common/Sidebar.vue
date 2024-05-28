@@ -31,22 +31,46 @@
           <router-link
             to="/"
             class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
-            :class="
-              $route.path === '/' || $route.path.includes('/newOrtesys')
-                ? 'active'
-                : ''
-            "
+            :class="$route.path === '/' ? 'active' : ''"
+          >
+            <svg
+              width="24"
+              height="28"
+              viewBox="0 0 24 28"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="11.3063"
+                cy="14.258"
+                r="5.16913"
+                :fill="$route.path === '/' ? 'white' : '#2d5893'"
+              />
+              <path
+                d="M11.1498 22.09C11.1498 23.0375 10.8894 23.9667 10.3971 24.7762C9.90473 25.5856 9.1994 26.2442 8.35812 26.68C7.51684 27.1157 6.57198 27.3119 5.62676 27.247C4.68155 27.1822 3.77234 26.8588 2.99848 26.3122C2.22461 25.7656 1.61585 25.0168 1.23871 24.1477C0.861571 23.2785 0.730556 22.3225 0.85998 21.3839C0.989404 20.4453 1.37429 19.5604 1.97258 18.8258C2.57088 18.0912 3.35957 17.5351 4.25249 17.2183L5.98066 22.09H11.1498Z"
+                :fill="$route.path === '/' ? 'white' : '#2d5893'"
+              />
+              <path
+                d="M18.8186 11.9538C19.7338 11.7086 20.564 11.2166 21.2184 10.5315C21.8729 9.84643 22.3265 8.99467 22.5297 8.06928C22.7328 7.14388 22.6778 6.18045 22.3705 5.28423C22.0632 4.38801 21.5155 3.59348 20.7872 2.98746C20.0589 2.38143 19.1781 1.98721 18.241 1.84787C17.3039 1.70853 16.3465 1.82943 15.4734 2.19736C14.6003 2.56529 13.8451 3.1661 13.2904 3.93414C12.7356 4.70218 12.4027 5.60792 12.3278 6.5524L17.4808 6.96079L18.8186 11.9538Z"
+                :fill="$route.path === '/' ? 'white' : '#2d5893'"
+              />
+            </svg>
+
+            Página inicial</router-link
+          >
+        </li>
+
+        <li>
+          <router-link
+            to="/newOrtesys"
+            class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
+            :class="$route.path.includes('/newOrtesys') ? 'active' : ''"
           >
             <svg
               class="w-[30px]"
               width="28"
               height="29"
               viewBox="0 0 28 29"
-              :fill="
-                $route.path === '/' || $route.path.includes('/newOrtesys')
-                  ? 'white'
-                  : '#2d5893'
-              "
+              :fill="$route.path.includes('/newOrtesys') ? 'white' : '#2d5893'"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -105,14 +129,14 @@
           <router-link
             to="/myAccount"
             class="text-[#2d5893] flex items-center gap-4 w-3/4 max-w-[310px] px-3 py-1.5 mx-auto rounded-md bg-[#f4f4f4]"
-            :class="$route.path === '/myAccount' ? 'active' : ''"
+            :class="$route.path.includes('/myAccount') ? 'active' : ''"
           >
             <svg
               class="w-[30px]"
               width="22"
               height="23"
               viewBox="0 0 22 23"
-              :fill="$route.path === '/myAccount' ? 'white' : '#2d5893'"
+              :fill="$route.path.includes('/myAccount') ? 'white' : '#2d5893'"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

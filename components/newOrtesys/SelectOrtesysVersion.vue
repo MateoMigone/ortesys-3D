@@ -3,9 +3,21 @@
   <div class="flex">
     <div class="w-1/2 bg-white p-12 rounded-xl">
       <div class="w-[170px] flex flex-col gap-3">
-        <Button text="Punho" color="purple" />
-        <Button text="Punho Inferior" color="purple" />
-        <Button text="Punho Completo" color="purple" />
+        <Button
+          text="Punho"
+          color="purple"
+          @click="setSelectedVersion('Punho')"
+        />
+        <Button
+          text="Punho Inferior"
+          color="purple"
+          @click="setSelectedVersion('Punho inferior')"
+        />
+        <Button
+          text="Punho Completo"
+          color="purple"
+          @click="setSelectedVersion('Punho completo')"
+        />
       </div>
     </div>
     <div class="w-1/2 flex flex-col justify-center items-center gap-5 h-[55vh]">
@@ -18,4 +30,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { setSelectedVersion } = defineProps(["setSelectedVersion"]);
+</script>

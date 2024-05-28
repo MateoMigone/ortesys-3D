@@ -11,8 +11,20 @@
       </NuxtLink>
       <StatCard title="Receita" value="R$32,00" class="leading-10" />
       <StatCard title="Gesso salvo" value="32kg" class="leading-10" />
-      <StatCard title="Filamento utilizado" value="32kg" class="leading-10" />
-      <StatCard title="Velcro utilizado" value="32m" class="leading-10" />
+      <NuxtLink to="/infoPanel/materialsHistory/filamento" class="w-full">
+        <StatCard
+          title="Filamento utilizado"
+          value="32kg"
+          class="leading-10 hover:drop-shadow hover:bg-slate-50"
+        />
+      </NuxtLink>
+      <NuxtLink to="/infoPanel/materialsHistory/velcro" class="w-full">
+        <StatCard
+          title="Velcro utilizado"
+          value="32m"
+          class="leading-10 hover:drop-shadow hover:bg-slate-50"
+        />
+      </NuxtLink>
       <StatCard title="Tempo de impressão" value="32h" class="leading-10" />
       <NuxtLink to="/infoPanel/usersHistory" class="w-full">
         <StatCard

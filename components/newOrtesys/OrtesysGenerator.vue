@@ -3,26 +3,28 @@
     <div class="w-[45%] bg-white p-11 rounded-xl">
       <div class="flex flex-col gap-3">
         <div>
-          <label for="palm" class="text-[#2d5893] font-bold text-xl"
+          <label
+            class="text-[#2d5893] font-bold text-xl"
+            @mouseenter="toggleShowRefImg"
+            @mouseleave="toggleShowRefImg"
             >Palma</label
           ><br />
           <input
             type="text"
-            name="palm"
-            id="palm"
             class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
             placeholder="Preencha com as medidas"
           />
           <p class="text-sm font-medium">Deve estar entre 250 e 300 cm</p>
         </div>
         <div>
-          <label for="fist" class="text-[#2d5893] font-bold text-xl"
+          <label
+            class="text-[#2d5893] font-bold text-xl"
+            @mouseenter="toggleShowRefImg"
+            @mouseleave="toggleShowRefImg"
             >Punho</label
           ><br />
           <input
             type="text"
-            name="fist"
-            id="fist"
             class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
             placeholder="Preencha com as medidas"
           />
@@ -31,39 +33,42 @@
           </p>
         </div>
         <div>
-          <label for="forearm" class="text-[#2d5893] font-bold text-xl"
+          <label
+            class="text-[#2d5893] font-bold text-xl"
+            @mouseenter="toggleShowRefImg"
+            @mouseleave="toggleShowRefImg"
             >Antebraço</label
           ><br />
           <input
             type="text"
-            name="forearm"
-            id="forearm"
             class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
             placeholder="Preencha com as medidas"
           />
           <p class="text-sm font-medium">Deve estar entre 2 e 5</p>
         </div>
         <div>
-          <label for="palmar-crease" class="text-[#2d5893] font-bold text-xl"
+          <label
+            class="text-[#2d5893] font-bold text-xl"
+            @mouseenter="toggleShowRefImg"
+            @mouseleave="toggleShowRefImg"
             >Prega palmar</label
           ><br />
           <input
             type="text"
-            name="palmar-crease"
-            id="palmar-crease"
             class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
             placeholder="Preencha com as medidas"
           />
           <p class="text-sm font-medium">Deve estar entre 80 e 110 cm</p>
         </div>
         <div>
-          <label for="edges" class="text-[#2d5893] font-bold text-xl"
+          <label
+            class="text-[#2d5893] font-bold text-xl"
+            @mouseenter="toggleShowRefImg"
+            @mouseleave="toggleShowRefImg"
             >Bordas</label
           ><br />
           <input
             type="text"
-            name="edges"
-            id="edges"
             class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
             placeholder="Preencha com as medidas"
           />
@@ -137,7 +142,16 @@
             </div>
           </div>
         </div>
-        <Button text="Gerar órteses" color="green" />
+        <Button
+          text="Gerar órteses"
+          color="green"
+          @click.prevent="generateOrtesys"
+        />
+        <Button
+          text="Cancelar"
+          color="red"
+          @click.prevent="cancelOrtesysGeneration"
+        />
       </div>
     </div>
     <div class="w-[55%] flex flex-col items-center gap-5">
@@ -161,11 +175,41 @@
         src="../../assets/imgs/ortesys-arm-shadow.png"
         alt="Ortesys Arm"
       />
+
+      <img
+        v-show="showRefImg"
+        src="../../assets/imgs/handRefImg.png"
+        class="fixed top-[110px] h-[80vh]"
+      />
     </div>
   </form>
 </template>
 
-<script setup></script>
+<script setup>
+import SelectOrtesysVersion from "./SelectOrtesysVersion.vue";
+
+const { setSelectedVersion } = defineProps(["setSelectedVersion"]);
+
+const router = useRouter();
+const showRefImg = ref(false);
+
+const cancelOrtesysGeneration = () => {
+  // reset all inputs
+  SelectOrtesysVersion.value = "";
+  router.push("/newOrtesys");
+};
+
+const generateOrtesys = () => {
+  // post all inputs
+  // reset all inputs
+  SelectOrtesysVersion.value = "";
+  router.push("/manage");
+};
+
+const toggleShowRefImg = () => {
+  showRefImg.value = !showRefImg.value;
+};
+</script>
 
 <style scoped>
 input[type="range"]::-webkit-slider-thumb {

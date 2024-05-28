@@ -33,11 +33,38 @@
     </div>
     <div class="flex flex-col gap-6">
       <DateFilterButton />
-      <div class="flex flex-col gap-5">
-        <OrtesysInfoCard />
-        <OrtesysInfoCard type="user" />
-        <OrtesysInfoCard type="user" />
-        <OrtesysInfoCard type="user" />
+      <div v-if="clinicUser === ''" class="flex flex-col gap-5">
+        <OrtesysInfoCard text="Total" />
+        <OrtesysInfoCard
+          text="Paulo"
+          type="user"
+          :clinicUser="clinicUser"
+          :setClinicUser="setClinicUser"
+        />
+        <OrtesysInfoCard
+          text="Santi"
+          type="user"
+          :clinicUser="clinicUser"
+          :setClinicUser="setClinicUser"
+        />
+        <OrtesysInfoCard
+          text="Pedro"
+          type="user"
+          :clinicUser="clinicUser"
+          :setClinicUser="setClinicUser"
+        />
+      </div>
+
+      <div v-else class="flex flex-col gap-5">
+        <OrtesysInfoCard text="Total" />
+        <OrtesysInfoCard
+          :text="clinicUser"
+          type="user"
+          :clinicUser="clinicUser"
+          :setClinicUser="setClinicUser"
+        />
+        <OrtesysInfoCard text="Rick" type="user" />
+        <OrtesysInfoCard text="Monstro" type="user" />
       </div>
     </div>
   </div>
@@ -48,6 +75,12 @@ definePageMeta({
   layout: "main-layout",
   middleware: "auth",
 });
+
+const clinicUser = ref("");
+
+const setClinicUser = (name) => {
+  clinicUser.value = name;
+};
 </script>
 
 <style scoped></style>

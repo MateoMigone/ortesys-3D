@@ -27,25 +27,80 @@
         </div>
         <div class="flex flex-col items-center gap-3">
           <span class="text-xl font-bold text-[#2D5893]">E-mail</span>
-          <Button text="Enviar um e-mail" color="purple" class="w-[270px]" />
+          <Button
+            text="Enviar um e-mail"
+            color="purple"
+            class="w-[270px]"
+            @click="openMail"
+          />
         </div>
         <div class="flex flex-col items-center gap-3">
           <span class="text-xl font-bold text-[#2D5893]">Chat</span>
-          <Button text="Abrir o chat" color="purple" class="w-[270px]" />
+          <Button
+            text="Abrir o chat"
+            color="purple"
+            class="w-[270px]"
+            @click="openWhatsApp"
+          />
         </div>
         <div class="flex justify-between gap-2">
-          <Button text="Feedback" color="secondary" />
-          <Button text="Videos tutoriais" />
-          <Button text="Solicitar órteses diferente" color="red" />
+          <Button text="Feedback" color="secondary" @click="openFeedbackMail" />
+          <Button text="Videos tutoriais" @click="openModal" />
+          <Button
+            text="Solicitar órteses diferente"
+            color="red"
+            @click="openNewOrtesysMail"
+          />
         </div>
       </div>
     </div>
+    <a ref="mailLink" href="mailto:example@example.com" class="hidden" />
+    <a
+      ref="feedbackMailLink"
+      href="mailto:example@example.com?subject=Feedback"
+      class="hidden"
+    />
+    <a
+      ref="newOrtesysMailLink"
+      href="mailto:example@example.com?subject=Solicitar órteses diferente"
+      class="hidden"
+    />
+
+    <TutorialsModal :openRequest="showModal" :toggleModal="openModal" />
   </div>
 </template>
 
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /* middleware: "auth", */
 });
+
+const showModal = ref(false);
+
+const mailLink = ref("");
+const feedbackMailLink = ref("");
+const newOrtesysMailLink = ref("");
+
+const openModal = () => {
+  showModal.value = !showModal.value;
+};
+
+const openMail = () => {
+  mailLink.value.click();
+};
+
+const openFeedbackMail = () => {
+  feedbackMailLink.value.click();
+};
+
+const openNewOrtesysMail = () => {
+  newOrtesysMailLink.value.click();
+};
+
+const openWhatsApp = () => {
+  const phoneNumber = "12345678";
+  const url = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+  window.open(url, "_blank");
+};
 </script>

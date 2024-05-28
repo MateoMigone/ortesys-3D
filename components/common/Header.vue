@@ -4,11 +4,32 @@
   >
     <!-- Search bar -->
     <div class="flex items-center gap-6 2xl:gap-10">
-      <input
-        type="text"
-        class="pl-10 pr-4 py-2 rounded-full bg-[#f4f4f4] placeholder:text-sm placeholder:text-[#2d5893] text-[#2d5893] text-sm font-medium 2xl:mr-[45px]"
-        placeholder="Pesquisar"
-      />
+      <div class="flex rounded-full bg-[#f4f4f4]">
+        <div class="rounded-full bg-[#f4f4f4] px-2 flex">
+          <svg
+            class="w-[20px] cursor-pointer"
+            viewBox="0 0 11 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.43609 3.5C7.43609 5.15744 6.09431 6.5 4.44045 6.5C2.7866 6.5 1.44482 5.15744 1.44482 3.5C1.44482 1.84256 2.7866 0.5 4.44045 0.5C6.09431 0.5 7.43609 1.84256 7.43609 3.5Z"
+              fill="#F4F4F4"
+              stroke="#2D5893"
+            />
+            <path
+              d="M6.9375 6L9.93375 9"
+              stroke="#2D5893"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <input
+          type="text"
+          class="pl-3 pr-4 py-2 rounded-full bg-[#f4f4f4] focus:outline-none placeholder:text-sm placeholder:text-[#2d5893] text-[#2d5893] text-sm font-medium 2xl:mr-[45px]"
+          placeholder="Pesquisar"
+        />
+      </div>
       <NuxtLink to="/newOrtesys"
         ><h5 class="text-[#2d5893] font-semibold">Membro Superior</h5></NuxtLink
       >
@@ -19,7 +40,7 @@
 
     <!-- Menu items -->
     <div class="flex items-center gap-2">
-      <div
+      <!-- <div
         class="bg-[#2d5893] rounded-md w-[34px] h-[34px] flex items-center justify-center"
       >
         <svg
@@ -36,7 +57,7 @@
             fill="white"
           />
         </svg>
-      </div>
+      </div> -->
 
       <div
         class="bg-[#2d5893] rounded-md w-[34px] h-[34px] flex items-center justify-center"

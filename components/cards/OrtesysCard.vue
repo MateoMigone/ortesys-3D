@@ -19,7 +19,11 @@
 
         <div class="w-40 h-10 mt-4">
           <NuxtLink to="/newOrtesys/1">
-            <Button text="Personalizar" color="purple" />
+            <Button
+              text="Personalizar"
+              color="purple"
+              class="w-[170px] h-[40px]"
+            />
           </NuxtLink>
         </div>
       </div>

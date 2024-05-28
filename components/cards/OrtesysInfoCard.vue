@@ -5,42 +5,47 @@
       :class="type === 'user' && 'p-6'"
       @click="toggle"
     >
-      <div class="flex justify-center items-center">
-        <h2 class="text-2xl font-extrabold">Punho</h2>
-        <svg
-          :class="{ rotate: isOpen }"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6 ml-2 transition-transform duration-500 mr-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m6 9 6 6 6-6"
-          />
-        </svg>
+      <div class="flex justify-center items-center gap-12">
+        <div class="flex items-center">
+          <h2 class="text-2xl font-extrabold">{{ text }}</h2>
+          <svg
+            :class="{ rotate: isOpen }"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 ml-2 transition-transform duration-500 mr-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m6 9 6 6 6-6"
+            />
+          </svg>
+        </div>
         <div
-          v-show="type === 'user'"
-          class="grid grid-cols-4 gap-2 place-items-center"
+          v-if="type === 'user'"
+          class="grid grid-cols-4 gap-2.5 place-items-center"
         >
           <NuxtLink to="/infoPanel/updateUser/id" class="w-full h-full">
-            <Button text="Cadastro" color="secondary" class="w-full h-full" />
+            <Button text="Cadastro" color="purple" class="w-full h-full" />
           </NuxtLink>
-          <Button
-            text="Pagamento"
-            color="secondary"
-            class="w-full h-full"
-            @click.stop
-          />
+
           <Button
             text="Material"
             color="secondary"
             class="w-full h-full"
-            @click.stop="openModal"
+            @click.stop="openMaterialModal"
           />
+
+          <Button
+            text="Desconto"
+            color="secondary"
+            class="w-full h-full"
+            @click.stop="openDiscountModal"
+          />
+
           <div class="w-[100px]">
             <Button
               text="Habilitar / Desabilitar"
@@ -49,6 +54,35 @@
               @click.stop="toggleUserState"
             />
           </div>
+
+          <Button
+            v-if="clinicUser === ''"
+            text="Funções"
+            color="secondary"
+            class="w-full h-full"
+            @click.stop="setClinicUser(text)"
+          />
+
+          <Button
+            text="Clinica"
+            color="secondary"
+            class="w-full h-full"
+            @click.stop=""
+          />
+
+          <Button
+            text="PDO"
+            :color="userPDO ? 'secondary' : 'red'"
+            class="w-full h-full"
+            @click.stop="toggleUserPDO"
+          />
+
+          <Button
+            text="Cancelar"
+            color="red"
+            class="w-full h-full"
+            @click.stop="setClinicUser('')"
+          />
         </div>
       </div>
     </div>
@@ -63,22 +97,50 @@
         <InfoCard />
       </div>
     </transition>
-    <MaterialModal :openRequest="showModal" :toggleModal="openModal" />
+
+    <!-- Here the modals used in this component -->
+    <MaterialModal
+      :openRequest="showMaterialModal"
+      :toggleModal="openMaterialModal"
+    />
+
+    <DiscountModal
+      :openRequest="showDiscountModal"
+      :toggleModal="openDiscountModal"
+    />
   </div>
 </template>
 
 <script setup>
-const { type } = defineProps(["type"]);
-const isOpen = ref(false);
-const showModal = ref(false);
-const userState = ref(true);
+const { text, type, clinicUser, setClinicUser } = defineProps([
+  "text",
+  "type",
+  "clinicUser",
+  "setClinicUser",
+]);
 
-const openModal = () => {
-  showModal.value = !showModal.value;
+const isOpen = ref(false);
+
+const showMaterialModal = ref(false);
+const showDiscountModal = ref(false);
+
+const userState = ref(true);
+const userPDO = ref(false);
+
+const openMaterialModal = () => {
+  showMaterialModal.value = !showMaterialModal.value;
+};
+
+const openDiscountModal = () => {
+  showDiscountModal.value = !showDiscountModal.value;
 };
 
 const toggleUserState = () => {
   userState.value = !userState.value;
+};
+
+const toggleUserPDO = () => {
+  userPDO.value = !userPDO.value;
 };
 
 const toggle = () => {

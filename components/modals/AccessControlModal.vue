@@ -8,13 +8,24 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
-      <Button text="Apenas eu" color="purple" class="w-[250px] h-[40px]" />
+      <Button
+        text="Apenas eu"
+        color="purple"
+        class="w-[250px] h-[40px]"
+        @click="selectOption"
+      />
       <Button
         text="Eu e colaboradores"
         color="green"
         class="w-[250px] h-[40px]"
+        @click="selectOption"
       />
-      <Button text="Todos" color="yellow" class="w-[250px] h-[40px]" />
+      <Button
+        text="Todos"
+        color="yellow"
+        class="w-[250px] h-[40px]"
+        @click="selectOption"
+      />
     </div>
   </div>
 </template>
@@ -27,5 +38,10 @@ const { openRequest, toggleModal } = defineProps([
 
 const closeModal = () => {
   toggleModal();
+};
+
+const selectOption = () => {
+  // set access control value in the component that called this modal
+  closeModal();
 };
 </script>

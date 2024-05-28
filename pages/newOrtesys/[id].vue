@@ -1,7 +1,10 @@
 <template>
   <div class="w-[90%] mx-auto">
-    <OrtesysGenerator v-if="true" />
-    <SelectOrtesysVersion v-else />
+    <OrtesysGenerator
+      v-if="selectedVersion"
+      :setSelectedVersion="setSelectedVersion"
+    />
+    <SelectOrtesysVersion v-else :setSelectedVersion="setSelectedVersion" />
   </div>
 </template>
 
@@ -10,6 +13,12 @@ definePageMeta({
   layout: "main-layout",
   middleware: "auth",
 });
+
+const selectedVersion = ref("");
+
+const setSelectedVersion = (version) => {
+  selectedVersion.value = version;
+};
 </script>
 
 <style scoped></style>
