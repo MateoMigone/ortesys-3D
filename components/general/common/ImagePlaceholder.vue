@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-6 items-center">
-    <img src="../../assets/imgs/img-placeholder.png" class="w-[80%]" />
+    <img src="~/assets/imgs/img-placeholder.png" class="w-[80%]" />
     <Button
       text="Adicionar uma imagem"
       color="yellow"

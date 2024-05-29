@@ -1,13 +1,13 @@
 <template>
   <div>
     <OrtesysForm
-      v-show="!showAddVariable && !showAddFiles"
-      :setShowAddVariable="setShowAddVariable"
+      v-show="!showVariableForm && !showAddFiles"
+      :setShowVariableForm="setShowVariableForm"
       :setShowAddFiles="setShowAddFiles"
     />
-    <AddVariable
-      v-show="showAddVariable"
-      :setShowAddVariable="setShowAddVariable"
+    <VariableForm
+      v-show="showVariableForm"
+      :setShowVariableForm="setShowVariableForm"
     />
     <AddFiles v-show="showAddFiles" :setShowAddFiles="setShowAddFiles" />
   </div>
@@ -19,11 +19,11 @@ definePageMeta({
   /* middleware: "auth", */
 });
 
-const showAddVariable = ref(false);
+const showVariableForm = ref(false);
 const showAddFiles = ref(false);
 
-const setShowAddVariable = (status) => {
-  showAddVariable.value = status;
+const setShowVariableForm = (status) => {
+  showVariableForm.value = status;
 };
 
 const setShowAddFiles = (status) => {

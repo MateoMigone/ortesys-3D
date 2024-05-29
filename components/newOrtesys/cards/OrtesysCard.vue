@@ -1,11 +1,7 @@
 <template>
   <div class="bg-white shadow-sm rounded-2xl w-[100%] py-[38px]">
     <div class="flex items-center justify-center gap-8 h-full px-6 2xl:gap-14">
-      <img
-        class="h-56"
-        src="../../assets/imgs/ortesys-arm.png"
-        alt="Ortesys Arm"
-      />
+      <img class="h-56" src="~/assets/imgs/ortesys-arm.png" alt="Ortesys Arm" />
 
       <div
         class="flex flex-col justify-between h-[85%] max-w-[175px] 2xl:max-w-[240px]"

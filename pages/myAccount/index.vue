@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center gap-2 2xl:mt-5">
           <img
             class="h-[62px] w-[62px] rounded-full border-2 border-[#2d5893] p-1"
-            src="../../assets/imgs/user-avatar.png"
+            src="~/assets/imgs/user-avatar.png"
             alt="Profile image"
           />
           <h4 class="font-semibold text-[#2d5893] text-lg">Dr Paulo Tavares</h4>

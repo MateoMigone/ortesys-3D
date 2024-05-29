@@ -3,7 +3,7 @@
     <!-- This is the form displayed when "Medidas" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
-      v-show="type === 'Medida'"
+      v-show="variableType === 'Medida'"
     >
       <div class="flex flex-col gap-1.5 2xl:gap-2">
         <input
@@ -43,7 +43,7 @@
           text="Salvar"
           color="green"
           class="text-[15px]"
-          @click.prevent="setShowAddVariable(false)"
+          @click.prevent="setShowVariableForm(false)"
         />
       </div>
     </form>
@@ -51,7 +51,7 @@
     <!-- This is the form displayed when "Botao" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
-      v-show="type === 'Botao'"
+      v-show="variableType === 'Botao'"
     >
       <div class="flex flex-col gap-1.5 2xl:gap-2">
         <input
@@ -94,7 +94,7 @@
           text="Salvar"
           color="green"
           class="text-[15px]"
-          @click.prevent="setShowAddVariable(false)"
+          @click.prevent="setShowVariableForm(false)"
         />
       </div>
     </form>
@@ -102,7 +102,7 @@
     <!-- This is the form displayed when "Barra" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
-      v-show="type === 'Barra'"
+      v-show="variableType === 'Barra'"
     >
       <div class="flex flex-col gap-6">
         <div class="flex flex-col">
@@ -164,7 +164,7 @@
           text="Salvar"
           color="green"
           class="text-[15px]"
-          @click.prevent="setShowAddVariable(false)"
+          @click.prevent="handleSubmit"
         />
       </div>
     </form>
@@ -183,27 +183,24 @@
     <VariablesConfigModal
       :openRequest="showVariablesConfigModal"
       :toggleModal="openVariablesConfigModal"
-      :type="type"
+      :type="variableType"
     />
 
     <VariablesActionsModal
       :openRequest="showVariablesActionsModal"
       :toggleModal="openVariablesActionsModal"
-      :type="type"
+      :type="variableType"
     />
   </div>
 </template>
 
 <script setup>
-const { setShowAddVariable, type, setVariableType } = defineProps([
-  "setShowAddVariable",
-  "type",
-  "setVariableType",
-]);
+const { setShowVariableForm } = defineProps(["setShowVariableForm"]);
 
 const showVariablesModal = ref(false);
 const showVariablesConfigModal = ref(false);
 const showVariablesActionsModal = ref(false);
+const variableType = ref("Medida");
 
 const openVariablesModal = () => {
   showVariablesModal.value = !showVariablesModal.value;
@@ -216,6 +213,16 @@ const openVariablesConfigModal = () => {
 const openVariablesActionsModal = () => {
   showVariablesActionsModal.value = !showVariablesActionsModal.value;
 };
+
+const setVariableType = (newType) => {
+  variableType.value = newType;
+};
+
+const handleSubmit = () => {
+  // Post the new variable or update an existing one
+  setShowVariableForm(false);
+};
+//
 </script>
 
 <style lang="scss" scoped></style>

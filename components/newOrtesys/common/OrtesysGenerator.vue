@@ -1,79 +1,66 @@
 <template>
-  <form class="flex gap-6">
-    <div class="w-[45%] bg-white p-11 rounded-xl">
+  <form class="flex gap-6 max-h-[80vh]">
+    <div class="w-[50%] bg-white p-11 rounded-xl overflow-auto">
       <div class="flex flex-col gap-3">
-        <div>
-          <label
-            class="text-[#2d5893] font-bold text-xl"
-            @mouseenter="toggleShowRefImg"
-            @mouseleave="toggleShowRefImg"
-            >Palma</label
-          ><br />
-          <input
-            type="text"
-            class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
-            placeholder="Preencha com as medidas"
-          />
-          <p class="text-sm font-medium">Deve estar entre 250 e 300 cm</p>
-        </div>
-        <div>
-          <label
-            class="text-[#2d5893] font-bold text-xl"
-            @mouseenter="toggleShowRefImg"
-            @mouseleave="toggleShowRefImg"
-            >Punho</label
-          ><br />
-          <input
-            type="text"
-            class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
-            placeholder="Preencha com as medidas"
-          />
-          <p class="text-sm font-medium">
-            Entre 65 e 80 cm (menor que largura)
-          </p>
-        </div>
-        <div>
-          <label
-            class="text-[#2d5893] font-bold text-xl"
-            @mouseenter="toggleShowRefImg"
-            @mouseleave="toggleShowRefImg"
-            >Antebraço</label
-          ><br />
-          <input
-            type="text"
-            class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
-            placeholder="Preencha com as medidas"
-          />
-          <p class="text-sm font-medium">Deve estar entre 2 e 5</p>
-        </div>
-        <div>
-          <label
-            class="text-[#2d5893] font-bold text-xl"
-            @mouseenter="toggleShowRefImg"
-            @mouseleave="toggleShowRefImg"
-            >Prega palmar</label
-          ><br />
-          <input
-            type="text"
-            class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
-            placeholder="Preencha com as medidas"
-          />
-          <p class="text-sm font-medium">Deve estar entre 80 e 110 cm</p>
-        </div>
-        <div>
-          <label
-            class="text-[#2d5893] font-bold text-xl"
-            @mouseenter="toggleShowRefImg"
-            @mouseleave="toggleShowRefImg"
-            >Bordas</label
-          ><br />
-          <input
-            type="text"
-            class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm"
-            placeholder="Preencha com as medidas"
-          />
-          <p class="text-sm font-medium">Deve estar entre 1 e 5</p>
-        </div>
+        <OutputFieldVariable
+          :variable="{
+            title: 'Palma',
+            subtitle: 'Deve estar entre 250 e 300 cm',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputFieldVariable
+          :variable="{
+            title: 'Punho',
+            subtitle: 'Entre 65 e 80 cm (menor que largura)',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputFieldVariable
+          :variable="{
+            title: 'Antebraço',
+            subtitle: 'Deve estar entre 2 e 5',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputFieldVariable
+          :variable="{
+            title: 'Prega palmar',
+            subtitle: 'Deve estar entre 80 e 110 cm',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputFieldVariable
+          :variable="{
+            title: 'Bordas',
+            subtitle: 'Deve estar entre 1 e 5',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputButtonVariable
+          :variable="{
+            title: 'Palma',
+            subtitle: 'Deve estar entre 250 e 300 cm',
+            enabledText: 'ON',
+            disabledText: 'OFF',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <OutputBarVariable
+          :variable="{
+            title: 'Nível de regidez',
+            subtitle: 'Deve estar entre 01 e 04',
+            qty: 4,
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
         <div>
           <label for="printer" class="text-[#2d5893] font-bold text-xl"
             >Configuração:</label
@@ -154,31 +141,26 @@
         />
       </div>
     </div>
-    <div class="w-[55%] flex flex-col items-center gap-5">
-      <div class="bg-white p-6 rounded-2xl relative w-full text-center">
-        <h1 class="text-[#2d5893] font-bold text-2xl mb-1">Nível de regidez</h1>
-        <p class="text-sm text-[#131E41]">Deve estar entre 01 e 03</p>
-        <input
-          type="range"
-          min="1"
-          max="3"
-          class="my-4 rounded-full overflow-hidden appearance-none w-full"
-        />
-        <div class="flex justify-between w-full">
-          <span class="text-blue-600">01</span>
-          <span class="text-blue-600">02</span>
-          <span class="text-blue-600">03</span>
-        </div>
-      </div>
+    <div class="w-[50%] flex flex-col items-center gap-5">
+      <OutputBarVariable
+        :variable="{
+          title: 'Nível de regidez',
+          subtitle: 'Deve estar entre 01 e 03',
+          qty: 3,
+        }"
+        :toggleShowRefImg="toggleShowRefImg"
+        size="lg"
+      />
+
       <img
         class="h-[70%] mt-10"
-        src="../../assets/imgs/ortesys-arm-shadow.png"
+        src="~/assets/imgs/ortesys-arm-shadow.png"
         alt="Ortesys Arm"
       />
 
       <img
         v-show="showRefImg"
-        src="../../assets/imgs/handRefImg.png"
+        src="~/assets/imgs/handRefImg.png"
         class="fixed top-[110px] h-[80vh]"
       />
     </div>
@@ -210,15 +192,3 @@ const toggleShowRefImg = () => {
   showRefImg.value = !showRefImg.value;
 };
 </script>
-
-<style scoped>
-input[type="range"]::-webkit-slider-thumb {
-  width: 15px;
-  appearance: none;
-  height: 15px;
-  cursor: pointer;
-  background: #2fb7a0;
-  box-shadow: -405px 0 0 400px #2d5893;
-  border-radius: 100%;
-}
-</style>

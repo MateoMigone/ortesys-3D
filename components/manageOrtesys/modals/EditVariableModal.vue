@@ -9,24 +9,28 @@
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
       <Button
-        text="Apenas eu"
+        text="Editar"
         color="purple"
         class="w-[250px] h-[40px]"
-        @click="selectOption"
+        @click.prevent="goToVariableEdit"
       />
       <Button
-        text="Eu e colaboradores"
-        color="green"
+        text="Remover"
+        color="red"
         class="w-[250px] h-[40px]"
-        @click="selectOption"
+        @click.prevent="selectOption"
       />
       <Button
-        text="Todos"
+        text="Controle de visualização"
         color="yellow"
         class="w-[250px] h-[40px]"
-        @click="selectOption"
+        @click.prevent="openAccessControlModal"
       />
     </div>
+    <AccessControlModal
+      :openRequest="showAccessControlModal"
+      :toggleModal="openAccessControlModal"
+    />
   </div>
 </template>
 
@@ -36,12 +40,24 @@ const { openRequest, toggleModal } = defineProps([
   "toggleModal",
 ]);
 
+const showAccessControlModal = ref(false);
+
 const closeModal = () => {
   toggleModal();
 };
 
+const openAccessControlModal = () => {
+  showAccessControlModal.value = !showAccessControlModal.value;
+};
+
 const selectOption = () => {
-  // set access control value in the component that called this modal
   closeModal();
+};
+
+const setShowVariableForm = inject("setShowVariableForm");
+
+const goToVariableEdit = () => {
+  closeModal();
+  setShowVariableForm(true);
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="w-full p-8 flex flex-col">
     <NuxtLink to="/" class="w-[170px] self-center">
       <img
-        src="../../assets/imgs/logo.png"
+        src="~/assets/imgs/logo.png"
         alt="Ortesys Gen"
         class="mx-auto h-[30px] w-[170px] self-items-center 2xl:mt-5"
       />
@@ -12,7 +12,7 @@
     >
       <img
         class="h-[52px] w-[52px] rounded-full border-2 border-[#2d5893] p-1"
-        src="../../assets/imgs/user-avatar.png"
+        src="~/assets/imgs/user-avatar.png"
         alt="Profile image"
       />
       <div class="flex flex-col items-center gap-1">

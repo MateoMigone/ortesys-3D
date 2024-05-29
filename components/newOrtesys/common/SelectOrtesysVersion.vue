@@ -23,7 +23,7 @@
     <div class="w-1/2 flex flex-col justify-center items-center gap-5 h-[55vh]">
       <img
         class="h-[90%] mt-10"
-        src="../../assets/imgs/ortesys-arm-shadow.png"
+        src="~/assets/imgs/ortesys-arm-shadow.png"
         alt="Ortesys Arm"
       />
     </div>
