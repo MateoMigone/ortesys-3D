@@ -4,3 +4,29 @@ body {
   font-family: "Archivo", sans-serif;
   color: #131e41;
 }
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d4d4f7; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Roundness of the scrollbar handle */
+  border: 3px solid #f1f1f1; /* Padding around the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2d5893; /* Color of the scrollbar handle on hover */
+}
+
+/* For Firefox */
+.scrollbar {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: #d4d4f7 #f1f1f1; /* Color of the scrollbar handle and track */
+}

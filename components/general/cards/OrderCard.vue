@@ -103,6 +103,7 @@
         <!-- Show all the files/info of the selected generated ortesys -->
         <OrderContentCard />
         <OrderContentCard />
+        <OrderContentCard />
       </div>
     </transition>
   </div>

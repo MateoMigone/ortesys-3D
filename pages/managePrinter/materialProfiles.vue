@@ -4,8 +4,15 @@
     <div
       class="bg-white p-8 w-[40%] min-w-[300px] flex justify-center rounded-2xl"
     >
-      <Button text="Adicionar novo perfil" color="green" class="w-[240px]" />
+      <Button
+        text="Adicionar novo perfil"
+        color="green"
+        class="w-[240px]"
+        @click="handleNewProfileFileInput"
+      />
     </div>
+    <!-- Hidden new profile file input -->
+    <input type="file" ref="newProfileFileInput" class="hidden" />
 
     <!-- Show all material profiles with a v-for -->
     <ConfigCard text="Perfil 1" type="materialProfile" />
@@ -25,4 +32,10 @@ definePageMeta({
 });
 
 // SHOULD RECEIVE ALL THE PROFILES FROM THE PRINTER
+
+const newProfileFileInput = ref(null);
+
+const handleNewProfileFileInput = () => {
+  newProfileFileInput.value.click();
+};
 </script>

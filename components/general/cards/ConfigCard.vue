@@ -19,10 +19,23 @@
             : 'flex flex-col gap-2 2xl:flex-row 2xl:gap-2.5'
         "
       >
-        <!-- Update button -->
-        <NuxtLink :to="type === 'printer' && '/managePrinter/updatePrinter/id'">
+        <!-- Update button if type "printer" -->
+        <NuxtLink
+          v-if="type === 'printer'"
+          to="/managePrinter/updatePrinter/id"
+        >
           <Button text="Editar" class="w-[165px] 2xl:w-[130px]" />
         </NuxtLink>
+
+        <!-- Update button if type "materialProfile" -->
+        <Button
+          v-if="type === 'materialProfile'"
+          text="Editar"
+          class="w-[165px] 2xl:w-[130px]"
+          @click="handleUpdateProfileFileInput"
+        />
+        <!-- Hidden update profile file input -->
+        <input type="file" ref="updateProfileFileInput" class="hidden" />
 
         <!-- Remove button -->
         <Button
@@ -81,11 +94,17 @@ const { text, type } = defineProps(["text", "type"]);
 const showAccessControlModal = ref(false);
 const showConfirmRemoveModal = ref(false);
 
+const updateProfileFileInput = ref(null);
+
 const openAccessControlModal = () => {
   showAccessControlModal.value = !showAccessControlModal.value;
 };
 
 const openConfirmRemoveModal = () => {
   showConfirmRemoveModal.value = !showConfirmRemoveModal.value;
+};
+
+const handleUpdateProfileFileInput = () => {
+  updateProfileFileInput.value.click();
 };
 </script>
