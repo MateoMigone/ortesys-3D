@@ -30,9 +30,12 @@
           placeholder="Pesquisar"
         />
       </div>
+
+      <!-- Quick search option 1 -->
       <NuxtLink to="/newOrtesys"
         ><h5 class="text-[#2d5893] font-semibold">Membro Superior</h5></NuxtLink
       >
+      <!-- Quick search option 2 -->
       <NuxtLink to="/newOrtesys"
         ><h5 class="text-[#2d5893] font-semibold">Membro Inferior</h5></NuxtLink
       >
@@ -59,6 +62,7 @@
         </svg>
       </div> -->
 
+      <!-- Notifications button -->
       <div
         class="bg-[#2d5893] rounded-md w-[34px] h-[34px] flex items-center justify-center"
       >
@@ -76,6 +80,7 @@
         </svg>
       </div>
 
+      <!-- Support button -->
       <div
         class="bg-[#2d5893] rounded-md w-[34px] h-[34px] flex items-center justify-center"
       >

@@ -1,6 +1,8 @@
 <template>
-  <reset-password-form v-if="!formSent" @submit.prevent="submitForm" />
-  <reset-password-message v-else />
+  <!-- Show the form if it wasn´t sent  -->
+  <ResetPasswordForm v-if="!formSent" @submit.prevent="submitForm" />
+  <!-- If the form was sent show this message component -->
+  <ResetPasswordMessage v-else />
 </template>
 
 <script setup>

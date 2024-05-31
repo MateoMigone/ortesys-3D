@@ -6,6 +6,7 @@
     <div
       class="flex flex-col justify-center items-center rounded-2xl w-full border-[1px] border-[#D9D9D9] gap-2 p-5"
     >
+      <!-- Printer name input -->
       <input
         type="text"
         value="Nome da impressora"
@@ -20,12 +21,15 @@
       <div
         class="flex flex-col items-center justify-between w-full max-w-[830px] px-20 py-8 gap-8"
       >
+        <!-- Form body title -->
         <h3 class="text-2xl font-bold text-[#2D5893]">
           Configuração de impressão
         </h3>
 
+        <!-- Form variable inputs -->
         <div class="flex gap-4 flex-col w-full">
           <div class="flex gap-16 2xl:gap-20 w-full">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="xWidth"
@@ -40,6 +44,7 @@
               />
             </div>
 
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="xWidthMin"
@@ -56,6 +61,7 @@
           </div>
 
           <div class="flex gap-16 2xl:gap-20 w-full">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="yDepth"
@@ -70,6 +76,7 @@
               />
             </div>
 
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="yDepthMin"
@@ -84,7 +91,9 @@
               />
             </div>
           </div>
+
           <div class="flex gap-16 2xl:gap-20 w-full">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="zHeight"
@@ -99,6 +108,7 @@
               />
             </div>
 
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="zHeightMax"
@@ -115,6 +125,7 @@
           </div>
 
           <div class="flex gap-16 2xl:gap-20 w-full">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="buildPlateType"
@@ -129,6 +140,7 @@
               </select>
             </div>
 
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="gantryHeight"
@@ -145,6 +157,7 @@
           </div>
 
           <div class="flex gap-16 2xl:gap-20 w-full">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="gcodeFlavor"
@@ -159,6 +172,7 @@
               </select>
             </div>
 
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
               <label
                 for="numExtruders"
@@ -175,6 +189,7 @@
           </div>
 
           <div class="flex gap-16 2xl:gap-20 w-full mt-2">
+            <!-- Form variable input -->
             <div class="flex flex-col gap-2 w-1/2">
               <p class="font-bold">Build plate shape:</p>
               <div class="flex gap-3">
@@ -211,6 +226,7 @@
             </div>
 
             <div class="flex flex-col gap-5 w-1/2">
+              <!-- Form variable input -->
               <div class="flex gap-2">
                 <input
                   type="radio"
@@ -223,6 +239,7 @@
                 >
               </div>
 
+              <!-- Form variable input -->
               <div class="flex flex-col gap-2 2xl:gap-2.5">
                 <label
                   for="materialDiameter"
@@ -239,6 +256,7 @@
           </div>
         </div>
 
+        <!-- Form variable input -->
         <div class="flex flex-col justify-center items-center gap-3 w-full">
           <h3 class="text-xl font-bold text-[#2D5893]">Start Gcode</h3>
           <textarea
@@ -253,6 +271,8 @@ G92 E0
         </textarea
           >
         </div>
+
+        <!-- Form variable input -->
         <div class="flex flex-col justify-center items-center gap-3 w-full">
           <h3 class="text-xl font-bold text-[#2D5893]">End Gcode</h3>
           <textarea
@@ -269,6 +289,7 @@ G92 E0
         </div>
 
         <div class="flex flex-col gap-4 w-full">
+          <!-- Form variable input -->
           <div class="flex items-center justify-between gap-10 2xl:gap-2.5">
             <label
               for="nozzleSize"
@@ -283,6 +304,7 @@ G92 E0
             />
           </div>
 
+          <!-- Form variable input -->
           <div class="flex items-center justify-between gap-10 2xl:gap-2.5">
             <label
               for="compatibleMaterialDiameter"
@@ -297,6 +319,7 @@ G92 E0
             />
           </div>
 
+          <!-- Form variable input -->
           <div class="flex items-center justify-between gap-10 2xl:gap-2.5">
             <label
               for="nozzleOffsetX"
@@ -311,6 +334,7 @@ G92 E0
             />
           </div>
 
+          <!-- Form variable input -->
           <div class="flex items-center justify-between gap-10 2xl:gap-2.5">
             <label
               for="nozzleOffsetY"
@@ -325,6 +349,7 @@ G92 E0
             />
           </div>
 
+          <!-- Form variable input -->
           <div class="flex items-center justify-between gap-10 2xl:gap-2.5">
             <label
               for="coolingFanNumber"
@@ -340,6 +365,7 @@ G92 E0
           </div>
         </div>
 
+        <!-- Form variable input -->
         <div class="flex flex-col justify-center items-center gap-3 w-full">
           <h3 class="text-xl font-bold text-[#2D5893]">
             Extruder Start G-code
@@ -356,6 +382,8 @@ G92 E0
         </textarea
           >
         </div>
+
+        <!-- Form variable input -->
         <div class="flex flex-col justify-center items-center gap-3 w-full">
           <h3 class="text-xl font-bold text-[#2D5893]">Extruder End G-code</h3>
           <textarea
@@ -373,12 +401,16 @@ G92 E0
 
         <!-- Form buttons -->
         <div class="flex justify-between h-[40px] gap-2">
+          <!-- Save changes button -->
           <Button text="Salvar" color="secondary" class="w-[165px] h-[40px]" />
+          <!-- Restore default button -->
           <Button
             text="Restaurar padrão"
             color="red"
             class="w-[165px] h-[40px]"
           />
+
+          <!-- Set new default button -->
           <Button
             text="Tornar padrão"
             color="yellow"
@@ -390,6 +422,10 @@ G92 E0
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { submitAction } = defineProps(["submitAction"]);
+
+// SHOULD RECEIVE SELECTED PRINTER IF UPDATING
+</script>
 
 <style scoped></style>

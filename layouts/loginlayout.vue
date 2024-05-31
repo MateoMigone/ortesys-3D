@@ -1,7 +1,10 @@
 <template>
+  <!-- Page content -->
   <div class="mainBackground grid items-center">
     <slot />
   </div>
+
+  <!-- Page footer -->
   <footer
     class="flex justify-center items-center gap-[40px] bg-[#2d5893] h-[10vh] text-white py-4"
   >

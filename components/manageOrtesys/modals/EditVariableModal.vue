@@ -8,18 +8,21 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
+      <!-- Open edit variable form button -->
       <Button
         text="Editar"
         color="purple"
         class="w-[250px] h-[40px]"
         @click.prevent="goToVariableEdit"
       />
+      <!-- Remove varibale button -->
       <Button
         text="Remover"
         color="red"
         class="w-[250px] h-[40px]"
         @click.prevent="selectOption"
       />
+      <!-- Open access control modal button -->
       <Button
         text="Controle de visualização"
         color="yellow"
@@ -27,6 +30,8 @@
         @click.prevent="openAccessControlModal"
       />
     </div>
+
+    <!-- Access control modal shown if opened  -->
     <AccessControlModal
       :openRequest="showAccessControlModal"
       :toggleModal="openAccessControlModal"
@@ -35,10 +40,13 @@
 </template>
 
 <script setup>
-const { openRequest, toggleModal } = defineProps([
-  "openRequest",
-  "toggleModal",
-]);
+const { openRequest, toggleModal, variableType, setSelectedVariableType } =
+  defineProps([
+    "openRequest",
+    "toggleModal",
+    "variableType",
+    "setSelectedVariableType",
+  ]);
 
 const showAccessControlModal = ref(false);
 
@@ -58,6 +66,7 @@ const setShowVariableForm = inject("setShowVariableForm");
 
 const goToVariableEdit = () => {
   closeModal();
+  setSelectedVariableType(variableType);
   setShowVariableForm(true);
 };
 </script>

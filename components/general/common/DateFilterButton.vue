@@ -1,5 +1,7 @@
 <template>
+  <!-- REDESIGN DATE FILTER BUTTON -->
   <div class="relative flex justify-center items-center w-[220px]">
+    <!-- Select filter option -->
     <select
       name="dateFilter"
       id="dateFilter"
@@ -10,6 +12,8 @@
       <option value="thisYear">Esse ano</option>
       <option value="total">Total</option>
     </select>
+
+    <!-- Left icon -->
     <div class="absolute left-5">
       <svg
         width="12"
@@ -24,6 +28,7 @@
         />
       </svg>
     </div>
+    <!-- Right icon -->
     <div class="absolute right-5">
       <svg
         width="8"
@@ -99,9 +104,9 @@
 </template>
 
 <script setup>
-const isOpen = ref(false);
+/* const isOpen = ref(false);
 
 const toggle = () => {
   isOpen.value = !isOpen.value;
-};
+}; */
 </script>

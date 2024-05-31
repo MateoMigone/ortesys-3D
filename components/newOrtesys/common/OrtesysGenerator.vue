@@ -2,7 +2,8 @@
   <form class="flex gap-6 max-h-[80vh]">
     <div class="w-[50%] bg-white p-11 rounded-xl overflow-auto">
       <div class="flex flex-col gap-3">
-        <OutputFieldVariable
+        <!-- Show the input for the ortesys variables of the selected ortesys -->
+        <FieldVariable
           :variable="{
             title: 'Palma',
             subtitle: 'Deve estar entre 250 e 300 cm',
@@ -10,7 +11,7 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputFieldVariable
+        <FieldVariable
           :variable="{
             title: 'Punho',
             subtitle: 'Entre 65 e 80 cm (menor que largura)',
@@ -18,7 +19,7 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputFieldVariable
+        <FieldVariable
           :variable="{
             title: 'Antebraço',
             subtitle: 'Deve estar entre 2 e 5',
@@ -26,7 +27,7 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputFieldVariable
+        <FieldVariable
           :variable="{
             title: 'Prega palmar',
             subtitle: 'Deve estar entre 80 e 110 cm',
@@ -34,7 +35,7 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputFieldVariable
+        <FieldVariable
           :variable="{
             title: 'Bordas',
             subtitle: 'Deve estar entre 1 e 5',
@@ -42,7 +43,15 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputButtonVariable
+        <ComputedVariable
+          :variable="{
+            title: 'Comprimento',
+            subtitle: 'Distancia para tirar as medidas',
+          }"
+          :toggleShowRefImg="toggleShowRefImg"
+        />
+
+        <ButtonVariable
           :variable="{
             title: 'Palma',
             subtitle: 'Deve estar entre 250 e 300 cm',
@@ -52,7 +61,7 @@
           :toggleShowRefImg="toggleShowRefImg"
         />
 
-        <OutputBarVariable
+        <BarVariable
           :variable="{
             title: 'Nível de regidez',
             subtitle: 'Deve estar entre 01 e 04',
@@ -65,6 +74,7 @@
           <label for="printer" class="text-[#2d5893] font-bold text-xl"
             >Configuração:</label
           ><br />
+          <!-- Select printer -->
           <div class="relative flex justify-center items-center">
             <select
               name="printer"
@@ -97,6 +107,7 @@
             </div>
           </div>
 
+          <!-- Select material -->
           <div class="relative flex justify-center items-center">
             <select
               name="material"
@@ -129,11 +140,15 @@
             </div>
           </div>
         </div>
+
+        <!-- Generate ortesys button -->
         <Button
           text="Gerar órteses"
           color="green"
           @click.prevent="generateOrtesys"
         />
+
+        <!-- Cancel button -->
         <Button
           text="Cancelar"
           color="red"
@@ -141,8 +156,10 @@
         />
       </div>
     </div>
+
     <div class="w-[50%] flex flex-col items-center gap-5">
-      <OutputBarVariable
+      <!-- Show main bar variable  -->
+      <BarVariable
         :variable="{
           title: 'Nível de regidez',
           subtitle: 'Deve estar entre 01 e 03',
@@ -152,12 +169,14 @@
         size="lg"
       />
 
+      <!-- Selected ortesys image -->
       <img
         class="h-[70%] mt-10"
         src="~/assets/imgs/ortesys-arm-shadow.png"
         alt="Ortesys Arm"
       />
 
+      <!-- Hovered variable image -->
       <img
         v-show="showRefImg"
         src="~/assets/imgs/handRefImg.png"
@@ -171,19 +190,20 @@
 import SelectOrtesysVersion from "./SelectOrtesysVersion.vue";
 
 const { setSelectedVersion } = defineProps(["setSelectedVersion"]);
+// SHOULD RECEIVE THE SELECTED ORTESYS (AT LEAST VARIABLES AN IMAGE)
 
 const router = useRouter();
 const showRefImg = ref(false);
 
 const cancelOrtesysGeneration = () => {
-  // reset all inputs
+  // ADD INPUTS RESET
   SelectOrtesysVersion.value = "";
   router.push("/newOrtesys");
 };
 
 const generateOrtesys = () => {
-  // post all inputs
-  // reset all inputs
+  // ADD INPUT POST (GENERATE ORTESYS)
+  // ADD INPUTS RESET
   SelectOrtesysVersion.value = "";
   router.push("/manage");
 };

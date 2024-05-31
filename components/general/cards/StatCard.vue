@@ -2,18 +2,24 @@
   <div
     class="bg-white flex flex-col items-center text-center w-full h-full gap-3 shadow rounded-xl py-8 2xl:py-10"
   >
+    <!-- Show normal stat card if title and value were provided -->
     <div v-if="title && value">
+      <!-- Stat value -->
       <span
         class="text-[33px] font-medium text-[#2fb7a0] leading-8 2xl:text-4xl"
       >
         {{ value }}
       </span>
+
+      <!-- Stat title -->
       <p
         class="font-bold text-[#2d5893] text-center text-2xl leading-6 max-w-[120px] 2xl:leading-7 2xl:text-[27px] 2xl:max-w-[130px]"
       >
         {{ title }}
       </p>
     </div>
+
+    <!-- Show add icon if title and value were not provided -->
     <svg
       v-else
       width="96"
@@ -33,4 +39,5 @@
 
 <script setup>
 const { title, value } = defineProps(["title", "value"]);
+// SHOULD RECEIVE SELECTED STAT
 </script>

@@ -5,20 +5,29 @@
       @click="toggle"
     >
       <div class="flex flex-col items-start gap-1">
+        <!-- Generated ortesys type -->
         <span class="rounded-lg px-2 py-0.5 bg-[#D2FFDA]">Órtese de Braço</span>
+
+        <!-- User that generated this ortesys -->
         <h3 class="font-bold text-2xl">Silvana Oliveira</h3>
+
+        <!-- Show if more than 1 file was generated for this ortesys -->
         <p class="font-bold text-[#2FB7A0] underline" v-show="filesQty > 1">
           02 ARQUIVOS GERADOS
         </p>
       </div>
+
       <div class="flex gap-4 items-center">
         <div class="flex gap-2">
+          <!-- Download file/s button -->
           <Button
             color="secondary"
             text="Download"
             class="w-[100px]"
             @click.stop
           />
+
+          <!-- Print ortesys button -->
           <Button
             color="primary"
             text="Imprimir"
@@ -26,7 +35,9 @@
             @click.stop
           />
         </div>
+
         <div class="flex items-center gap-2.5">
+          <!-- Ortesys generation date -->
           <div class="flex items-center gap-2">
             <svg
               width="14"
@@ -42,6 +53,8 @@
             </svg>
             <span>13/05/2023</span>
           </div>
+
+          <!-- Ortesys generation time -->
           <div class="flex items-center gap-2">
             <svg
               width="14"
@@ -57,6 +70,8 @@
             </svg>
             <span>19:08h</span>
           </div>
+
+          <!-- Arrow icon -->
           <svg
             :class="{
               'rotate-up': isOpen,
@@ -75,6 +90,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Transition for card content -->
     <transition
       name="expand"
       @before-enter="beforeEnter"
@@ -83,6 +100,7 @@
       @leave="leave"
     >
       <div v-if="isOpen" class="content rounded-b-2xl">
+        <!-- Show all the files/info of the selected generated ortesys -->
         <OrderContentCard />
         <OrderContentCard />
       </div>
@@ -92,6 +110,7 @@
 
 <script setup>
 const { filesQty } = defineProps(["filesQty"]);
+/* SHOULD RECEIVE ALL THE GENERATED ORTESYS HISTORY OF THE USER */
 
 const isOpen = ref(false);
 

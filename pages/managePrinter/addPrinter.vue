@@ -1,6 +1,8 @@
 <template>
   <div class="w-[90%] mx-auto flex flex-col gap-2.5">
+    <!-- Text banner -->
     <TextBanner title="Adicionar impressora" />
+    <!-- Create new printer form -->
     <PrinterConfigForm submitAction="create" />
   </div>
 </template>

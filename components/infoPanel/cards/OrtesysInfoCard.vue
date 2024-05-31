@@ -7,7 +7,9 @@
     >
       <div class="flex justify-center items-center gap-12">
         <div class="flex items-center">
+          <!-- Card title -->
           <h2 class="text-2xl font-extrabold">{{ text }}</h2>
+          <!-- Arrow icon -->
           <svg
             :class="{ rotate: isOpen }"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,14 +26,18 @@
             />
           </svg>
         </div>
+
+        <!-- Show this buttons if the card is type "user" -->
         <div
           v-if="type === 'user'"
           class="grid grid-cols-4 gap-2.5 place-items-center"
         >
+          <!-- Open update user info form button -->
           <NuxtLink to="/infoPanel/updateUser/id" class="w-full h-full">
             <Button text="Cadastro" color="purple" class="w-full h-full" />
           </NuxtLink>
 
+          <!-- Open material modal button -->
           <Button
             text="Material"
             color="secondary"
@@ -39,6 +45,7 @@
             @click.stop="openMaterialModal"
           />
 
+          <!-- Open discount modal button -->
           <Button
             text="Desconto"
             color="secondary"
@@ -46,6 +53,7 @@
             @click.stop="openDiscountModal"
           />
 
+          <!-- Activate/deactivate user button -->
           <div class="w-[100px]">
             <Button
               text="Habilitar / Desabilitar"
@@ -55,6 +63,7 @@
             />
           </div>
 
+          <!-- Show clinic user and sub-users button if no clinic user is selected -->
           <Button
             v-if="clinicUser === ''"
             text="Funções"
@@ -63,6 +72,7 @@
             @click.stop="setClinicUser(text)"
           />
 
+          <!-- Open user role select button -->
           <Button
             text="Clinica"
             color="secondary"
@@ -70,6 +80,7 @@
             @click.stop=""
           />
 
+          <!-- Toggle PDO button -->
           <Button
             text="PDO"
             :color="userPDO ? 'secondary' : 'red'"
@@ -77,15 +88,18 @@
             @click.stop="toggleUserPDO"
           />
 
+          <!-- Remove user button -->
           <Button
-            text="Cancelar"
+            text="Remove"
             color="red"
             class="w-full h-full"
-            @click.stop="setClinicUser('')"
+            @click.stop="openConfirmRemoveModal"
           />
         </div>
       </div>
     </div>
+
+    <!-- Transition for user stats -->
     <transition
       name="expand"
       @before-enter="beforeEnter"
@@ -94,19 +108,27 @@
       @leave="leave"
     >
       <div v-show="isOpen" class="content" key="content">
-        <InfoCard />
+        <!-- User info card -->
+        <InfoCard :type="type" />
       </div>
     </transition>
 
-    <!-- Here the modals used in this component -->
+    <!-- Material modal shown if opened -->
     <MaterialModal
       :openRequest="showMaterialModal"
       :toggleModal="openMaterialModal"
     />
 
+    <!-- Discount modal shown if opened -->
     <DiscountModal
       :openRequest="showDiscountModal"
       :toggleModal="openDiscountModal"
+    />
+
+    <!-- Confirm remove modal shown if opened -->
+    <ConfirmRemoveModal
+      :openRequest="showConfirmRemoveModal"
+      :toggleModal="openConfirmRemoveModal"
     />
   </div>
 </template>
@@ -119,10 +141,13 @@ const { text, type, clinicUser, setClinicUser } = defineProps([
   "setClinicUser",
 ]);
 
+// SHOULD RECEIVE THE STATS FOR THE SELECTED USER AND ORTESYS
+
 const isOpen = ref(false);
 
 const showMaterialModal = ref(false);
 const showDiscountModal = ref(false);
+const showConfirmRemoveModal = ref(false);
 
 const userState = ref(true);
 const userPDO = ref(false);
@@ -133,6 +158,10 @@ const openMaterialModal = () => {
 
 const openDiscountModal = () => {
   showDiscountModal.value = !showDiscountModal.value;
+};
+
+const openConfirmRemoveModal = () => {
+  showConfirmRemoveModal.value = !showConfirmRemoveModal.value;
 };
 
 const toggleUserState = () => {

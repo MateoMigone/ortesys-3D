@@ -8,13 +8,15 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-6 p-12 rounded-2xl relative right-[15%]"
     >
+      <!-- Field input shown depending on the variable type -->
       <div class="flex flex-col gap-1.5 2xl:gap-2 w-full">
         <label
           class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
           >{{
             (type === "Medida" && "Valor mínimo") ||
             (type === "Botao" && "Opção 1") ||
-            (type === "Barra" && "Número de opções")
+            (type === "Barra" && "Número de opções") ||
+            (type === "Computed" && "Equação")
           }}</label
         >
         <input
@@ -23,8 +25,9 @@
         />
       </div>
 
+      <!-- Field input shown for variable types "Medida" or "Botao" -->
       <div
-        v-show="type !== 'Barra'"
+        v-show="type !== 'Barra' && type !== 'Computed'"
         class="flex flex-col gap-1.5 2xl:gap-2 w-full"
       >
         <label
@@ -49,6 +52,7 @@ const { openRequest, toggleModal, type } = defineProps([
   "toggleModal",
   "type",
 ]);
+// SHOULD RECEIVE UPDATE FUNCTIONS IF NECCESSARY
 
 const closeModal = () => {
   toggleModal();

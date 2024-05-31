@@ -3,47 +3,50 @@
     <div
       class="flex flex-col justify-center px-6 py-12 m-[100px] 2xl:m-[140px]"
     >
+      <!-- Login title -->
       <div class="mx-auto w-full max-w-sm">
         <h2 class="text-center text-2xl 2xl:text-3xl font-bold">Login</h2>
       </div>
 
       <div class="mt-5 2xl:mt-8 mx-auto w-full max-w-sm">
+        <!-- Login form -->
         <form class="flex flex-col items-center" @submit.prevent="handleSubmit">
+          <!-- Login input email -->
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
             <input
-              id="email"
-              name="email"
               type="email"
               autocomplete="email"
               required
               placeholder="Seu email..."
-              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 bg-[#5C6AC4] bg-opacity-10 placeholder:text-blue-950 text-sm"
               v-model="email"
             />
           </div>
-
+          <!-- Login input password -->
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
             <input
-              id="password"
-              name="password"
               type="password"
               autocomplete="current-password"
               required
               placeholder="Sua senha..."
-              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm"
+              class="w-full rounded-md px-3 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 bg-[#5C6AC4] bg-opacity-10 placeholder:text-blue-950 text-sm"
               v-model="password"
             />
           </div>
-
+          <!-- Login submit button -->
           <div class="w-2/3 2xl:w-3/4 mt-2 2xl:mt-3">
-            <Button type="submit" text="Continuar" class="w-full" />
+            <Button text="Continuar" class="w-full" />
           </div>
         </form>
-
-        <p class="underline mt-5 2xl:mt-8 text-center text-sm 2xl:text-base">
+        <!-- Forgot my password link -->
+        <p
+          class="underline mt-5 2xl:mt-8 text-[#2D5893] text-center text-sm 2xl:text-base"
+        >
           <NuxtLink to="../login/resetPassword">Esqueci minha senha</NuxtLink>
         </p>
       </div>
+
+      <!-- SHOULD ADD SOME ERROR OUTPUT FOR USERS IN CASE EMAIL OR PASSWORD ARE INCORRECT -->
     </div>
   </div>
 </template>
@@ -61,8 +64,7 @@ const authStore = useAuthStore();
 const router = useRouter();
 
 const handleSubmit = async () => {
-  /* await authStore.login(email.value, password.value);
-  router.push("/"); */
+  /* Post the authorization login values */
   const { data, error } = await useFetch("/api/Conta/OAuth", {
     method: "POST",
     headers: {
@@ -74,8 +76,10 @@ const handleSubmit = async () => {
     }),
   });
 
+  /* Let authStore authenticate user*/
   authStore.login(error.value);
 
+  /* Allow the login if the user is authenticated */
   authStore.isAuthenticated && router.push("/");
 };
 </script>
@@ -86,13 +90,5 @@ const handleSubmit = async () => {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-input {
-  background-color: rgba(92, 106, 196, 0.1);
-}
-
-p {
-  color: rgba(45, 88, 147, 1);
 }
 </style>

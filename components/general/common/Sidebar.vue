@@ -1,5 +1,6 @@
 <template>
   <div class="w-full p-8 flex flex-col">
+    <!-- Ortesys Gen Icon -->
     <NuxtLink to="/" class="w-[170px] self-center">
       <img
         src="~/assets/imgs/logo.png"
@@ -7,16 +8,22 @@
         class="mx-auto h-[30px] w-[170px] self-items-center 2xl:mt-5"
       />
     </NuxtLink>
+
     <div
       class="flex flex-col items-center gap-1 p-2 mt-5 2xl:gap-3 2xl:p-4 2xl:mt-7"
     >
+      <!-- Profile image -->
       <img
         class="h-[52px] w-[52px] rounded-full border-2 border-[#2d5893] p-1"
         src="~/assets/imgs/user-avatar.png"
         alt="Profile image"
       />
+
       <div class="flex flex-col items-center gap-1">
+        <!-- Profile Name -->
         <h4 class="font-semibold text-[#2d5893]">Dr Paulo Tavares</h4>
+
+        <!-- Edit profile button -->
         <NuxtLink to="/myAccount"
           ><span
             class="px-2.5 py-[1px] border-[#2d5893] border-[1px] text-[#2d5893] rounded-full text-xs text-bold"
@@ -25,8 +32,11 @@
         >
       </div>
     </div>
+
+    <!-- Sidebar menu -->
     <div>
       <ul class="p-4 flex flex-col gap-3 2xl:gap-3.5">
+        <!-- HOME PAGE -->
         <li>
           <router-link
             to="/"
@@ -59,6 +69,7 @@
           >
         </li>
 
+        <!-- NEW ORTESYS -->
         <li>
           <router-link
             to="/newOrtesys"
@@ -81,6 +92,7 @@
           >
         </li>
 
+        <!-- MANAGE -->
         <li>
           <router-link
             to="/manage"
@@ -103,6 +115,7 @@
           >
         </li>
 
+        <!-- SUPPORT -->
         <li>
           <router-link
             to="/support"
@@ -125,6 +138,7 @@
           >
         </li>
 
+        <!-- MY ACCOUNT -->
         <li>
           <router-link
             to="/myAccount"
@@ -150,6 +164,7 @@
           >
         </li>
 
+        <!-- MANAGE PRINTER -->
         <li>
           <router-link
             to="/managePrinter"
@@ -183,6 +198,7 @@
           >
         </li>
 
+        <!-- INFO PANEL -->
         <li>
           <router-link
             to="/infoPanel"
@@ -205,6 +221,7 @@
           >
         </li>
 
+        <!-- MANAGE ORTESYS -->
         <li>
           <router-link
             to="/manageOrtesys"
@@ -235,6 +252,8 @@
           >
         </li>
       </ul>
+
+      <!-- LOGOUT BUTTON -->
       <div class="flex justify-center mt-4 2xl:mt-[100px]">
         <NuxtLink
           @click="handleLogout"

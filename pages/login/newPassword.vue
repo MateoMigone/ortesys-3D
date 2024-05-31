@@ -3,27 +3,37 @@
     <div
       class="flex flex-col gap-2 mx-auto w-full max-w-[560px] 2xl:max-w-[340px]"
     >
+      <!-- Ortesys gen icon -->
       <img
         src="../../assets/imgs/logo.png"
         alt="Ortesys Gen"
         class="mx-auto h-[30px] w-[170px]"
       />
+
+      <!-- Title -->
       <h3
         class="text-center blue-text font-bold mt-3 text-[20px] 2xl:text-[20px]"
       >
         Crie sua senha
       </h3>
+
+      <!-- Info paragraph -->
       <p
         class="text-center font-bold leading-6 mt-2 2xl:mt-3 text-[20px] 2xl:text-[20px] w-[340px] mx-auto"
       >
         Falta pouco! Crie uma senha para acessar seu painel.
       </p>
+
+      <!-- Password requirements title -->
       <p
         class="text-center blue-text font-bold mb-3 mt-2 2xl:mt-3 text-[20px] 2xl:text-[20px]"
       >
         Sua senha deve ter:
       </p>
+
+      <!-- Password requirements -->
       <ul class="grid grid-cols-2 2xl:grid-cols-1 mx-auto 2xl:mx-0">
+        <!-- Characters quantity -->
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +48,8 @@
 
           6 ou mais caracteres
         </li>
+
+        <!-- Special character -->
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,6 +63,8 @@
           </svg>
           um caracter especial (@*!%;:.)
         </li>
+
+        <!-- Uppercase letter -->
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,6 +78,8 @@
           </svg>
           uma letra maiúscula
         </li>
+
+        <!-- Lowercase letter -->
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +93,8 @@
           </svg>
           uma letra minúscula
         </li>
+
+        <!-- Number -->
         <li class="mb-1 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,6 +108,8 @@
           </svg>
           um número
         </li>
+
+        <!-- Non sequencial numbers -->
         <li class="mb-2 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,18 +124,25 @@
           números não sequenciais
         </li>
       </ul>
+
       <div class="flex items-center gap-3 mt-5 2xl:mt-0">
+        <!-- Caution icon -->
         <img
           src="../../assets/imgs/warning-icon.png"
           alt="Warning icon"
           class="w-[30px] h-[30px] 2xl:w-[42px] 2xl:h-[42px]"
         />
+
+        <!-- Caution message -->
         <p class="my-1">
           Evite senhas utilizadas em outros sites, ou que sejam fáceis de
           descobrir
         </p>
       </div>
+
+      <!-- Create new password form -->
       <form action="#" class="flex 2xl:flex-col items-center gap-2 mt-2">
+        <!-- New password input -->
         <div class="w-[260px]">
           <input
             v-model="pass"
@@ -128,6 +155,8 @@
             class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm leading-6"
           />
         </div>
+
+        <!-- Repeat new password input -->
         <div class="w-[260px]">
           <input
             id="newPassRepeat"
@@ -138,6 +167,8 @@
             class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm leading-6"
           />
         </div>
+
+        <!-- Submit form button -->
         <Button type="submit" text="Criar senha" class="w-[260px]" />
       </form>
     </div>
@@ -148,6 +179,7 @@
 definePageMeta({
   layout: "loginlayout",
 });
+// SHOULD RECEIVE SELECTED USER
 
 const pass = ref("");
 const charQty = ref(false);

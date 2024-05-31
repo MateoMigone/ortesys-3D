@@ -8,12 +8,15 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-6 py-12 rounded-2xl relative right-[15%]"
     >
+      <!-- Field variable option displayed -->
       <div
         class="w-[250px] rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5 cursor-pointer"
         @click="selectMeasure"
       >
         <span class="text-sm">Preencha com as medidas</span>
       </div>
+
+      <!-- Button variable option displayed -->
       <div
         class="flex gap-1 rounded-full border-[2px] border-[#2D5893] bg-[#FCFCFF] px-1 py-1 2xl:py-1.5 cursor-pointer"
         @click="selectButton"
@@ -23,6 +26,8 @@
         >
         <span class="text-sm text-[#C45C5C] rounded-full p-1.5">OFF</span>
       </div>
+
+      <!-- Bar variable option displayed -->
       <div class="flex flex-col gap-4 cursor-pointer" @click="selectBar">
         <div class="relative">
           <div

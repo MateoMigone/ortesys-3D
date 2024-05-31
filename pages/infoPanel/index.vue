@@ -1,7 +1,10 @@
 <template>
   <div class="w-[90%] mx-auto flex flex-col gap-5">
+    <!-- SHOULD ADD MORE FILTER BUTTONS -->
+    <!-- Date filter button -->
     <DateFilterButton />
     <div class="grid grid-cols-3 gap-6 place-items-center 2xl:grid-cols-4">
+      <!-- Show stat cards (maybe with v-for) -->
       <NuxtLink to="/infoPanel/ordersHistory" class="w-full">
         <StatCard
           title="Órteses geradas"
@@ -45,4 +48,6 @@ definePageMeta({
   layout: "main-layout",
   middleware: "auth",
 });
+
+// SHOULD GET THE USER/TOTAL STATS FROM THE API
 </script>

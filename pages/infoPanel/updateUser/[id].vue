@@ -4,11 +4,14 @@
       <div
         class="flex items-center justify-center bg-[#ffff] w-[400px] h-[100px] rounded-2xl"
       >
+        <!-- Text banner -->
         <NuxtLink to="/infoPanel/usersHistory">
           <Button text="Voltar" color="red" class="w-[214px] h-[40px]" />
         </NuxtLink>
       </div>
+      <!-- Update selected user form -->
       <UserForm submitAction="update" />
+      <!-- Footer -->
       <Footer class="w-full" />
     </div>
   </div>
@@ -19,6 +22,7 @@ definePageMeta({
   layout: "main-layout",
   middleware: "auth",
 });
+// SHOULD RECEIVE SELECTED USER (BY URL PARAM)
 </script>
 
 <style lang="scss" scoped></style>

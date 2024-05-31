@@ -3,6 +3,7 @@
     class="flex flex-col items-center justify-center gap-12 rounded-2xl bg-[#ffff] shadow-xl py-12 w-[700px] 2xl:w-[800px]"
     @submit.prevent="handleSubmit"
   >
+    <!-- Form title -->
     <h3
       class="border-[2px] rounded-full py-1.5 px-7 text-xl 2xl:text-2xl"
       :class="
@@ -13,7 +14,9 @@
     >
       {{ title }} usuário
     </h3>
+
     <div class="flex flex-col w-[400px] gap-5 2xl:w-[450px] 2xl:gap-6">
+      <!-- Name -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="complete-name"
@@ -28,6 +31,7 @@
         />
       </div>
 
+      <!-- Username -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="username"
@@ -42,6 +46,7 @@
         />
       </div>
 
+      <!-- Birth date -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="birth-date"
@@ -56,6 +61,7 @@
         />
       </div>
 
+      <!-- Gender -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label for="gender" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Genero</label
@@ -88,6 +94,7 @@
       </div> -->
 
       <div class="flex gap-2 2xl:gap-2.5">
+        <!-- Proffesion -->
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
             for="profession"
@@ -102,6 +109,7 @@
           />
         </div>
 
+        <!-- Specialty -->
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/2">
           <label
             for="specialty"
@@ -117,6 +125,7 @@
         </div>
       </div>
 
+      <!-- Email -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label for="email" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >E-mail</label
@@ -128,6 +137,8 @@
           v-model="email"
         />
       </div>
+
+      <!-- Phone number -->
       <div class="flex gap-2 2xl:gap-2.5">
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-1/4">
           <label for="ddi" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
@@ -140,7 +151,6 @@
             v-model="ddi"
           />
         </div>
-
         <div class="flex flex-col gap-2 2xl:gap-2.5 w-3/4">
           <label
             for="phone-number"
@@ -155,7 +165,9 @@
           />
         </div>
       </div>
+
       <div class="flex gap-2 2xl:gap-2.5">
+        <!-- State (UF) -->
         <div class="flex flex-col gap-2 2xl:gap-2.5 relative w-1/2">
           <label for="uf" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
             >UF</label
@@ -171,6 +183,7 @@
           </select>
         </div>
 
+        <!-- City -->
         <div class="flex flex-col gap-2 2xl:gap-2.5 relative w-1/2">
           <label for="city" class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
             >Cidade</label
@@ -244,6 +257,7 @@
         </select>
       </div> -->
 
+      <!-- Password -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="password"
@@ -258,6 +272,7 @@
         />
       </div>
 
+      <!-- Repeat password -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label
           for="password-repeat"
@@ -273,6 +288,7 @@
       </div>
 
       <hr class="border-[#CDCEE4] mt-3" />
+      <!-- Marketing notifications -->
       <div class="flex gap-2 2xl:gap-2.5">
         <input
           id="marketing-notifications"
@@ -287,6 +303,8 @@
         >
       </div>
       <hr class="border-[#CDCEE4] mb-3" />
+
+      <!-- Submit form button -->
       <Button text="Concluir" color="purple" />
     </div>
   </form>
@@ -294,6 +312,8 @@
 
 <script setup>
 const { submitAction } = defineProps(["submitAction"]);
+// SHOULD RECEIVE SELECTED USER IF UPDATING
+
 const title = ref("");
 title.value = submitAction === "create" ? "Criando novo" : "Atualizando";
 

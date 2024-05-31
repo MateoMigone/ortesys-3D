@@ -8,18 +8,23 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
+      <!-- Access control option button -->
       <Button
         text="Apenas eu"
         color="purple"
         class="w-[250px] h-[40px]"
         @click.prevent="selectOption"
       />
+
+      <!-- Access control option button -->
       <Button
         text="Eu e colaboradores"
         color="green"
         class="w-[250px] h-[40px]"
         @click.prevent="selectOption"
       />
+
+      <!-- Access control option button -->
       <Button
         text="Todos"
         color="yellow"
@@ -41,7 +46,7 @@ const closeModal = () => {
 };
 
 const selectOption = () => {
-  // set access control value in the component that called this modal
+  // SHOULD SET ACCESS CONTROL VALUE IN THE COMPONENT THAT CALLED THIS MODAL
   closeModal();
 };
 </script>

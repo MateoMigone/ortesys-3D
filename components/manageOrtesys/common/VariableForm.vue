@@ -3,22 +3,34 @@
     <!-- This is the form displayed when "Medidas" is the variable type selected -->
     <form
       class="flex flex-col justify-center gap-3 w-1/2 h-full bg-white px-12 py-6 rounded-xl"
-      v-show="variableType === 'Medida'"
+      v-show="variableType === 'Medida' || variableType === 'Computed'"
     >
       <div class="flex flex-col gap-1.5 2xl:gap-2">
+        <!-- Variable title input -->
         <input
           type="text"
           placeholder="Título da variável"
           class="font-bold text-lg text-[#2D5893] placeholder:text-light px-2"
         />
 
+        <!-- Show field variable preview if variabale type "Medida" -->
         <div
+          v-show="variableType === 'Medida'"
           class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5 cursor-pointer"
           @click="openVariablesModal"
         >
           <span class="text-sm">Preencha com as medidas</span>
         </div>
 
+        <!-- Show computed variable preview if variabale type "Computed" -->
+        <div
+          v-show="variableType === 'Computed'"
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#5CC46D] bg-opacity-10 px-3.5 py-1 2xl:py-1.5 h-[35px]"
+        >
+          <span class="text-sm"></span>
+        </div>
+
+        <!-- Variable subtitle input  -->
         <input
           type="text"
           placeholder="Subítulo da variável"
@@ -27,18 +39,21 @@
       </div>
 
       <div class="w-full flex flex-col gap-3">
+        <!-- Open variables config modal button -->
         <Button
-          text="Filtros"
+          :text="variableType === 'Medida' ? 'Filtros' : 'Calculo do campo'"
           color="red"
           class="text-[15px]"
           @click.prevent="openVariablesConfigModal"
         />
+        <!-- Open variables actions modal button -->
         <Button
           text="Sustituir valor"
           color="purple"
           class="text-[15px]"
           @click.prevent="openVariablesActionsModal"
         />
+        <!-- Save variable changes button -->
         <Button
           text="Salvar"
           color="green"
@@ -54,12 +69,14 @@
       v-show="variableType === 'Botao'"
     >
       <div class="flex flex-col gap-1.5 2xl:gap-2">
+        <!-- Variable title input -->
         <input
           type="text"
           placeholder="Título da variável"
           class="font-bold text-lg text-[#2D5893] placeholder:text-light px-2"
         />
 
+        <!-- Button variable preview -->
         <div
           class="flex gap-1 rounded-full border-[2px] border-[#2D5893] bg-[#FCFCFF] px-1 py-1 2xl:py-1.5 cursor-pointer w-[90px]"
           @click="openVariablesModal"
@@ -70,6 +87,7 @@
           <span class="text-sm text-[#C45C5C] rounded-full p-1.5">OFF</span>
         </div>
 
+        <!-- Variable subtitle input -->
         <input
           type="text"
           placeholder="Subítulo da variável"
@@ -78,18 +96,21 @@
       </div>
 
       <div class="w-full flex flex-col gap-3">
+        <!-- Open variable config modal button -->
         <Button
           text="Nomes das opções"
           color="red"
           class="text-[15px]"
           @click.prevent="openVariablesConfigModal"
         />
+        <!-- Open variables actions modal button -->
         <Button
           text="Ação da variável"
           color="purple"
           class="text-[15px]"
           @click.prevent="openVariablesActionsModal"
         />
+        <!-- Save variable changes button -->
         <Button
           text="Salvar"
           color="green"
@@ -106,12 +127,14 @@
     >
       <div class="flex flex-col gap-6">
         <div class="flex flex-col">
+          <!-- Variable subtitle input -->
           <input
             type="text"
             placeholder="Título da variável"
             class="font-bold text-lg text-[#2D5893] placeholder:text-light px-2 text-center"
           />
 
+          <!-- Variable subtitle input -->
           <input
             type="text"
             placeholder="Subítulo da variável"
@@ -119,6 +142,7 @@
           />
         </div>
 
+        <!-- Bar variable preview -->
         <div
           class="flex flex-col gap-4 cursor-pointer"
           @click="openVariablesModal"
@@ -141,6 +165,7 @@
         </div>
       </div>
 
+      <!-- Variable description input -->
       <input
         type="text"
         placeholder="Subítulo da variável"
@@ -148,18 +173,21 @@
       />
 
       <div class="w-full flex flex-col gap-3">
+        <!-- Open variables config modal button -->
         <Button
           text="Número de opções"
           color="red"
           class="text-[15px]"
           @click.prevent="openVariablesConfigModal"
         />
+        <!-- Open variables actions modal button -->
         <Button
           text="Ação da variável"
           color="purple"
           class="text-[15px]"
           @click.prevent="openVariablesActionsModal"
         />
+        <!-- Save variable changes button -->
         <Button
           text="Salvar"
           color="green"
@@ -173,19 +201,21 @@
       <ImagePlaceholder />
     </div>
 
-    <!-- Here the modals beign used in this component -->
+    <!-- Variables modal shown if opened -->
     <VariablesModal
       :openRequest="showVariablesModal"
       :toggleModal="openVariablesModal"
       :setVariableType="setVariableType"
     />
 
+    <!-- Variables config modal shown if opened -->
     <VariablesConfigModal
       :openRequest="showVariablesConfigModal"
       :toggleModal="openVariablesConfigModal"
       :type="variableType"
     />
 
+    <!-- Variables actions modal shown if opened -->
     <VariablesActionsModal
       :openRequest="showVariablesActionsModal"
       :toggleModal="openVariablesActionsModal"
@@ -195,12 +225,16 @@
 </template>
 
 <script setup>
-const { setShowVariableForm } = defineProps(["setShowVariableForm"]);
+const { setShowVariableForm, variableType, setVariableType } = defineProps([
+  "setShowVariableForm",
+  "variableType",
+  "setVariableType",
+]);
+// SHOULD RECEIVE SELECTED ORTESYS AND VARIABLE IF UPDATING
 
 const showVariablesModal = ref(false);
 const showVariablesConfigModal = ref(false);
 const showVariablesActionsModal = ref(false);
-const variableType = ref("Medida");
 
 const openVariablesModal = () => {
   showVariablesModal.value = !showVariablesModal.value;
@@ -212,10 +246,6 @@ const openVariablesConfigModal = () => {
 
 const openVariablesActionsModal = () => {
   showVariablesActionsModal.value = !showVariablesActionsModal.value;
-};
-
-const setVariableType = (newType) => {
-  variableType.value = newType;
 };
 
 const handleSubmit = () => {

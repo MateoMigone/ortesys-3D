@@ -8,14 +8,17 @@
       @click.stop
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
+      <!-- Discount title -->
       <label class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
         >Desconto</label
       >
+      <!-- Discount input -->
       <input
         type="text"
         class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1 2xl:py-1.5 text-center"
         placeholder="Digite o desconto:"
       />
+      <!-- Apply changes button -->
       <Button
         text="Aplicar"
         color="green"
@@ -31,6 +34,7 @@ const { openRequest, toggleModal } = defineProps([
   "openRequest",
   "toggleModal",
 ]);
+// SHOULD RECEIVE SELECTED USER
 
 const closeModal = () => {
   toggleModal();

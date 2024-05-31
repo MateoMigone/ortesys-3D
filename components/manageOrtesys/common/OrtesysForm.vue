@@ -3,6 +3,7 @@
     <form
       class="flex flex-col items-center gap-3 w-1/2 bg-white px-12 py-6 rounded-xl overflow-auto"
     >
+      <!-- Ortesys title input -->
       <div class="flex flex-col gap-1.5 2xl:gap-2 w-full">
         <label class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Nome da órteses</label
@@ -15,6 +16,7 @@
         />
       </div>
 
+      <!-- Ortesys description input -->
       <div class="flex flex-col gap-2 2xl:gap-2.5 w-full">
         <label class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
           >Descrição da órteses</label
@@ -27,7 +29,7 @@
         />
       </div>
 
-      <!-- If we are updating an existing ortesys this will be rendered -->
+      <!-- If we are updating an existing ortesys all it´s variables will be rendered -->
       <component
         v-if="ortesysToUpdate"
         v-for="(item, index) in ortesysToUpdate.variables"
@@ -36,23 +38,32 @@
         :variable="item"
         class="w-full"
         edit=" {{ true }}"
+        :setSelectedVariableType="setSelectedVariableType"
       />
 
       <div class="w-full flex flex-col gap-3">
+        <!-- Open add variable form button -->
         <Button
           text="Adicionar variável"
           color="purple"
           class="text-[15px]"
           @click.prevent="setShowVariableForm(true)"
         />
-
+        <!-- Open add computed variable form button -->
+        <Button
+          text="Adicionar campo calculado"
+          color="purple"
+          class="text-[15px]"
+          @click.prevent="openNewComputedVariable"
+        />
+        <!-- Open manage ortesys files button -->
         <Button
           text="Arquivos"
           color="yellow"
           class="text-[15px]"
           @click.prevent="setShowAddFiles(true)"
         />
-
+        <!-- Save ortesys changes button -->
         <Button
           text="Salvar configurações"
           color="green"
@@ -61,6 +72,8 @@
         />
       </div>
     </form>
+
+    <!-- Add new ortesys image placeholder button -->
     <div class="w-1/2 flex flex-col justify-center items-center gap-5 h-[55vh]">
       <ImagePlaceholder />
       <!-- <img
@@ -73,17 +86,30 @@
 </template>
 
 <script setup>
-import OutputBarVariable from "~/components/newOrtesys/common/OutputBarVariable.vue";
-import OutputButtonVariable from "~/components/newOrtesys/common/OutputButtonVariable.vue";
-import OutputFieldVariable from "~/components/newOrtesys/common/OutputFieldVariable.vue";
+import BarVariable from "~/components/newOrtesys/common/BarVariable.vue";
+import ButtonVariable from "~/components/newOrtesys/common/ButtonVariable.vue";
+import ComputedVariable from "~/components/newOrtesys/common/ComputedVariable.vue";
+import FieldVariable from "~/components/newOrtesys/common/FieldVariable.vue";
 
-const { setShowVariableForm, setShowAddFiles, ortesysToUpdate } = defineProps([
+const {
+  setShowVariableForm,
+  setShowAddFiles,
+  ortesysToUpdate,
+  setSelectedVariableType,
+} = defineProps([
   "setShowVariableForm",
   "setShowAddFiles",
   "ortesysToUpdate",
+  "setSelectedVariableType",
 ]);
+// SHOULD RECEIVE SELECTED ORTESYS IF UPDATING
 
 const router = useRouter();
+
+const openNewComputedVariable = () => {
+  setSelectedVariableType("Computed");
+  setShowVariableForm(true);
+};
 
 const handleSubmit = () => {
   // If ortesys prop is undefined ---> post new ortesys(api)
@@ -94,11 +120,13 @@ const handleSubmit = () => {
 const getComponent = (type) => {
   switch (type) {
     case "Medida":
-      return OutputFieldVariable;
+      return FieldVariable;
     case "Botao":
-      return OutputButtonVariable;
+      return ButtonVariable;
     case "Barra":
-      return OutputBarVariable;
+      return BarVariable;
+    case "Computed":
+      return ComputedVariable;
     default:
       return null;
   }

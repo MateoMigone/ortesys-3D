@@ -9,6 +9,7 @@
       class="bg-white w-1/3 flex flex-col justify-center items-center gap-5 py-12 rounded-2xl relative right-[15%]"
     >
       <div class="flex flex-col gap-2 items-end">
+        <!-- Color input -->
         <div class="flex flex-col gap-2 w-[250px]">
           <label
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
@@ -17,6 +18,7 @@
           <input type="color" class="w-full bg-white h-[40px]" />
         </div>
 
+        <!-- Material name input -->
         <div class="flex flex-col gap-2 w-[250px]">
           <label
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
@@ -28,6 +30,7 @@
           />
         </div>
 
+        <!-- Cost input -->
         <div class="flex flex-col gap-2 w-[250px]">
           <label
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
@@ -39,6 +42,7 @@
           />
         </div>
 
+        <!-- Price input -->
         <div class="flex flex-col gap-2 w-[250px]">
           <label
             class="font-bold text-[#2D5893] text-lg 2xl:text-xl text-center"
@@ -50,6 +54,7 @@
           />
         </div>
 
+        <!-- Create new material button -->
         <Button
           text="Aplicar"
           color="green"
