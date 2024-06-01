@@ -29,6 +29,24 @@
         />
       </div>
 
+      <!-- Ortesys category name input -->
+      <div class="flex flex-col gap-1.5 2xl:gap-2 w-full">
+        <label class="font-bold text-[#2D5893] text-lg 2xl:text-xl"
+          >Categoria</label
+        >
+        <!-- If we are updating an existing ortesys it´s category will be shown for editing -->
+        <select
+          class="rounded-md border-[1px] border-[#CDCEE4] bg-[#FCFCFF] px-3.5 py-1.5 2xl:py-2"
+        >
+          <option selected disabled hidden>Selecione o arquivo</option>
+          <!-- Show all categories -->
+          <option>Cabeça</option>
+          <option>Braço</option>
+          <option>Tronco</option>
+          <option>Perna</option>
+        </select>
+      </div>
+
       <!-- If we are updating an existing ortesys all it´s variables will be rendered -->
       <component
         v-if="ortesysToUpdate"
@@ -56,6 +74,13 @@
           class="text-[15px]"
           @click.prevent="openNewComputedVariable"
         />
+        <!-- Open tutorial link modal button -->
+        <Button
+          text="Tutorial"
+          color="purple"
+          class="text-[15px]"
+          @click.prevent="openTutorialLinkModal"
+        />
         <!-- Open manage ortesys files button -->
         <Button
           text="Arquivos"
@@ -82,6 +107,11 @@
         alt="Ortesys Arm"
       /> -->
     </div>
+    <TutorialLinkModal
+      :openRequest="showTutorialLinkModal"
+      :toggleModal="openTutorialLinkModal"
+      :setTutorialLink="setTutorialLink"
+    />
   </div>
 </template>
 
@@ -105,6 +135,18 @@ const {
 // SHOULD RECEIVE SELECTED ORTESYS IF UPDATING
 
 const router = useRouter();
+
+const tutorialLink = ref("");
+
+const showTutorialLinkModal = ref(false);
+
+const setTutorialLink = (link) => {
+  tutorialLink.value = link;
+};
+
+const openTutorialLinkModal = () => {
+  showTutorialLinkModal.value = !showTutorialLinkModal.value;
+};
 
 const openNewComputedVariable = () => {
   setSelectedVariableType("Computed");
@@ -132,5 +174,3 @@ const getComponent = (type) => {
   }
 };
 </script>
-
-<style scoped></style>

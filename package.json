@@ -19,6 +19,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "ufo": "^1.5.3",
     "vue": "^3.4.19",
+    "vue-next-select": "^2.10.5",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {

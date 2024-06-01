@@ -10,5 +10,5 @@ export default defineNuxtConfig({
   runtimeConfig: {
     myProxyUrl: "https://ortesys.pro/api/v1",
   },
-  plugins: ["~/plugins/auth-persistance.js"],
+  plugins: ["~/plugins/auth-persistance.js", "~/plugins/vue-next-select.js"],
 });

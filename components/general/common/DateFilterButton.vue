@@ -2,17 +2,7 @@
   <!-- REDESIGN DATE FILTER BUTTON -->
   <div class="relative flex justify-center items-center w-[220px]">
     <!-- Select filter option -->
-    <select
-      name="dateFilter"
-      id="dateFilter"
-      class="appearance-none w-[220px] text-center text-sm font-bold text-[#2d5893] py-2.5 rounded-2xl cursor-pointer"
-    >
-      <option value="default" disabled selected hidden>Seleccione</option>
-      <option value="thisMonth">Esse mês</option>
-      <option value="thisYear">Esse ano</option>
-      <option value="total">Total</option>
-    </select>
-
+    <VueNextSelect :options="options" v-model="selected" />
     <!-- Left icon -->
     <div class="absolute left-5">
       <svg
@@ -43,70 +33,55 @@
         />
       </svg>
     </div>
-  </div>
-  <!-- <div class="relative inline-block text-left">
-    <div>
-      <button
-        type="button"
-        class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-        id="menu-button"
-        aria-expanded="true"
-        aria-haspopup="true"
-        @click="toggle"
-      >
-        Options
-        <svg
-          class="-mr-1 h-5 w-5 text-gray-400"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <div
-      v-show="isOpen"
-      class="absolute right-0 mt-2 w-56 rounded-md bg-white shadow-lg"
-      role="menu"
-      aria-orientation="vertical"
+    <!-- <select
+      name="dateFilter"
+      id="dateFilter"
+      class="appearance-none w-[220px] text-center text-sm font-bold text-[#2d5893] py-2.5 rounded-2xl cursor-pointer"
     >
-      <div class="py-1" role="none">
-        <a
-          href="#"
-          class="text-gray-700 block px-4 py-2 text-sm z-11"
-          role="menuitem"
-          id="menu-item-0"
-          >Account settings</a
-        >
-        <a
-          href="#"
-          class="text-gray-700 block px-4 py-2 text-sm"
-          role="menuitem"
-          id="menu-item-1"
-          >Support</a
-        >
-        <a
-          href="#"
-          class="text-gray-700 block px-4 py-2 text-sm"
-          role="menuitem"
-          id="menu-item-2"
-          >License</a
-        >
-      </div>
-    </div>
-  </div> -->
+      <option value="default" disabled selected hidden>Seleccione</option>
+      <option value="thisMonth" class="text-[#5C6AC4] text-lg text-left">
+        Esse mês
+      </option>
+      <option value="thisYear">Esse ano</option>
+      <option value="total">Total</option>
+    </select> -->
+  </div>
 </template>
 
 <script setup>
+import VueNextSelect from "vue-next-select";
+
+const options = ref(["Option 1", "Option 2", "Option 3"]);
+const selected = ref(null);
 /* const isOpen = ref(false);
 
 const toggle = () => {
   isOpen.value = !isOpen.value;
 }; */
 </script>
+
+<style>
+/* Custom styles for vue-next-select */
+.vue-select {
+  border: none;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.vue-input input {
+  font-size: 14px;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  display: none;
+}
+
+.vue-dropdown {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vue-dropdown-item {
+}
+</style>
