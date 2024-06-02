@@ -63,7 +63,7 @@
 
         <BarVariable
           :variable="{
-            title: 'Nível de regidez',
+            title: 'Nível de rigidez',
             subtitle: 'Deve estar entre 01 e 04',
             qty: 4,
           }"
@@ -161,7 +161,7 @@
       <!-- Show main bar variable  -->
       <BarVariable
         :variable="{
-          title: 'Nível de regidez',
+          title: 'Nível de rigidez',
           subtitle: 'Deve estar entre 01 e 03',
           qty: 3,
         }"
@@ -187,9 +187,6 @@
 </template>
 
 <script setup>
-import SelectOrtesysVersion from "./SelectOrtesysVersion.vue";
-
-const { setSelectedVersion } = defineProps(["setSelectedVersion"]);
 // SHOULD RECEIVE THE SELECTED ORTESYS (AT LEAST VARIABLES AN IMAGE)
 
 const router = useRouter();
@@ -197,14 +194,12 @@ const showRefImg = ref(false);
 
 const cancelOrtesysGeneration = () => {
   // ADD INPUTS RESET
-  SelectOrtesysVersion.value = "";
   router.push("/newOrtesys");
 };
 
 const generateOrtesys = () => {
   // ADD INPUT POST (GENERATE ORTESYS)
   // ADD INPUTS RESET
-  SelectOrtesysVersion.value = "";
   router.push("/manage");
 };
 

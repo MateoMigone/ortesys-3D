@@ -12,8 +12,8 @@
         <h3 class="font-bold text-2xl">Silvana Oliveira</h3>
 
         <!-- Show if more than 1 file was generated for this ortesys -->
-        <p class="font-bold text-[#2FB7A0] underline" v-show="filesQty > 1">
-          02 ARQUIVOS GERADOS
+        <p class="font-bold text-[#2FB7A0] underline">
+          {{ "ARQUIVOS GERADOS: " + filesQty }}
         </p>
       </div>
 
@@ -101,8 +101,6 @@
     >
       <div v-if="isOpen" class="content rounded-b-2xl">
         <!-- Show all the files/info of the selected generated ortesys -->
-        <OrderContentCard />
-        <OrderContentCard />
         <OrderContentCard />
       </div>
     </transition>

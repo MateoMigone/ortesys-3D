@@ -19,14 +19,14 @@
         <p
           class="text-center font-semibold text-gray-800 mb-5 text-lg 2xl:text-xl"
         >
-          Digite seu CPF para criar sua senha
+          Digite seu email para criar sua senha
         </p>
         <div class="mt-2">
           <input
             type="text"
-            autocomplete="cpf"
+            autocomplete="email"
             required
-            placeholder="CPF"
+            placeholder="Digite seu email"
             class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 bg-[#5C6AC4] bg-opacity-10 placeholder:text-blue-950 text-sm 2xl:text-base"
           />
         </div>

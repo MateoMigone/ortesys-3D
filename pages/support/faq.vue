@@ -15,15 +15,14 @@
             <!-- Open add new tutorial button -->
             <!-- Shown only if user "Admin" or "Gerente" -->
             <Button
-              text="Adicionar tutorial"
+              text="Adicionar pergunta frequente"
               color="green"
-              class="w-[200px]"
-              @click="openNewTutorialModal"
+              class="w-[250px]"
+              @click="openNewFaqModal"
             />
           </div>
 
-          <!-- Show the tutorial cards for all tutorials -->
-          <!-- Apply filters -->
+          <!-- Show all the faq -->
           <TutorialCard text="Órteses de Polegar" />
           <TutorialCard text="Órteses de Braço" />
           <TutorialCard text="Órteses de Tornozelo" />
@@ -32,9 +31,9 @@
       </div>
 
       <!-- New tutorial modal shown if opened  -->
-      <NewTutorialModal
-        :openRequest="showNewTutorialModal"
-        :toggleModal="openNewTutorialModal"
+      <NewFaqModal
+        :openRequest="showNewFaqModal"
+        :toggleModal="openNewFaqModal"
       />
       <Footer class="mb-5 justify-self-end" />
     </div>
@@ -47,9 +46,9 @@ definePageMeta({
 });
 // SHOULD GET ALL THE TUTORIALS FROM THE API
 
-const showNewTutorialModal = ref(false);
+const showNewFaqModal = ref(false);
 
-const openNewTutorialModal = () => {
-  showNewTutorialModal.value = !showNewTutorialModal.value;
+const openNewFaqModal = () => {
+  showNewFaqModal.value = !showNewFaqModal.value;
 };
 </script>

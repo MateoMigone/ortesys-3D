@@ -109,19 +109,19 @@
           um número
         </li>
 
-        <!-- Non sequencial numbers -->
+        <!-- Repeated password -->
         <li class="mb-2 flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
             class="w-[20px] rounded-full icon-border"
-            :class="{ valid: nonSequencialNumbers }"
+            :class="{ valid: samePass }"
           >
             <path
               d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
             />
           </svg>
-          números não sequenciais
+          senhas coincidentes
         </li>
       </ul>
 
@@ -159,9 +159,11 @@
         <!-- Repeat new password input -->
         <div class="w-[260px]">
           <input
+            v-model="repeatedPass"
+            @input="checkRepeatedPass"
             id="newPassRepeat"
             name="newPassRepeat"
-            type="password"
+            type="text"
             required
             placeholder="Repetir senha"
             class="w-full rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-950 text-sm leading-6"
@@ -169,7 +171,12 @@
         </div>
 
         <!-- Submit form button -->
-        <Button type="submit" text="Criar senha" class="w-[260px]" />
+        <Button
+          type="submit"
+          text="Criar senha"
+          class="w-[260px]"
+          @click.prevent="handleSubmit"
+        />
       </form>
     </div>
   </div>
@@ -181,13 +188,16 @@ definePageMeta({
 });
 // SHOULD RECEIVE SELECTED USER
 
+const router = useRouter();
+
 const pass = ref("");
+const repeatedPass = ref("");
 const charQty = ref(false);
 const specialChar = ref(false);
 const mayus = ref(false);
 const minus = ref(false);
 const number = ref(false);
-const nonSequencialNumbers = ref(false);
+const samePass = ref(false);
 
 const checkCharQty = () => pass.value.length > 5;
 
@@ -211,10 +221,8 @@ const checkNumber = () => {
   return regex.test(pass.value);
 };
 
-const checkNonSequencialNumbers = () => {
-  const regex =
-    /(012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210)/;
-  return !regex.test(pass.value);
+const checkRepeatedPass = () => {
+  samePass.value = pass.value === repeatedPass.value;
 };
 
 const validatePassword = () => {
@@ -233,8 +241,23 @@ const validatePassword = () => {
   // checks if the password has a number
   number.value = checkNumber();
 
-  // checks if the password has non sequencial numbers
-  nonSequencialNumbers.value = checkNonSequencialNumbers();
+  // checks if the password and the repeated password are the same
+  checkRepeatedPass();
+};
+
+const submitValidation = () => {
+  return (
+    charQty.value &&
+    specialChar.value &&
+    mayus.value &&
+    minus.value &&
+    number.value &&
+    samePass.value
+  );
+};
+
+const handleSubmit = () => {
+  submitValidation() && router.push("/login");
 };
 </script>
 

@@ -10,13 +10,14 @@
       class="flex justify-center items-center rounded-2xl bg-white py-12 2xl:py-16"
     >
       <div class="flex flex-col items-center gap-6">
-        <!-- Frequently asked questions button -->
-        <Button
-          text="Acessar perguntas frequentes"
-          color="purple"
-          class="w-[270px]"
-        />
-
+        <!-- Go to frequently asked questions button -->
+        <NuxtLink to="/support/faq">
+          <Button
+            text="Acessar perguntas frequentes"
+            color="purple"
+            class="w-[270px]"
+          />
+        </NuxtLink>
         <div class="flex flex-col items-center">
           <!-- Title -->
           <h3 class="font-bold text-[#2D5893] text-3xl 2xl:text-4xl">
