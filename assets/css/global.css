@@ -32,27 +32,3 @@ body {
   scrollbar-width: thin; /* Width of the scrollbar */
   scrollbar-color: #d4d4f7 #f1f1f1; /* Color of the scrollbar handle and track */
 }
-
-/* Custom styles for vue-next-select */
-/* .vue-next-select {
-  --vns-border: 1px solid #ccc;
-  --vns-border-radius: 0.5rem;
-  --vns-padding: 0.5rem 1rem;
-  --vns-font-size: 1rem;
-  --vns-background: #f1f1f1;
-}
-
-.vue-next-select .vns__dropdown-menu {
-  background-color: #fff;
-  color: #333;
-}
-
-.vue-next-select .vns__dropdown-option {
-  padding: 0.5rem 1rem;
-}
-
-.vue-next-select .vns__dropdown-option--selected {
-  background-color: #007bff;
-  color: #fff;
-}
- */

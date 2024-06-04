@@ -10,7 +10,7 @@
       />
     </div>
 
-    <div class="flex flex-col gap-5 w-full">
+    <div class="flex flex-col gap-5 w-full max-h-[60vh] overflow-y-auto">
       <!-- Show created material cards with v-for -->
       <AdminMaterialCard color="Vermelho" />
       <AdminMaterialCard color="Vermelho" />

@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col items-center justify-center gap-12 rounded-2xl bg-[#ffff] shadow-xl py-12 w-[700px] 2xl:w-[800px]"
+    class="flex flex-col items-center gap-12 rounded-2xl bg-[#ffff] shadow-xl py-12 w-[700px] 2xl:w-[800px]"
     @submit.prevent="handleSubmit"
   >
     <!-- Form title -->
@@ -15,7 +15,7 @@
       {{ title }} usuário
     </h3>
 
-    <div class="flex flex-col w-[400px] gap-5 2xl:w-[450px] 2xl:gap-6">
+    <div class="flex flex-col w-[350px] gap-5 2xl:w-[450px] 2xl:gap-6">
       <!-- Name -->
       <div class="flex flex-col gap-2 2xl:gap-2.5">
         <label

@@ -73,11 +73,11 @@
           />
 
           <!-- Open user role select button -->
-          <Button
-            text="Clinica"
-            color="secondary"
+          <DropdownButton
+            :options="userRoles"
+            type="userRole"
+            @click.stop
             class="w-full h-full"
-            @click.stop=""
           />
 
           <!-- Toggle PDO button -->
@@ -151,6 +151,14 @@ const showConfirmRemoveModal = ref(false);
 
 const userState = ref(true);
 const userPDO = ref(false);
+const userRoles = [
+  "Gerente",
+  "Financeiro ADM",
+  "Clinica",
+  "Financeiro Clinica",
+  "Usuário",
+  "Assinante",
+];
 
 const openMaterialModal = () => {
   showMaterialModal.value = !showMaterialModal.value;

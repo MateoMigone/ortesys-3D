@@ -38,7 +38,7 @@
     </div>
 
     <div class="flex flex-col gap-6">
-      <div class="flex gap-6">
+      <div class="flex flex-col gap-3">
         <!-- Return button -->
         <Button
           v-if="clinicUser"
@@ -48,10 +48,18 @@
           @click.stop="setClinicUser('')"
         />
         <!-- Date filter button -->
-        <DateFilterButton />
+        <div class="flex gap-6">
+          <DropdownButton :options="options" type="date" />
+          <DropdownButton :options="options" type="date" />
+          <DropdownButton :options="options" type="date" />
+          <DropdownButton :options="options" type="date" />
+        </div>
       </div>
       <!-- Show clinic user and sub-users if a clinic user is selected -->
-      <div v-if="clinicUser === ''" class="flex flex-col gap-5">
+      <div
+        v-if="clinicUser === ''"
+        class="flex flex-col gap-5 max-h-[60vh] overflow-y-auto"
+      >
         <OrtesysInfoCard text="Total" />
         <OrtesysInfoCard
           text="Paulo"
@@ -74,7 +82,7 @@
       </div>
 
       <!-- Show all clinic users if no clinic user is selected -->
-      <div v-else class="flex flex-col gap-5">
+      <div v-else class="flex flex-col gap-5 max-h-[60vh] overflow-y-auto">
         <OrtesysInfoCard text="Total" />
         <OrtesysInfoCard
           :text="clinicUser"
@@ -97,6 +105,8 @@ definePageMeta({
 // SHOULD GET ALL USERS AND USER STATS FROM THE API
 
 const clinicUser = ref("");
+
+const options = ["Esse mês", "Esse ano", "Total"];
 
 const setClinicUser = (name) => {
   clinicUser.value = name;

@@ -5,10 +5,15 @@
       <NuxtLink to="/infoPanel/usersHistory"
         ><Button text="Voltar" color="red" class="w-[200px] h-[40px]"
       /></NuxtLink>
-      <!-- Show all materials with user material stats (v-for) -->
-      <MaterialCard color="Vermelho" />
-      <MaterialCard color="Vermelho" />
-      <MaterialCard color="Vermelho" />
+      <div class="flex flex-col gap-5 w-full max-h-[65vh] overflow-y-auto">
+        <!-- Show created material cards with v-for -->
+        <MaterialCard color="Vermelho" />
+        <MaterialCard color="Vermelho" />
+        <MaterialCard color="Vermelho" />
+        <MaterialCard color="Vermelho" />
+        <MaterialCard color="Vermelho" />
+        <MaterialCard color="Vermelho" />
+      </div>
     </div>
   </div>
 </template>

@@ -14,14 +14,16 @@
     <!-- Hidden new profile file input -->
     <input type="file" ref="newProfileFileInput" class="hidden" />
 
-    <!-- Show all material profiles with a v-for -->
-    <ConfigCard text="Perfil 1" type="materialProfile" />
-    <ConfigCard text="Perfil 2" type="materialProfile" />
-    <ConfigCard text="Perfil 3" type="materialProfile" />
-    <ConfigCard text="Perfil 4" type="materialProfile" />
-    <ConfigCard text="Perfil 5" type="materialProfile" />
-    <ConfigCard text="Perfil 6" type="materialProfile" />
-    <ConfigCard text="Perfil 7" type="materialProfile" />
+    <div class="w-full flex flex-col gap-6 max-h-[60vh] overflow-y-auto">
+      <!-- Show all material profiles with a v-for -->
+      <ConfigCard text="Perfil 1" type="materialProfile" />
+      <ConfigCard text="Perfil 2" type="materialProfile" />
+      <ConfigCard text="Perfil 3" type="materialProfile" />
+      <ConfigCard text="Perfil 4" type="materialProfile" />
+      <ConfigCard text="Perfil 5" type="materialProfile" />
+      <ConfigCard text="Perfil 6" type="materialProfile" />
+      <ConfigCard text="Perfil 7" type="materialProfile" />
+    </div>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-evenly items-center rounded-2xl bg-white p-6 gap-5"
+    class="flex flex-col justify-evenly items-center rounded-2xl bg-white p-6 gap-5 max-h-[65vh] overflow-y-auto"
   >
     <!-- Form header -->
     <div

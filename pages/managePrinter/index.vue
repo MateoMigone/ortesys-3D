@@ -13,14 +13,16 @@
       </NuxtLink>
     </div>
 
-    <!-- Show all printers with a v-for -->
-    <ConfigCard text="Impressora 1" type="printer" />
-    <ConfigCard text="Impressora 2" type="printer" />
-    <ConfigCard text="Impressora 3" type="printer" />
-    <ConfigCard text="Impressora 4" type="printer" />
-    <ConfigCard text="Impressora 5" type="printer" />
-    <ConfigCard text="Impressora 6" type="printer" />
-    <ConfigCard text="Impressora 7" type="printer" />
+    <div class="w-full flex flex-col gap-6 max-h-[60vh] overflow-y-auto">
+      <!-- Show all printers with a v-for -->
+      <ConfigCard text="Impressora 1" type="printer" />
+      <ConfigCard text="Impressora 2" type="printer" />
+      <ConfigCard text="Impressora 3" type="printer" />
+      <ConfigCard text="Impressora 4" type="printer" />
+      <ConfigCard text="Impressora 5" type="printer" />
+      <ConfigCard text="Impressora 6" type="printer" />
+      <ConfigCard text="Impressora 7" type="printer" />
+    </div>
   </div>
 </template>
 

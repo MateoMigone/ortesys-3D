@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-between rounded-2xl h-[115px] px-[26px] shadow-sm bg-white"
+    class="flex items-center justify-between rounded-2xl min-h-[115px] px-[26px] shadow-sm bg-white"
   >
     <div class="flex gap-6 2xl:gap-12">
       <div class="flex items-center gap-2 min-w-[140px]">

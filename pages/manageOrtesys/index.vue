@@ -9,7 +9,7 @@
       /></NuxtLink>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 w-full">
+    <div class="grid grid-cols-2 gap-4 w-full max-h-[65vh] overflow-y-auto">
       <!-- Show all Ortesys (admin) -->
       <OrtesysAdminCard text="Punho" />
       <OrtesysAdminCard text="Punho dedo" />

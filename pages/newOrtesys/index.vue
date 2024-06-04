@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[90%] mx-auto">
+  <div class="w-[90%] mx-auto max-h-[77vh] overflow-y-auto">
     <!-- Text banner -->
     <TextBanner title="Selecione o tipo de órtese desejado." />
 
@@ -18,6 +18,10 @@
       <OrtesysCard
         title="Tornozelo"
         description="Adequada para fraturas estáveis ou instáveis da tíbia ou no maléolo lateral da fíbula."
+      />
+      <OrtesysCard
+        title="Punho polegar"
+        description="Fraturas e tenossinovite De Quervain"
       />
       <OrtesysCard
         title="Punho polegar"

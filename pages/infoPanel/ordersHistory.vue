@@ -4,9 +4,9 @@
     <TextBanner v-if="user" title="Paulo Tavares" subtitle="Clinica" />
 
     <!-- Date filter button -->
-    <DateFilterButton />
+    <DropdownButton :options="options" type="date" />
 
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-5 max-h-[65vh] overflow-y-auto">
       <!-- Show all the ortesys info cards with v-for -->
       <!-- OrtesysInfoCard should receive an object with all the stats to be shown in it -->
       <OrtesysInfoCard text="Total" />
@@ -28,6 +28,8 @@ definePageMeta({
 // SHOULD GET ALL THE GENERATED ORTESYS INFO FROM THE API
 
 const user = ref(false);
+
+const options = ["Esse mês", "Esse ano", "Total"];
 </script>
 
 <style lang="scss" scoped></style>

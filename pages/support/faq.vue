@@ -5,7 +5,7 @@
         <!-- Header -->
         <Header class="mt-5" />
 
-        <div class="flex flex-col items-center gap-5 w-[90%]">
+        <div class="flex flex-col items-center gap-6 w-[90%]">
           <div class="flex gap-6">
             <!-- Return button -->
             <NuxtLink to="/support">
@@ -23,10 +23,20 @@
           </div>
 
           <!-- Show all the faq -->
-          <TutorialCard text="Órteses de Polegar" />
-          <TutorialCard text="Órteses de Braço" />
-          <TutorialCard text="Órteses de Tornozelo" />
-          <TutorialCard text="Órteses de Teste" />
+          <div class="w-full flex flex-col gap-5 max-h-[65vh] overflow-y-auto">
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+          </div>
         </div>
       </div>
 
@@ -44,7 +54,7 @@
 definePageMeta({
   middleware: "auth",
 });
-// SHOULD GET ALL THE TUTORIALS FROM THE API
+// SHOULD GET ALL THE FAQS FROM THE API (if included in apis)
 
 const showNewFaqModal = ref(false);
 

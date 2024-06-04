@@ -154,6 +154,25 @@
           color="red"
           @click.prevent="cancelOrtesysGeneration"
         />
+
+        <!-- Error messages if input is incorrect -->
+        <div
+          v-if="error"
+          class="flex flex-col gap-2.5 bg-[#DE3618] bg-opacity-80 text-white w-full p-3.5 px-5 italic rounded-xl shadow-2xl"
+        >
+          <h6 class="font-bold text-lg">Atenção:</h6>
+          <ul class="list-disc list-inside">
+            <li>
+              Medida fora do intervalo na variável da palma, verifique a medida
+            </li>
+            <li>
+              Medida fora do intervalo na variável da punho, verifique a medida
+            </li>
+            <li>
+              Medida fora do intervalo na variável da bordas, verifique a medida
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -192,9 +211,82 @@
 const router = useRouter();
 const showRefImg = ref(false);
 
+const error = ref(true);
+/* const palmaRange = [250, 300];
+const punhoRange = [65, 80];
+const antebracoRange = [2, 5];
+const pregaPalmarRange = [80, 110];
+const bordasRange = [1, 5];
+
+const palmaValue = ref("");
+const punhoValue = ref("");
+const antebracoValue = ref("");
+const pregaPalmarValue = ref("");
+const bordasValue = ref("");
+
+const palma = ref(false);
+const punho = ref(false);
+const antebraco = ref(false);
+const pregaPalmar = ref(false);
+const bordas = ref(false);
+
+const regex = /^\d+$/;
+
+const checkPalma = () => {
+  if (!regex.test(palmaValue.value)) {
+    return false;
+  }
+  const number = parseInt(palmaValue.value, 10);
+  return number >= palmaRange.value[0] && number <= palmaRange.value[1];
+};
+
+const checkPunho = () => {
+  if (!regex.test(punhoValue.value)) {
+    return false;
+  }
+  const number = parseInt(punhoValue.value, 10);
+  return number >= punhoRange.value[0] && number <= punhoRange.value[1];
+};
+
+const checkAntebraco = () => {
+  if (!regex.test(antebracoValue.value)) {
+    return false;
+  }
+  const number = parseInt(antebracoValue.value, 10);
+  return number >= antebracoRange.value[0] && number <= antebracoRange.value[1];
+};
+
+const checkPregaPalmar = () => {
+  if (!regex.test(pregaPalmarValue.value)) {
+    return false;
+  }
+  const number = parseInt(pregaPalmarValue.value, 10);
+  return (
+    number >= pregaPalmarRange.value[0] && number <= pregaPalmarRange.value[1]
+  );
+};
+
+const checkBordas = () => {
+  if (!regex.test(bordasValue.value)) {
+    return false;
+  }
+  const number = parseInt(bordasValue.value, 10);
+  return number >= bordasRange.value[0] && number <= bordasRange.value[1];
+};
+
+const validateFields = () => {
+  return palma && punho && antebraco && pregaPalmar && bordas;
+}; */
+
 const cancelOrtesysGeneration = () => {
   // ADD INPUTS RESET
-  router.push("/newOrtesys");
+
+  /* palma.value = checkPalma();
+  punho.value = checkPunho();
+  antebraco.value = checkAntebraco();
+  pregaPalmar.value = checkPregaPalmar();
+  bordas.value = checkBordas(); */
+  error.value && router.push("/newOrtesys");
 };
 
 const generateOrtesys = () => {

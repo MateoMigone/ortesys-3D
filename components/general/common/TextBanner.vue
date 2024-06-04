@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-banner mb-3 flex flex-col justify-center items-center rounded-2xl min-h-[100px] px-[100px] py-[25px] 2xl:py-[40px]"
+    class="bg-banner mb-3 flex flex-col justify-center items-center rounded-2xl min-h-[70px] 2xl:min-h-[100px] px-[100px] py-[20px] 2xl:py-[40px]"
   >
     <!-- Banner title -->
     <h2 class="text-[#2d5893] font-bold text-3xl text-center leading-8">

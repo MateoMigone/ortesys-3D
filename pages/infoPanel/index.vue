@@ -2,7 +2,7 @@
   <div class="w-[90%] mx-auto flex flex-col gap-5">
     <!-- SHOULD ADD MORE FILTER BUTTONS -->
     <!-- Date filter button -->
-    <DateFilterButton />
+    <DropdownButton :options="options" type="date" />
     <div class="grid grid-cols-3 gap-6 place-items-center 2xl:grid-cols-4">
       <!-- Show stat cards (maybe with v-for) -->
       <NuxtLink to="/infoPanel/ordersHistory" class="w-full">
@@ -50,4 +50,6 @@ definePageMeta({
 });
 
 // SHOULD GET THE USER/TOTAL STATS FROM THE API
+
+const options = ["Esse mês", "Esse ano", "Total"];
 </script>
