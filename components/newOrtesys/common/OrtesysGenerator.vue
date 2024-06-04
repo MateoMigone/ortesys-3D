@@ -81,6 +81,7 @@
               id="printer"
               class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm appearance-none cursor-pointer"
               placeholder="Preencha com as medidas"
+              v-model="selectedPrinter"
             >
               <option value="" disabled selected hidden>
                 Selecione uma impressora:
@@ -114,6 +115,7 @@
               id="material"
               class="bg-[#FCFCFF] border-[#CDCEE4] border-[1px] rounded-lg my-1.5 w-full py-3 px-4 placeholder:text-[#131E41] font-medium text-xs 2xl:text-sm appearance-none cursor-pointer"
               placeholder="Preencha com as medidas"
+              :disabled="!selectedPrinter"
             >
               <option value="" disabled selected hidden>
                 Selecione um material:
@@ -213,6 +215,7 @@ const router = useRouter();
 const showRefImg = ref(false);
 
 const error = ref(true);
+const selectedPrinter = ref("");
 /* const palmaRange = [250, 300];
 const punhoRange = [65, 80];
 const antebracoRange = [2, 5];
