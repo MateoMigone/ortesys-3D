@@ -86,9 +86,11 @@ const handleSubmit = async () => {
     }),
   });
 
-  errorMessage.value = error.value.data.errors || error.value.data || null;
+  if (error.value) {
+    errorMessage.value = error.value.data.errors || error.value.data || null;
+  }
 
-  console.log(error.value.data.error);
+  console.log(error.value);
   /* Let authStore authenticate user*/
   authStore.login(error.value);
 

@@ -162,6 +162,7 @@
         >
           <h6 class="font-bold text-lg">Atenção:</h6>
           <ul class="list-disc list-inside">
+            <!-- SHOULD SHOW THE MESSAGES FROM THE API REQUEST -->
             <li>
               Medida fora do intervalo na variável da palma, verifique a medida
             </li>
