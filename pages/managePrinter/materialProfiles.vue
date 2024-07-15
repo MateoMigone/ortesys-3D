@@ -30,7 +30,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /* middleware: "auth", */
 });
 
 // SHOULD RECEIVE ALL THE PROFILES FROM THE PRINTER

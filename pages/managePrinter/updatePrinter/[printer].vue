@@ -10,7 +10,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /* middleware: "auth", */
 });
 
 // SHOULD GET THE SELECTED PRINTER FROM THE API

@@ -18,7 +18,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /* middleware: "auth", */
 });
 // SHOULD RECEIVE SELECTED USER (BY URL PARAM)
 </script>

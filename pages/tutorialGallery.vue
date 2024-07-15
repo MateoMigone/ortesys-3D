@@ -48,9 +48,9 @@
 </template>
 
 <script setup>
-definePageMeta({
+/* definePageMeta({
   middleware: "auth",
-});
+}); */
 // SHOULD GET ALL THE TUTORIALS FROM THE API
 
 const showNewTutorialModal = ref(false);

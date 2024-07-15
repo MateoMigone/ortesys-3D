@@ -100,7 +100,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /*  middleware: "auth", */
 });
 // SHOULD GET ALL USERS AND USER STATS FROM THE API
 

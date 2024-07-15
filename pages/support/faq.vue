@@ -51,9 +51,9 @@
 </template>
 
 <script setup>
-definePageMeta({
+/* definePageMeta({
   middleware: "auth",
-});
+}); */
 // SHOULD GET ALL THE FAQS FROM THE API (if included in apis)
 
 const showNewFaqModal = ref(false);

@@ -73,9 +73,10 @@ const authStore = useAuthStore();
 const router = useRouter();
 const errorMessage = ref(null);
 
-const handleSubmit = async () => {
+const handleSubmit = /* async */ () => {
+  router.push("/");
   /* Post the authorization login values */
-  const { data, error } = await useFetch("/api/Conta/OAuth", {
+  /* const { data, error } = await useFetch("/api/Conta/OAuth", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -90,12 +91,13 @@ const handleSubmit = async () => {
     errorMessage.value = error.value.data.errors || error.value.data || null;
   }
 
-  console.log(error.value);
+  console.log(error.value); */
   /* Let authStore authenticate user*/
-  authStore.login(error.value);
-
+  /*   authStore.login(error.value);
+   */
   /* Allow the login if the user is authenticated */
-  authStore.isAuthenticated && router.push("/");
+  /*   authStore.isAuthenticated && router.push("/");
+   */
 };
 </script>
 

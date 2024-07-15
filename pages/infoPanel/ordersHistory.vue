@@ -22,7 +22,7 @@
 <script setup>
 definePageMeta({
   layout: "main-layout",
-  middleware: "auth",
+  /* middleware: "auth", */
 });
 
 // SHOULD GET ALL THE GENERATED ORTESYS INFO FROM THE API
